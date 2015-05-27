@@ -1,4 +1,4 @@
-# Aspose.Slides for Cloud Repository
+# Aspose.Slides for Cloud
 This repository contains examples and SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cloud/powerpoint-api.aspx).
 
 ## Why SDKs?
