@@ -1,4 +1,4 @@
-# Aspose.Slides for Cloud
+## Aspose.Slides for Cloud
 This repository contains examples and SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cloud/powerpoint-api.aspx).
 
 ## Why SDKs?
@@ -14,3 +14,11 @@ Directory | Description
 --------- | -----------
 [Java SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Java)  |  Aspose.Slides for Cloud Java SDK.
 [PHP SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_PHP)  | Aspose.Slides for Cloud PHP SDK.
+
+## Resources
+
++ **Website:** [www.aspose.com](http://www.aspose.com)
++ **Product Home:** [Aspose.Slides for Cloud](http://www.aspose.com/cloud/powerpoint-api.aspx)
++ **Documentation:** [Aspose.Slides for Cloud Documentation](http://www.aspose.com/docs/display/slidescloud/Home)
++ **Forum:** [Aspose.Slides for Cloud Forum](http://www.aspose.com/community/forums/aspose.slides-product-family/75/showforum.aspx)
++ **Blog:** [Aspose.Slides for Cloud Blog](http://www.aspose.com/blogs/aspose-products/aspose-slides-product-family.html)
