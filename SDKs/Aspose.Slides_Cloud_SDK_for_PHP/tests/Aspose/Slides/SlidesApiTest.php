@@ -221,11 +221,12 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(200, $result->Code);
     }
     
-    /*public function testPostSlidesDocument()
+    public function testPostSlidesDocument()
     {
-        $result = $this->slides->PostSlidesDocument($name, $templatePath, $templateStorage = null, $isImageDataEmbeeded = null, $password = null, $storage = null, $folder = null, $file);
+        $file = getcwd() . '/Data/Input/test_slides.pptx';
+        $result = $this->slides->PostSlidesDocument($name="new_slides.pptx", $templatePath="test_slides.pptx", $templateStorage = null, $isImageDataEmbeeded = null, $password = null, $storage = null, $folder = null, $file);
         $this->assertEquals(200, $result->Code);
-    }*/
+    }
     
     public function testPostSlidesPresentationReplaceText()
     {
@@ -239,13 +240,20 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(200, $result->Code);
     }
     
-    /*public function testPostSlidesSetDocumentProperties()
+    public function testPostSlidesSetDocumentProperties()
     {
-        $body = json_encode(array("DocumentProperties" => array("Name" => "Test", "Value" => "Testing123")));
-        echo $body; exit;
+        $body = '{
+                    "List": [
+                      {
+                        "Name": "Test",
+                        "Value": "Testing123",
+                        "BuiltIn": false
+                      }
+                    ]
+                  }';
         $result = $this->slides->PostSlidesSetDocumentProperties($name="test_slides.pptx", $folder="", $storage="", $body);
         $this->assertEquals(200, $result->Code);
-    }*/
+    }
     
     public function testPostSlidesSlideReplaceText()
     {
@@ -265,13 +273,12 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
         $result = $this->slides->PutNewPresentation($name="new_presentation.pptx", $password="", $storage="", $folder="", $file);        
     }
     
-    /*public function testPutNewPresentationFromStoredTemplate()
+    public function testPutNewPresentationFromStoredTemplate()
     {
         $file =  getcwd() . '/Data/Input/test_slides.pptx';
-        $templatePath =  getcwd() . '/Data/Input/test_slides.pptx';
-        $result = $this->slides->PutNewPresentationFromStoredTemplate($name="new_prep1.pptx", $templatePath, $templateStorage = null, $password = null, $storage="", $folder="", $file);
+        $result = $this->slides->PutNewPresentationFromStoredTemplate($name="new_prep1.pptx", $templatePath="test_slides.pptx", $templateStorage = null, $password = null, $storage="", $folder="", $file);
         $this->assertEquals(200, $result->Code);
-    }*/
+    }
     
     public function testPutPresentationMerge()
     {
@@ -279,17 +286,19 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(200, $result->Code);
     }
     
-    /*public function testPutSetParagraphPortionProperties()
+    public function testPutSetParagraphPortionProperties()
     {
-        $result = $this->slides->PutSetParagraphPortionProperties($name="test_slides.pptx", $slideIndex=1, $shapeIndex=1, $paragraphIndex=1, $portionIndex=1, $storage="", $folder="", $body="Test.pptx");
+        $body = array("Text"=>"Paragraph portion text", "FontColor"=>"#FF000000");
+        $result = $this->slides->PutSetParagraphPortionProperties($name="test_slides.pptx", $slideIndex=1, $shapeIndex=1, $paragraphIndex=1, $portionIndex=1, $storage="", $folder="", $body);
         $this->assertEquals(200, $result->Code);
     }
     
     public function testPutSlideShapeInfo()
     {
-        $result = $this->slides->PutSlideShapeInfo($name="test_slides.pptx", $slideIndex, $shapePath, $storage="", $folder="", $body);
+        $body = array("Text"=>"Shape Info");
+        $result = $this->slides->PutSlideShapeInfo($name="test_slides.pptx", $slideIndex=2, $shapePath=1, $storage="", $folder="", $body);
         $this->assertEquals(200, $result->Code);
-    }*/
+    }
     
     public function testPutSlidesConvert()
     {
