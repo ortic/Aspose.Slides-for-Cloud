@@ -72,6 +72,11 @@ class APIClient {
     public function callAPI($resourcePath, $method, $queryParams, $postData, $headerParams) {
 
         $headers = array();
+        if ($headerParams != null) {
+            foreach ($headerParams as $key => $val) {
+                $headers[] = "$key: $val";
+            }
+        }
 
         if (is_object($postData) or is_array($postData)) {
             $postData = json_encode(self::sanitizeForSerialization($postData));
