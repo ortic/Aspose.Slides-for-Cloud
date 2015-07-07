@@ -21,9 +21,11 @@ import com.aspose.slides.model.PresentationsMergeRequest;
 import com.aspose.slides.model.ResponseMessage;
 import com.aspose.slides.model.Shape;
 import com.aspose.slides.model.ShapeListResponse;
+import com.aspose.slides.model.ShapeResponse;
 import com.aspose.slides.model.SlideBackgroundResponse;
 import com.aspose.slides.model.SlideCommentsResponse;
 import com.aspose.slides.model.SlideListResponse;
+import com.aspose.slides.model.SlideResponse;
 import com.aspose.slides.model.SlideStringReplaceResponse;
 import com.aspose.slides.model.SplitDocumentResponse;
 import com.aspose.slides.model.TextItemsResponse;
@@ -177,7 +179,8 @@ public class SlidesApiTest {
 		File file;
 		try {
 			file = new File(getClass().getResource("/test_convert_slide.pptx").toURI());
-			ResponseMessage result = slidesApi.PutNewPresentation(name, password, storage, folder, file);
+			 DocumentResponse result = slidesApi.PutNewPresentation(name, password, storage, folder, file);
+			 System.out.println("Empty presentation file has been created successfully");
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -578,7 +581,7 @@ public class SlidesApiTest {
 		String storage = "";
 		try {
 			
-			ResponseMessage result = slidesApi.GetSlidesSlideShapesParent(name, slideIndex, shapePath, folder, storage);
+			ShapeResponse result = slidesApi.GetSlidesSlideShapesParent(name, slideIndex, shapePath, folder, storage);
 			
 			
 		} catch (ApiException apiException) {
@@ -706,7 +709,7 @@ public class SlidesApiTest {
 		String folder = "";
 		String storage = "";
 		try {
-			ResponseMessage result = slidesApi.GetSlidesSlide(name, slideIndex, folder, storage);
+			 SlideResponse result = slidesApi.GetSlidesSlide(name, slideIndex, folder, storage);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);

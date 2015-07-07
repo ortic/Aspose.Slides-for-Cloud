@@ -4,7 +4,9 @@ import com.aspose.slides.client.ApiException;
 import com.aspose.slides.client.ApiInvoker;
 import com.aspose.slides.client.ApiInvokerResponse;
 import com.aspose.slides.model.FontSchemeResponse;
+import com.aspose.slides.model.ShapeResponse;
 import com.aspose.slides.model.SlideBackgroundResponse;
+import com.aspose.slides.model.SlideResponse;
 import com.aspose.slides.model.SplitDocumentResponse;
 import com.aspose.slides.model.DocumentResponse;
 import com.aspose.slides.model.ResponseMessage;
@@ -376,13 +378,13 @@ try {
 	* @param storage	String	Document's storage.
 	* @param folder	String	Document's folder.
 	* @param file	File	
-	* @return ResponseMessage
+	* @return DocumentResponse
 	*/
 
-  public ResponseMessage PutNewPresentation (String name, String password, String storage, String folder, File file) {
+  public DocumentResponse PutNewPresentation (String name, String password, String storage, String folder, File file) {
     Object postBody = null;
     // verify required params are set
-    if(name == null || file == null ) {
+    if(name == null) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
@@ -414,14 +416,17 @@ try {
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-if(contentType.startsWith("multipart/form-data")) {      
-      FormDataMultiPart mp = new FormDataMultiPart();
-      mp.field("file", file, MediaType.MULTIPART_FORM_DATA_TYPE);
-        postBody = mp;
+    if(file != null){
+       FormDataMultiPart mp = new FormDataMultiPart();
+       mp.field("file", file, MediaType.MULTIPART_FORM_DATA_TYPE);
+         postBody = mp;         
+    }else{
+       contentType = "application/json";
     }
+     
 try {
 		response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, postBody, headerParams, formParams, contentType);
-		return (ResponseMessage) ApiInvoker.deserialize(response, "", ResponseMessage.class);
+		return (DocumentResponse) ApiInvoker.deserialize(response, "", DocumentResponse.class);
     } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	throw new ApiException(404, "");
@@ -1497,10 +1502,10 @@ try {
 	* @param shapePath	String	Shape path.
 	* @param folder	String	Presentation folder.
 	* @param storage	String	Presentation storage.
-	* @return ResponseMessage
+	* @return ShapeResponse
 	*/
 
-  public ResponseMessage GetSlidesSlideShapesParent (String name, Integer slideIndex, String shapePath, String folder, String storage) {
+  public ShapeResponse GetSlidesSlideShapesParent (String name, Integer slideIndex, String shapePath, String folder, String storage) {
     Object postBody = null;
     // verify required params are set
     if(name == null || slideIndex == null || shapePath == null ) {
@@ -1541,7 +1546,7 @@ try {
 
 try {
 		response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams, formParams, contentType);
-		return (ResponseMessage) ApiInvoker.deserialize(response, "", ResponseMessage.class);
+		return (ShapeResponse) ApiInvoker.deserialize(response, "", ShapeResponse.class);
     } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	throw new ApiException(404, "");
@@ -1860,10 +1865,10 @@ try {
 	* @param slideIndex	Integer	
 	* @param folder	String	
 	* @param storage	String	
-	* @return ResponseMessage
+	* @return SlideResponse
 	*/
 
-  public ResponseMessage GetSlidesSlide (String name, Integer slideIndex, String folder, String storage) {
+  public SlideResponse GetSlidesSlide (String name, Integer slideIndex, String folder, String storage) {
     Object postBody = null;
     // verify required params are set
     if(name == null || slideIndex == null ) {
@@ -1900,7 +1905,7 @@ try {
 
 try {
 		response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams, formParams, contentType);
-		return (ResponseMessage) ApiInvoker.deserialize(response, "", ResponseMessage.class);
+		return (SlideResponse) ApiInvoker.deserialize(response, "", SlideResponse.class);
     } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	throw new ApiException(404, "");

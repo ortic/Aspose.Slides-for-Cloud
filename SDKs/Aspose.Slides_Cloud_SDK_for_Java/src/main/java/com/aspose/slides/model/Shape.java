@@ -7,7 +7,7 @@ import com.aspose.slides.model.AutoShapeType;
 public class Shape {
   private String Text = null;
   private ResourceUriElement Paragraphs = null;
-  private AutoShapeType ShapeType = null;
+  private Integer ShapeType = null;
   private String Name = null;
   private Float Width = null;
   private Float Height = null;
@@ -63,16 +63,16 @@ public class Shape {
 	 * Gets AutoShapeType
 	 * @return ShapeType
 	 */
-  public AutoShapeType getShapeType() {
+  public Integer getShapeType() {
     return ShapeType;
   }
 
 	/**
 	 * setShapeType
 	 * Sets AutoShapeType
-	 * @param ShapeType AutoShapeType
+	 * @param Integer AutoShapeType
 	 */
-  public void setShapeType(AutoShapeType ShapeType) {
+  public void setShapeType(Integer ShapeType) {
     this.ShapeType = ShapeType;
   }
 
