@@ -509,7 +509,11 @@ class SlidesApi(object):
         queryParams = {}
         headerParams = {}
         formParams = {}
-        files = { 'file':open(file, 'rb')}
+        files = {}
+        
+        if file is not None:
+            files = { 'file':open(file, 'rb')}
+            
         bodyParam = None
 
         headerParams['Accept'] = 'application/xml,application/json'

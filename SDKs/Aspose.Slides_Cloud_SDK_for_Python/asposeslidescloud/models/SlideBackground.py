@@ -12,7 +12,7 @@ class SlideBackground(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-            'Type': 'FillType',
+            'Type': 'str',
             'FillFormat': 'FillFormat',
             'SelfUri': 'ResourceUri',
             'AlternateLinks': 'list[ResourceUri]',
