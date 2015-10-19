@@ -1,0 +1,10 @@
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\obj\x86\Debug\AsposeSlides.csprojResolveAssemblyReference.cache
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\ConsoleApplication.exe.config
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\ConsoleApplication.exe
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\ConsoleApplication.pdb
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\Aspose.Storage-Cloud.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\LinqBridge.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\Newtonsoft.Json.dll
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\bin\Debug\Newtonsoft.Json.xml
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\obj\x86\Debug\ConsoleApplication.exe
+D:\aspose\swagger\swagger-codegen-2.0.17\aspose\csharp\slides\obj\x86\Debug\ConsoleApplication.pdb
