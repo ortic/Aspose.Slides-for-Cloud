@@ -3,7 +3,7 @@
 namespace Aspose\Slides;
 
 use Aspose\Slides\AsposeApp;
-use Aspose\Barcode\ApiException as Exception;
+use Aspose\Slides\ApiException as Exception;
 
 /**
  * APIClient.php
@@ -81,6 +81,7 @@ class APIClient {
         if (is_object($postData) or is_array($postData)) {
             $postData = json_encode(self::sanitizeForSerialization($postData));
         }
+	
         $resourcePath = str_replace("{appSid}", urlencode($this->appSid), $resourcePath);
         $url = rtrim($this->apiServer, "/") . $resourcePath;
 
@@ -133,8 +134,22 @@ class APIClient {
 //		}
 
         if ($method == self::$POST) {
+            if (file_exists($postData)) {
+
+                $fp = fopen($postData, "r");
+
+                curl_setopt($curl, CURLOPT_VERBOSE, 1);
+                curl_setopt($curl, CURLOPT_USERPWD, 'user:password');
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_UPLOAD, true);
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+                curl_setopt($curl, CURLOPT_INFILE, $fp);
+                curl_setopt($curl, CURLOPT_INFILESIZE, filesize($postData));
+            } else {
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+            }
         } else if ($method == self::$PUT) {
             if (file_exists($postData)) {
 
@@ -169,7 +184,7 @@ class APIClient {
         if ($response_info['http_code'] == 0) {
             throw new Exception("TIMEOUT: api call to " . $url .
             " took more than 180s to return");
-        } else if ($response_info['http_code'] == 200) {
+        } else if ($response_info['http_code'] == 200 || $response_info['http_code'] == 201) {
             //$data = json_decode($response);
             $data = $response;
         } else if ($response_info['http_code'] == 401) {
@@ -178,10 +193,9 @@ class APIClient {
         } else if ($response_info['http_code'] == 404) {
             $data = null;
         } else {
-            /* throw new Exception("Can't connect to the api: " . $url .
-              " response code: " .
-              $response_info['http_code']); */
-            echo "response code: " . $response_info['http_code'];
+            throw new Exception("Can't connect to the api: " . $url .
+            " response code: " .
+            $response_info['http_code']);
         }
 
         return $data;
@@ -313,7 +327,7 @@ class APIClient {
         return $instance;
     }
 
-    public function isJson($string) {
+    public static function isJson($string) {
         return is_string($string) && is_object(json_decode($string)) && (json_last_error() == JSON_ERROR_NONE) ? true : false;
     }
 
