@@ -82,8 +82,9 @@
                                                  storage:nil
                                                   folder:nil
                                        completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                          XCTAssertNotNil(output, @"Failed to read presentation info.");
-                                          [expectation fulfill];
+                                           XCTAssertNotNil(output, @"Failed to read presentation info.");
+                                           XCTAssertEqualObjects(output.status, @"OK");
+                                           [expectation fulfill];
                                       }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -139,6 +140,7 @@
                                                    folder:nil
                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                             XCTAssertNotNil(output, @"Failed to create presentation.");
+                                            XCTAssertEqualObjects(output.status, @"Created");
                                             [expectation fulfill];
      }];
     
@@ -161,6 +163,7 @@
                                                            storage:nil
                                                  completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                      XCTAssertNotNil(output, @"Failed to read presentation document properties.");
+                                                     XCTAssertEqualObjects(output.status, @"OK");
                                                      [expectation fulfill];
     }];
     
@@ -192,6 +195,7 @@
                                                                storage:nil
                                                      completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                          XCTAssertNotNil(output, @"Failed to set document properties.");
+                                                         XCTAssertEqualObjects(output.status, @"OK");
                                                          [expectation fulfill];
     }];
     
@@ -214,6 +218,7 @@
                                                               storage:nil
                                                     completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                         XCTAssertNotNil(output, @"Failed to clean document properties.");
+                                                        XCTAssertEqualObjects(output.status, @"OK");
                                                         [expectation fulfill];
      }];
     
@@ -237,6 +242,7 @@
                                                          storage:nil
                                                completionHandler:^(ASPDocumentPropertyResponse *output, NSError *error) {
                                                    XCTAssertNotNil(output, @"Failed to read presentation document property.");
+                                                   XCTAssertEqualObjects(output.status, @"OK");
                                                    [expectation fulfill];
     }];
     
@@ -266,8 +272,9 @@
                                                              folder:nil
                                                             storage:nil
                                                   completionHandler:^(ASPDocumentPropertyResponse *output, NSError *error) {
-                                                     XCTAssertNotNil(output, @"Failed to set document property.");
-                                                     [expectation fulfill];
+                                                      XCTAssertNotNil(output, @"Failed to set document property.");
+                                                      XCTAssertEqualObjects(output.status, @"OK");
+                                                      [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -291,8 +298,9 @@
                                                              folder:nil
                                                             storage:nil
                                                   completionHandler:^(ASPCommonResponse *output, NSError *error) {
-                                                     XCTAssertNotNil(output, @"Failed to delete document property.");
-                                                     [expectation fulfill];
+                                                      XCTAssertNotNil(output, @"Failed to delete document property.");
+                                                      XCTAssertEqualObjects(output.status, @"OK");
+                                                      [expectation fulfill];
      }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -316,8 +324,9 @@
                                                          storage:nil
                                                           folder:nil
                                                completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to create presentation document from html.");
-                                                 [expectation fulfill];
+                                                   XCTAssertNotNil(output, @"Failed to create presentation document from html.");
+                                                   XCTAssertEqualObjects(output.status, @"Created");
+                                                   [expectation fulfill];
      }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -339,6 +348,7 @@
                                                storage:nil
                                      completionHandler:^(ASPImagesResponse *output, NSError *error) {
                                          XCTAssertNotNil(output, @"Failed to read presentation images info");
+                                         XCTAssertEqualObjects(output.status, @"OK");
                                          [expectation fulfill];
     }];
     
@@ -377,8 +387,9 @@
                                                     storage:nil
                                                      folder:nil
                                           completionHandler:^(ASPDocumentResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to merge presentations.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to merge presentations.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
      }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -407,8 +418,9 @@
                                                      storage:nil
                                                       folder:nil
                                            completionHandler:^(ASPDocumentResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to merge presentations.");
-                                             [expectation fulfill];
+                                               XCTAssertNotNil(output, @"Failed to merge presentations.");
+                                               XCTAssertEqualObjects(output.status, @"OK");
+                                               [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -432,8 +444,9 @@
                                                                   folder:nil
                                                                  storage:nil
                                                        completionHandler:^(ASPPresentationStringReplaceResponse *output, NSError *error) {
-                                                         XCTAssertNotNil(output, @"Failed to replace text by a new value.");
-                                                         [expectation fulfill];
+                                                           XCTAssertNotNil(output, @"Failed to replace text by a new value.");
+                                                           XCTAssertEqualObjects(output.status, @"OK");
+                                                           [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -460,8 +473,9 @@
                                                      folder:nil
                                                     outPath:nil
                                           completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to save presentation in html format with options.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to save presentation in html format with options.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
      }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -489,6 +503,7 @@
                                                    outPath:nil
                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                              XCTAssertNotNil(output, @"Failed to save presentation in pdf format with options.");
+                                             XCTAssertEqualObjects(output.status, @"OK");
                                              [expectation fulfill];
     }];
     
@@ -516,8 +531,9 @@
                                                      folder:nil
                                                     outPath:nil
                                           completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to saves presentation in tiff format with options.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to saves presentation in tiff format with options.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -538,6 +554,7 @@
                                                    storage:nil
                                          completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                              XCTAssertNotNil(output, @"Failed to read presentation slides info.");
+                                             XCTAssertEqualObjects(output.status, @"OK");
                                              [expectation fulfill];
     }];
     
@@ -561,8 +578,9 @@
                                                           folder:nil
                                                          storage:nil
                                                completionHandler:^(ASPSlideListResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to reorder presentation slide position.");
-                                                 [expectation fulfill];
+                                                   XCTAssertNotNil(output, @"Failed to reorder presentation slide position.");
+                                                   XCTAssertEqualObjects(output.status, @"OK");
+                                                   [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -583,6 +601,7 @@
                                                            storage:nil
                                                  completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                                      XCTAssertNotNil(output, @"Failed to delete presentation slides.");
+                                                     XCTAssertEqualObjects(output.status, @"OK");
                                                      [expectation fulfill];
      }];
     
@@ -604,8 +623,9 @@
                                                folder:nil
                                               storage:nil
                                     completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                         XCTAssertNotNil(output, @"Failed to read slide info.");
-                                         [expectation fulfill];
+                                        XCTAssertNotNil(output, @"Failed to read slide info.");
+                                        XCTAssertEqualObjects(output.status, @"OK");
+                                        [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -627,6 +647,7 @@
                                                   storage:nil
                                         completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                             XCTAssertNotNil(output, @"Failed to delete presentation slide by its index.");
+                                            XCTAssertEqualObjects(output.status, @"OK");
                                             [expectation fulfill];
     }];
     
@@ -648,8 +669,9 @@
                                                          folder:nil
                                                         storage:nil
                                               completionHandler:^(ASPSlideBackgroundResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to read presentation slide background color type.");
-                                                 [expectation fulfill];
+                                                  XCTAssertNotNil(output, @"Failed to read presentation slide background color type.");
+                                                  XCTAssertEqualObjects(output.status, @"OK");
+                                                  [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -671,8 +693,9 @@
                                                          folder:nil
                                                         storage:nil
                                               completionHandler:^(ASPSlideBackgroundResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to set presentation slide background color.");
-                                                 [expectation fulfill];
+                                                  XCTAssertNotNil(output, @"Failed to set presentation slide background color.");
+                                                  XCTAssertEqualObjects(output.status, @"OK");
+                                                  [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -694,6 +717,7 @@
                                                            storage:nil
                                                  completionHandler:^(ASPSlideBackgroundResponse *output, NSError *error) {
                                                      XCTAssertNotNil(output, @"Failed to remove presentation slide background color.");
+                                                     XCTAssertEqualObjects(output.status, @"OK");
                                                      [expectation fulfill];
     }];
     
@@ -715,8 +739,9 @@
                                                        folder:nil
                                                       storage:nil
                                             completionHandler:^(ASPSlideCommentsResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to read presentation slide comments.");
-                                                 [expectation fulfill];
+                                                XCTAssertNotNil(output, @"Failed to read presentation slide comments.");
+                                                XCTAssertEqualObjects(output.status, @"OK");
+                                                [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -737,8 +762,9 @@
                                                      folder:nil
                                                     storage:nil
                                           completionHandler:^(ASPImagesResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to read slide images info.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to read slide images info.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -760,6 +786,7 @@
                                                      storage:nil
                                            completionHandler:^(ASPPlaceholdersResponse *output, NSError *error) {
                                                XCTAssertNotNil(output, @"Failed to read slide placeholders info.");
+                                               XCTAssertEqualObjects(output.status, @"OK");
                                                [expectation fulfill];
     }];
     
@@ -782,8 +809,9 @@
                                                      folder:nil
                                                     storage:nil
                                           completionHandler:^(ASPPlaceholderResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to read slide placeholder info.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to read slide placeholder info.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -807,8 +835,9 @@
                                                            folder:nil
                                                           storage:nil
                                                 completionHandler:^(ASPSlideStringReplaceResponse *output, NSError *error) {
-                                                     XCTAssertNotNil(output, @"Failed to replace text by a new value.");
-                                                     [expectation fulfill];
+                                                    XCTAssertNotNil(output, @"Failed to replace text by a new value.");
+                                                    XCTAssertEqualObjects(output.status, @"OK");
+                                                    [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -829,8 +858,9 @@
                                                      folder:nil
                                                     storage:nil
                                           completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to read slides shapes info.");
-                                             [expectation fulfill];
+                                              XCTAssertNotNil(output, @"Failed to read slides shapes info.");
+                                              XCTAssertEqualObjects(output.status, @"OK");
+                                              [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -857,6 +887,7 @@
                                                storage:nil
                                      completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                          XCTAssertNotNil(output, @"Failed to creates new shape.");
+                                         XCTAssertEqualObjects(output.status, @"Created");
                                          [expectation fulfill];
     }];
     
@@ -883,8 +914,9 @@
                                                    scaleY:nil
                                                    bounds:nil
                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                             XCTAssertNotNil(output, @"Failed to render shape to specified picture format.");
-                                             [expectation fulfill];
+                                            XCTAssertNotNil(output, @"Failed to render shape to specified picture format.");
+                                            XCTAssertEqualObjects(output.status, @"OK");
+                                            [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -907,6 +939,7 @@
                                                        storage:nil
                                              completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                                  XCTAssertNotNil(output, @"Failed to reads a list of paragraphs in shape's textBody.");
+                                                 XCTAssertEqualObjects(output.status, @"OK");
                                                  [expectation fulfill];
     }];
     
@@ -930,8 +963,9 @@
                                                   folder:nil
                                                  storage:nil
                                        completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                         XCTAssertNotNil(output, @"Failed to reads paragraph in shape's textBody.");
-                                         [expectation fulfill];
+                                           XCTAssertNotNil(output, @"Failed to reads paragraph in shape's textBody.");
+                                           XCTAssertEqualObjects(output.status, @"OK");
+                                           [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -956,6 +990,7 @@
                                                    storage:nil
                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                              XCTAssertNotNil(output, @"Failed to reads paragraph portion in shape's textBody.");
+                                             XCTAssertEqualObjects(output.status, @"OK");
                                              [expectation fulfill];
     }];
     
@@ -985,8 +1020,9 @@
                                                                  folder:nil
                                                                 storage:nil
                                                       completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                                         XCTAssertNotNil(output, @"Failed to updates paragraph portion properties.");
-                                                         [expectation fulfill];
+                                                          XCTAssertNotNil(output, @"Failed to updates paragraph portion properties.");
+                                                          XCTAssertEqualObjects(output.status, @"OK");
+                                                          [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -1009,6 +1045,7 @@
                                                           storage:nil
                                                 completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                                      XCTAssertNotNil(output, @"Failed to read slide shapes or shape info.");
+                                                     XCTAssertEqualObjects(output.status, @"OK");
                                                      [expectation fulfill];
     }];
     
@@ -1035,8 +1072,9 @@
                                                   folder:nil
                                                  storage:nil
                                        completionHandler:^(ASPBaseResponse *output, NSError *error) {
-                                         XCTAssertNotNil(output, @"Failed to updates shape properties.");
-                                         [expectation fulfill];
+                                           XCTAssertNotNil(output, @"Failed to updates shape properties.");
+                                           XCTAssertEqualObjects(output.status, @"OK");
+                                           [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -1059,6 +1097,7 @@
                                                        storage:nil
                                              completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                  XCTAssertNotNil(output, @"Failed to extract slide text items.");
+                                                 XCTAssertEqualObjects(output.status, @"OK");
                                                  [expectation fulfill];
     }];
     
@@ -1080,8 +1119,9 @@
                                                folder:nil
                                               storage:nil
                                     completionHandler:^(ASPThemeResponse *output, NSError *error) {
-                                         XCTAssertNotNil(output, @"Failed to read slide theme info.");
-                                         [expectation fulfill];
+                                        XCTAssertNotNil(output, @"Failed to read slide theme info.");
+                                        XCTAssertEqualObjects(output.status, @"OK");
+                                        [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -1102,8 +1142,9 @@
                                                           folder:nil
                                                          storage:nil
                                                completionHandler:^(ASPColorSchemeResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to read slide theme color scheme info.");
-                                                 [expectation fulfill];
+                                                   XCTAssertNotNil(output, @"Failed to read slide theme color scheme info.");
+                                                   XCTAssertEqualObjects(output.status, @"OK");
+                                                   [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -1124,8 +1165,9 @@
                                                          folder:nil
                                                         storage:nil
                                               completionHandler:^(ASPFontSchemeResponse *output, NSError *error) {
-                                                 XCTAssertNotNil(output, @"Failed to read slide theme font scheme info.");
-                                                 [expectation fulfill];
+                                                  XCTAssertNotNil(output, @"Failed to read slide theme font scheme info.");
+                                                  XCTAssertEqualObjects(output.status, @"OK");
+                                                  [expectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
@@ -1147,6 +1189,7 @@
                                                           storage:nil
                                                 completionHandler:^(ASPFormatSchemeResponse *output, NSError *error) {
                                                     XCTAssertNotNil(output, @"Failed to Read slide theme color scheme info.");
+                                                    XCTAssertEqualObjects(output.status, @"OK");
                                                     [expectation fulfill];
     }];
     
@@ -1174,6 +1217,7 @@
                                                 folder:nil
                                      completionHandler:^(ASPSplitDocumentResponse *output, NSError *error) {
                                          XCTAssertNotNil(output, @"Failed to split presentation.");
+                                         XCTAssertEqualObjects(output.status, @"OK");
                                          [expectation fulfill];
     }];
     
@@ -1196,6 +1240,7 @@
                                                               storage:nil
                                                     completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                         XCTAssertNotNil(output, @"Failed to extract presentation text items.");
+                                                        XCTAssertEqualObjects(output.status, @"OK");
                                                         [expectation fulfill];
      }];
     
@@ -1205,5 +1250,204 @@
         }
     }];
 }
+
+- (void)testGetSlidesDocumentWithFormat {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi getSlidesDocumentWithFormatWithCompletionBlock:fileName
+                                                            format:@"tiff"
+                                                       jpegQuality:nil
+                                                          password:nil
+                                                           storage:nil
+                                                            folder:nil
+                                                           outPath:nil
+                                                 completionHandler:^(NSURL *output, NSError *error) {
+                                                     XCTAssertNotNil(output, @"Failed to get slides document in specified format");
+                                                     [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testGetSlideWithFormat {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi getSlideWithFormatWithCompletionBlock:fileName
+                                               slideIndex:[NSNumber numberWithInt:1]
+                                                   format:@"pdf"
+                                                    width:nil
+                                                   height:nil
+                                                   folder:nil
+                                                  storage:nil
+                                        completionHandler:^(NSURL *output, NSError *error) {
+                                            XCTAssertNotNil(output, @"Failed to get slide in specified format");
+                                            [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPostAddEmptySlide {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi postAddEmptySlideWithCompletionBlock:fileName
+                                                  folder:nil
+                                                 storage:nil
+                                       completionHandler:^(ASPSlideListResponse *output, NSError *error) {
+                                           XCTAssertNotNil(output, @"Failed to add empty slide");
+                                           XCTAssertEqualObjects(output.status, @"OK");
+                                           [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPostAddEmptySlideAtPosition {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi postAddEmptySlideAtPositionWithCompletionBlock:fileName
+                                                          position:[NSNumber numberWithInt:1]
+                                                            folder:nil
+                                                           storage:nil
+                                                 completionHandler:^(ASPSlideListResponse *output, NSError *error) {
+                                                     XCTAssertNotNil(output, @"Failed to add empty slide at position");
+                                                     XCTAssertEqualObjects(output.status, @"OK");
+                                                     [expectation fulfill];
+     }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPostClonePresentationSlide {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi postClonePresentationSlideWithCompletionBlock:fileName
+                                                         position:[NSNumber numberWithInt:1]
+                                                     slideToClone:[NSNumber numberWithInt:1]
+                                                           folder:nil
+                                                          storage:nil
+                                                completionHandler:^(ASPSlideListResponse *output, NSError *error) {
+                                                    XCTAssertNotNil(output, @"Failed to clone presentation slide");
+                                                    XCTAssertEqualObjects(output.status, @"OK");
+                                                    [expectation fulfill];
+     }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPostCopySlideFromSourcePresentation {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    NSString *sourceFile = @"sample-input.pptx";
+    [self uploadFile:sourceFile];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi postCopySlideFromSourcePresentationWithCompletionBlock:fileName
+                                                               slideToCopy:[NSNumber numberWithInt:1]
+                                                                    source:sourceFile
+                                                                  position:[NSNumber numberWithInt:1]
+                                                                    folder:nil
+                                                                   storage:nil
+                                                         completionHandler:^(ASPSlideListResponse *output, NSError *error) {
+                                                             XCTAssertNotNil(output, @"Failed to cpoy slide from source presentation.");
+                                                             XCTAssertEqualObjects(output.status, @"OK");
+                                                             [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPostAddSlideCopy {
+    NSString *fileName = @"sample.pptx";
+    [self uploadFile:fileName];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    [self.slidesApi postAddSlideCopyWithCompletionBlock:fileName
+                                           slideToClone:[NSNumber numberWithInt:1]
+                                                 folder:nil
+                                                storage:nil
+                                      completionHandler:^(ASPSlideListResponse *output, NSError *error) {
+                                          XCTAssertNotNil(output, @"Failed to add slide copy.");
+                                          XCTAssertEqualObjects(output.status, @"OK");
+                                          [expectation fulfill];
+     }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void)testPutNewPresentationFromStoredTemplate {
+    NSString *fileName = @"newPresentation.pptx";
+    NSString *templatePath = @"sample.pptx";
+    [self uploadFile:templatePath];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@""];
+    
+    NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"Test" withExtension:@"html"];
+    
+    [self.slidesApi putNewPresentationFromStoredTemplateWithCompletionBlock:fileName
+                                                               templatePath:templatePath
+                                                                       file:pathToFile
+                                                            templateStorage:nil
+                                                                   password:nil
+                                                                    storage:nil
+                                                                     folder:nil
+                                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                                              XCTAssertNotNil(output, @"Failed to add new presentation from stored template.");
+                                                              XCTAssertEqualObjects(output.status, @"Created");
+                                                              [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:180.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
+}
+
 
 @end
