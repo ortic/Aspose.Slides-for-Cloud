@@ -195,6 +195,283 @@
           ];
 }
 
+
+
+///
+/// Get slides document in specified format
+///
+///  @param name The document name.
+///
+///  @param format The slides document format.
+///
+///  @param jpegQuality
+///
+///  @param password The document password.
+///
+///  @param storage Document's storage.
+///
+///  @param folder Document's folder.
+///
+///  @param outPath
+///
+///  @returns NSURL*
+///
+-(NSNumber*) getSlidesDocumentWithFormatWithCompletionBlock: (NSString*) name
+                                                     format: (NSString*) format
+                                                jpegQuality: (NSString*) jpegQuality
+                                                   password: (NSString*) password
+                                                    storage: (NSString*) storage
+                                                     folder: (NSString*) folder
+                                                    outPath: (NSString*) outPath
+
+                                          completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `getSlidesDocumentWithFormat`"];
+    }
+    
+    // verify the required parameter 'format' is set
+    if (format == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `format` when calling `getSlidesDocumentWithFormat`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(format != nil) {
+        
+        queryParams[@"format"] = format;
+    }
+    if(jpegQuality != nil) {
+        
+        queryParams[@"jpegQuality"] = jpegQuality;
+    }
+    if(password != nil) {
+        
+        queryParams[@"password"] = password;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(outPath != nil) {
+        
+        queryParams[@"outPath"] = outPath;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"NSURL*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
+}
+
+
+
+///
+///
+///
+///  @param name The document name.
+///
+///  @param templatePath
+///
+///  @param file
+///
+///  @param templateStorage
+///
+///  @param password The document password.
+///
+///  @param storage Document's storage.
+///
+///  @param folder Document's folder.
+///
+///  @returns ASPBaseResponse*
+///
+-(NSNumber*) putNewPresentationFromStoredTemplateWithCompletionBlock: (NSString*) name
+                                                        templatePath: (NSString*) templatePath
+                                                                file: (NSURL*) file
+                                                     templateStorage: (NSString*) templateStorage
+                                                            password: (NSString*) password
+                                                             storage: (NSString*) storage
+                                                              folder: (NSString*) folder
+
+                                                   completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `putNewPresentationFromStoredTemplate`"];
+    }
+    
+    // verify the required parameter 'templatePath' is set
+    if (templatePath == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `templatePath` when calling `putNewPresentationFromStoredTemplate`"];
+    }
+    
+    // verify the required parameter 'file' is set
+    if (file == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `file` when calling `putNewPresentationFromStoredTemplate`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(templatePath != nil) {
+        
+        queryParams[@"templatePath"] = templatePath;
+    }
+    if(templateStorage != nil) {
+        
+        queryParams[@"templateStorage"] = templateStorage;
+    }
+    if(password != nil) {
+        
+        queryParams[@"password"] = password;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"multipart/form-data"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    files[@"file"] = file;
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"PUT"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPBaseResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPBaseResponse*)data, error);
+                                      }
+            ];
+}
+
+
+
 ///
 /// Read presentation info.
 /// 
@@ -2247,6 +2524,500 @@
           ];
 }
 
+
+
+///
+///
+///
+///  @param name The presentation name.
+///
+///  @param slideToClone
+///
+///  @param folder The presentation folder.
+///
+///  @param storage The presentation storage.
+///
+///  @returns ASPSlideListResponse*
+///
+-(NSNumber*) postAddSlideCopyWithCompletionBlock: (NSString*) name
+                                    slideToClone: (NSNumber*) slideToClone
+                                          folder: (NSString*) folder
+                                         storage: (NSString*) storage
+
+                               completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `postAddSlideCopy`"];
+    }
+    
+    // verify the required parameter 'slideToClone' is set
+    if (slideToClone == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideToClone` when calling `postAddSlideCopy`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(slideToClone != nil) {
+        
+        queryParams[@"slideToClone"] = slideToClone;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPSlideListResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPSlideListResponse*)data, error);
+                                      }
+            ];
+}
+
+
+
+///
+///
+///
+///  @param name The presentation name.
+///
+///  @param slideToCopy
+///
+///  @param source
+///
+///  @param position
+///
+///  @param folder The presentation folder.
+///
+///  @param storage The presentation storage.
+///
+///  @returns ASPSlideListResponse*
+///
+-(NSNumber*) postCopySlideFromSourcePresentationWithCompletionBlock: (NSString*) name
+                                                        slideToCopy: (NSNumber*) slideToCopy
+                                                             source: (NSString*) source
+                                                           position: (NSNumber*) position
+                                                             folder: (NSString*) folder
+                                                            storage: (NSString*) storage
+
+                                                  completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `postCopySlideFromSourcePresentation`"];
+    }
+    
+    // verify the required parameter 'slideToCopy' is set
+    if (slideToCopy == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideToCopy` when calling `postCopySlideFromSourcePresentation`"];
+    }
+    
+    // verify the required parameter 'source' is set
+    if (source == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `source` when calling `postCopySlideFromSourcePresentation`"];
+    }
+    
+    // verify the required parameter 'position' is set
+    if (position == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `position` when calling `postCopySlideFromSourcePresentation`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(slideToCopy != nil) {
+        
+        queryParams[@"slideToCopy"] = slideToCopy;
+    }
+    if(source != nil) {
+        
+        queryParams[@"source"] = source;
+    }
+    if(position != nil) {
+        
+        queryParams[@"position"] = position;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPSlideListResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPSlideListResponse*)data, error);
+                                      }
+            ];
+}
+
+
+
+///
+///
+///
+///  @param name The presentation name.
+///
+///  @param position
+///
+///  @param slideToClone
+///
+///  @param folder The presentation folder.
+///
+///  @param storage The presentation storage.
+///
+///  @returns ASPSlideListResponse*
+///
+-(NSNumber*) postClonePresentationSlideWithCompletionBlock: (NSString*) name
+                                                  position: (NSNumber*) position
+                                              slideToClone: (NSNumber*) slideToClone
+                                                    folder: (NSString*) folder
+                                                   storage: (NSString*) storage
+
+                                         completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `postClonePresentationSlide`"];
+    }
+    
+    // verify the required parameter 'position' is set
+    if (position == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `position` when calling `postClonePresentationSlide`"];
+    }
+    
+    // verify the required parameter 'slideToClone' is set
+    if (slideToClone == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideToClone` when calling `postClonePresentationSlide`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(position != nil) {
+        
+        queryParams[@"position"] = position;
+    }
+    if(slideToClone != nil) {
+        
+        queryParams[@"slideToClone"] = slideToClone;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPSlideListResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPSlideListResponse*)data, error);
+                                      }
+            ];
+}
+
+
+
+///
+///
+///
+///  @param name The presentation name.
+///
+///  @param position
+///
+///  @param folder The presentation folder.
+///
+///  @param storage The presentation storage.
+///
+///  @returns ASPSlideListResponse*
+///
+-(NSNumber*) postAddEmptySlideAtPositionWithCompletionBlock: (NSString*) name
+                                                   position: (NSNumber*) position
+                                                     folder: (NSString*) folder
+                                                    storage: (NSString*) storage
+
+                                          completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `postAddEmptySlideAtPosition`"];
+    }
+    
+    // verify the required parameter 'position' is set
+    if (position == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `position` when calling `postAddEmptySlideAtPosition`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(position != nil) {
+        
+        queryParams[@"position"] = position;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPSlideListResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPSlideListResponse*)data, error);
+                                      }
+            ];
+}
+
+
+
 ///
 /// Reorder presentation slide position
 /// 
@@ -2370,6 +3141,248 @@
               }
           ];
 }
+
+
+
+///
+///
+///
+///  @param name The presentation name.
+///
+///  @param folder The presentation folder.
+///
+///  @param storage The presentation storage.
+///
+///  @returns ASPSlideListResponse*
+///
+-(NSNumber*) postAddEmptySlideWithCompletionBlock: (NSString*) name
+                                           folder: (NSString*) folder
+                                          storage: (NSString*) storage
+
+                                completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `postAddEmptySlide`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"ASPSlideListResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((ASPSlideListResponse*)data, error);
+                                      }
+            ];
+}
+
+
+///
+/// Get slide in specified format
+///
+///  @param name
+///
+///  @param slideIndex
+///
+///  @param format
+///
+///  @param width
+///
+///  @param height
+///
+///  @param folder
+///
+///  @param storage
+///
+///  @returns NSURL*
+///
+-(NSNumber*) getSlideWithFormatWithCompletionBlock: (NSString*) name
+                                        slideIndex: (NSNumber*) slideIndex
+                                            format: (NSString*) format
+                                             width: (NSNumber*) width
+                                            height: (NSNumber*) height
+                                            folder: (NSString*) folder
+                                           storage: (NSString*) storage
+
+                                 completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
+    
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `getSlideWithFormat`"];
+    }
+    
+    // verify the required parameter 'slideIndex' is set
+    if (slideIndex == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideIndex` when calling `getSlideWithFormat`"];
+    }
+    
+    // verify the required parameter 'format' is set
+    if (format == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `format` when calling `getSlideWithFormat`"];
+    }
+    
+    
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}"];
+    
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        pathParams[@"name"] = name;
+    }
+    if (slideIndex != nil) {
+        pathParams[@"slideIndex"] = slideIndex;
+    }
+    
+    
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if(format != nil) {
+        
+        queryParams[@"format"] = format;
+    }
+    if(width != nil) {
+        
+        queryParams[@"width"] = width;
+    }
+    if(height != nil) {
+        
+        queryParams[@"height"] = height;
+    }
+    if(folder != nil) {
+        
+        queryParams[@"folder"] = folder;
+    }
+    if(storage != nil) {
+        
+        queryParams[@"storage"] = storage;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+    
+    
+    
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+    
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+    
+    // request content type
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
+    // Authentication setting
+    NSArray *authSettings = @[];
+    
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"NSURL*"
+                                      completionBlock: ^(id data, NSError *error) {
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
+}
+
+
 
 ///
 /// Delete presentation slides.

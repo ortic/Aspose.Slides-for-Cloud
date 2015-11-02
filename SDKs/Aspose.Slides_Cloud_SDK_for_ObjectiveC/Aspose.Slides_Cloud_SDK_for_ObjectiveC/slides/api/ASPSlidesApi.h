@@ -45,6 +45,9 @@
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
 +(ASPSlidesApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
+
+
+
 ///
 ///
 /// Convert presentation from request content to format specified.
@@ -64,6 +67,60 @@
     
     completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock;
     
+
+
+///
+///
+/// Get slides document in specified format
+///
+///
+/// @param name The document name.
+/// @param format The slides document format.
+/// @param jpegQuality
+/// @param password The document password.
+/// @param storage Document&#39;s storage.
+/// @param folder Document&#39;s folder.
+/// @param outPath
+///
+///
+/// @return NSURL*
+-(NSNumber*) getSlidesDocumentWithFormatWithCompletionBlock :(NSString*) name
+                                                      format:(NSString*) format
+                                                 jpegQuality:(NSString*) jpegQuality
+                                                    password:(NSString*) password
+                                                     storage:(NSString*) storage
+                                                      folder:(NSString*) folder 
+                                                     outPath:(NSString*) outPath 
+
+                                           completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock;
+
+
+
+///
+///
+///
+///
+///
+/// @param name The document name.
+/// @param templatePath
+/// @param file
+/// @param templateStorage
+/// @param password The document password.
+/// @param storage Document&#39;s storage.
+/// @param folder Document&#39;s folder.
+///
+///
+/// @return ASPBaseResponse*
+-(NSNumber*) putNewPresentationFromStoredTemplateWithCompletionBlock :(NSString*) name
+                                                         templatePath:(NSString*) templatePath
+                                                                 file:(NSURL*) file
+                                                      templateStorage:(NSString*) templateStorage
+                                                             password:(NSString*) password
+                                                              storage:(NSString*) storage 
+                                                               folder:(NSString*) folder 
+
+                                                    completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock;
+
 
 
 ///
@@ -444,7 +501,7 @@
      outPath:(NSString*) outPath 
     
     completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock;
-    
+
 
 
 ///
@@ -463,7 +520,97 @@
      storage:(NSString*) storage 
     
     completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
-    
+
+
+
+///
+///
+///
+///
+///
+/// @param name The presentation name.
+/// @param slideToClone
+/// @param folder The presentation folder.
+/// @param storage The presentation storage.
+///
+///
+/// @return ASPSlideListResponse*
+-(NSNumber*) postAddSlideCopyWithCompletionBlock :(NSString*) name
+                                     slideToClone:(NSNumber*) slideToClone
+                                           folder:(NSString*) folder
+                                          storage:(NSString*) storage
+
+                                completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
+
+
+
+///
+///
+///
+///
+///
+/// @param name The presentation name.
+/// @param slideToCopy
+/// @param source
+/// @param position
+/// @param folder The presentation folder.
+/// @param storage The presentation storage.
+///
+///
+/// @return ASPSlideListResponse*
+-(NSNumber*) postCopySlideFromSourcePresentationWithCompletionBlock :(NSString*) name
+                                                         slideToCopy:(NSNumber*) slideToCopy
+                                                              source:(NSString*) source
+                                                            position:(NSNumber*) position
+                                                              folder:(NSString*) folder
+                                                             storage:(NSString*) storage 
+
+                                                   completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
+
+
+
+///
+///
+///
+///
+///
+/// @param name The presentation name.
+/// @param position
+/// @param slideToClone
+/// @param folder The presentation folder.
+/// @param storage The presentation storage.
+///
+///
+/// @return ASPSlideListResponse*
+-(NSNumber*) postClonePresentationSlideWithCompletionBlock :(NSString*) name
+                                                   position:(NSNumber*) position
+                                               slideToClone:(NSNumber*) slideToClone
+                                                     folder:(NSString*) folder
+                                                    storage:(NSString*) storage 
+
+                                          completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
+
+
+
+///
+///
+///
+///
+///
+/// @param name The presentation name.
+/// @param position
+/// @param folder The presentation folder.
+/// @param storage The presentation storage.
+///
+///
+/// @return ASPSlideListResponse*
+-(NSNumber*) postAddEmptySlideAtPositionWithCompletionBlock :(NSString*) name
+                                                    position:(NSNumber*) position
+                                                      folder:(NSString*) folder
+                                                     storage:(NSString*) storage
+
+                                           completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
+
 
 
 ///
@@ -491,6 +638,25 @@
 
 ///
 ///
+///
+///
+///
+/// @param name The presentation name.
+/// @param folder The presentation folder.
+/// @param storage The presentation storage.
+///
+///
+/// @return ASPSlideListResponse*
+-(NSNumber*) postAddEmptySlideWithCompletionBlock :(NSString*) name
+                                            folder:(NSString*) folder
+                                           storage:(NSString*) storage
+
+                                 completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
+
+
+
+///
+///
 /// Delete presentation slides.
 /// 
 ///
@@ -506,6 +672,33 @@
     
     completionHandler: (void (^)(ASPSlideListResponse* output, NSError* error))completionBlock;
     
+
+
+///
+///
+/// Get slide in specified format
+///
+///
+/// @param name
+/// @param slideIndex
+/// @param format
+/// @param width
+/// @param height
+/// @param folder
+/// @param storage
+///
+///
+/// @return NSURL*
+-(NSNumber*) getSlideWithFormatWithCompletionBlock :(NSString*) name
+                                         slideIndex:(NSNumber*) slideIndex
+                                             format:(NSString*) format
+                                              width:(NSNumber*) width
+                                             height:(NSNumber*) height
+                                             folder:(NSString*) folder 
+                                            storage:(NSString*) storage 
+
+                                  completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock;
+
 
 
 ///
