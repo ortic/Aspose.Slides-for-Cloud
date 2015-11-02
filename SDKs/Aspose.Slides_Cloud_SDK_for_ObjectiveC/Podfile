@@ -1,0 +1,11 @@
+platform :ios, '6.0'
+
+target 'Aspose.Slides_Cloud_SDK_for_ObjectiveC' do
+	pod 'AFNetworking', '~> 2.5.0'
+	pod 'JSONModel', '~> 1.1'
+	pod 'ISO8601', '~> 0.3'
+end
+
+target 'Aspose.Slides_Cloud_SDK_for_ObjectiveCTests' do
+	pod 'JSONModel', '~> 1.1'
+end
