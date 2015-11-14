@@ -81,7 +81,7 @@
                                                 password:nil
                                                  storage:nil
                                                   folder:nil
-                                       completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                       completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                            XCTAssertNotNil(output, @"Failed to read presentation info.");
                                            XCTAssertEqualObjects(output.status, @"OK");
                                            [expectation fulfill];
@@ -323,7 +323,7 @@
                                                         password:nil
                                                          storage:nil
                                                           folder:nil
-                                               completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                               completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                    XCTAssertNotNil(output, @"Failed to create presentation document from html.");
                                                    XCTAssertEqualObjects(output.status, @"Created");
                                                    [expectation fulfill];
@@ -472,9 +472,8 @@
                                                     storage:nil
                                                      folder:nil
                                                     outPath:nil
-                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                          completionHandler:^(NSURL* output, NSError *error) {
                                               XCTAssertNotNil(output, @"Failed to save presentation in html format with options.");
-                                              XCTAssertEqualObjects(output.status, @"OK");
                                               [expectation fulfill];
      }];
     
@@ -501,9 +500,8 @@
                                                    storage:nil
                                                     folder:nil
                                                    outPath:nil
-                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                         completionHandler:^(NSURL *output, NSError *error) {
                                              XCTAssertNotNil(output, @"Failed to save presentation in pdf format with options.");
-                                             XCTAssertEqualObjects(output.status, @"OK");
                                              [expectation fulfill];
     }];
     
@@ -530,9 +528,8 @@
                                                     storage:nil
                                                      folder:nil
                                                     outPath:nil
-                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                          completionHandler:^(NSURL *output, NSError *error) {
                                               XCTAssertNotNil(output, @"Failed to saves presentation in tiff format with options.");
-                                              XCTAssertEqualObjects(output.status, @"OK");
                                               [expectation fulfill];
     }];
     
@@ -567,7 +564,7 @@
 
 
 - (void)testPostSlidesReorderPosition {
-    NSString *fileName = @"sample.pptx";
+    NSString *fileName = @"sample-input.pptx";
     [self uploadFile:fileName];
     
     XCTestExpectation *expectation = [self expectationWithDescription:@""];
@@ -622,7 +619,7 @@
                                            slideIndex:[NSNumber numberWithInt:1]
                                                folder:nil
                                               storage:nil
-                                    completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                    completionHandler:^(ASPSlideResponse *output, NSError *error) {
                                         XCTAssertNotNil(output, @"Failed to read slide info.");
                                         XCTAssertEqualObjects(output.status, @"OK");
                                         [expectation fulfill];
@@ -830,7 +827,7 @@
     [self.slidesApi postSlidesSlideReplaceTextWithCompletionBlock:fileName
                                                        slideIndex:[NSNumber numberWithInt:1]
                                                          oldValue:@"aspose"
-                                                       newerValue:@"Aspose File Format APIs"
+                                                       newValue:@"Aspose File Format APIs"
                                                        ignoreCase:nil
                                                            folder:nil
                                                           storage:nil
@@ -857,7 +854,7 @@
                                                  slideIndex:[NSNumber numberWithInt:1]
                                                      folder:nil
                                                     storage:nil
-                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                          completionHandler:^(ASPShapeResponse *output, NSError *error) {
                                               XCTAssertNotNil(output, @"Failed to read slides shapes info.");
                                               XCTAssertEqualObjects(output.status, @"OK");
                                               [expectation fulfill];
@@ -885,7 +882,7 @@
                                                  shape:share
                                                 folder:nil
                                                storage:nil
-                                     completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                     completionHandler:^(ASPNewShapeResponse *output, NSError *error) {
                                          XCTAssertNotNil(output, @"Failed to creates new shape.");
                                          XCTAssertEqualObjects(output.status, @"Created");
                                          [expectation fulfill];
@@ -913,9 +910,8 @@
                                                    scaleX:nil
                                                    scaleY:nil
                                                    bounds:nil
-                                        completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                        completionHandler:^(NSURL *output, NSError *error) {
                                             XCTAssertNotNil(output, @"Failed to render shape to specified picture format.");
-                                            XCTAssertEqualObjects(output.status, @"OK");
                                             [expectation fulfill];
     }];
     
@@ -937,7 +933,7 @@
                                                     shapeIndex:[NSNumber numberWithInt:1]
                                                         folder:nil
                                                        storage:nil
-                                             completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                             completionHandler:^(ASPShapeParagraphsResponse *output, NSError *error) {
                                                  XCTAssertNotNil(output, @"Failed to reads a list of paragraphs in shape's textBody.");
                                                  XCTAssertEqualObjects(output.status, @"OK");
                                                  [expectation fulfill];
@@ -962,7 +958,7 @@
                                           paragraphIndex:[NSNumber numberWithInt:1]
                                                   folder:nil
                                                  storage:nil
-                                       completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                       completionHandler:^(ASPShapeParagraphResponse *output, NSError *error) {
                                            XCTAssertNotNil(output, @"Failed to reads paragraph in shape's textBody.");
                                            XCTAssertEqualObjects(output.status, @"OK");
                                            [expectation fulfill];
@@ -988,7 +984,7 @@
                                               portionIndex:[NSNumber numberWithInt:1]
                                                     folder:nil
                                                    storage:nil
-                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                         completionHandler:^(ASPParagraphPortionResponse *output, NSError *error) {
                                              XCTAssertNotNil(output, @"Failed to reads paragraph portion in shape's textBody.");
                                              XCTAssertEqualObjects(output.status, @"OK");
                                              [expectation fulfill];
@@ -1019,7 +1015,7 @@
                                                                 portion:portion
                                                                  folder:nil
                                                                 storage:nil
-                                                      completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                                      completionHandler:^(ASPParagraphPortionResponse *output, NSError *error) {
                                                           XCTAssertNotNil(output, @"Failed to updates paragraph portion properties.");
                                                           XCTAssertEqualObjects(output.status, @"OK");
                                                           [expectation fulfill];
@@ -1043,7 +1039,7 @@
                                                         shapePath:@"1"
                                                            folder:nil
                                                           storage:nil
-                                                completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                                completionHandler:^(ASPNewShapeResponse *output, NSError *error) {
                                                      XCTAssertNotNil(output, @"Failed to read slide shapes or shape info.");
                                                      XCTAssertEqualObjects(output.status, @"OK");
                                                      [expectation fulfill];
@@ -1071,7 +1067,7 @@
                                                    shape:shape
                                                   folder:nil
                                                  storage:nil
-                                       completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                       completionHandler:^(ASPNewShapeResponse *output, NSError *error) {
                                            XCTAssertNotNil(output, @"Failed to updates shape properties.");
                                            XCTAssertEqualObjects(output.status, @"OK");
                                            [expectation fulfill];
@@ -1436,7 +1432,7 @@
                                                                    password:nil
                                                                     storage:nil
                                                                      folder:nil
-                                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
+                                                          completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                               XCTAssertNotNil(output, @"Failed to add new presentation from stored template.");
                                                               XCTAssertEqualObjects(output.status, @"Created");
                                                               [expectation fulfill];
