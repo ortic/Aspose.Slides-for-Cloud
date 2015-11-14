@@ -15,7 +15,7 @@ Directory | Description
 [Java SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Java)  |  Aspose.Slides Cloud SDK for Java.
 [PHP SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_PHP)  | Aspose.Slides Cloud SDK for PHP.
 [Python SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Python)  | Aspose.Slides Cloud SDK for Python.
-[iOS SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Objective_C)  | Aspose.Slides Cloud SDK for Objective_C.
+[iOS SDK](https://github.com/sohail-aspose/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
