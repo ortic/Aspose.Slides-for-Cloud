@@ -522,7 +522,7 @@ static NSString *appKey; // Represents AppKey for the app.
     // setting response serializer
     if ([responseContentType isEqualToString:@"application/json"]) {
         self.responseSerializer = [ASPJSONResponseSerializer serializer];
-        self.responseSerializer.acceptableContentTypes = [self.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+        self.responseSerializer.acceptableContentTypes = [self.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html"]];
     }
     else {
         self.responseSerializer = [AFHTTPResponseSerializer serializer];

@@ -330,8 +330,6 @@
             ];
 }
 
-
-
 ///
 ///
 ///
@@ -349,7 +347,7 @@
 ///
 ///  @param folder Document's folder.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPDocumentResponse*
 ///
 -(NSNumber*) putNewPresentationFromStoredTemplateWithCompletionBlock: (NSString*) name
                                                         templatePath: (NSString*) templatePath
@@ -359,7 +357,7 @@
                                                              storage: (NSString*) storage
                                                               folder: (NSString*) folder
 
-                                                   completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock {
+                                                   completionHandler: (void (^)(ASPDocumentResponse* output, NSError* error))completionBlock {
     
     
     
@@ -462,19 +460,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPDocumentResponse*"
                                       completionBlock: ^(id data, NSError *error) {
                                           
-                                          completionBlock((ASPBaseResponse*)data, error);
+                                          completionBlock((ASPDocumentResponse*)data, error);
                                       }
             ];
 }
 
-
-
 ///
 /// Read presentation info.
-/// 
+///
 ///  @param name The document name.
 ///
 ///  @param password The document password.
@@ -483,36 +479,36 @@
 ///
 ///  @param folder Document's folder.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPDocumentResponse*
 ///
 -(NSNumber*) getSlidesDocumentWithCompletionBlock: (NSString*) name
-         password: (NSString*) password
-         storage: (NSString*) storage
-         folder: (NSString*) folder
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                         password: (NSString*) password
+                                          storage: (NSString*) storage
+                                           folder: (NSString*) folder
 
+                                completionHandler: (void (^)(ASPDocumentResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `name` when calling `getSlidesDocument`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(password != nil) {
         
@@ -528,15 +524,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"text/javascript"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -545,20 +541,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -571,12 +567,12 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPDocumentResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPDocumentResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
@@ -1494,10 +1490,10 @@
 
 ///
 /// Create presentation document from html
-/// 
+///
 ///  @param name The document name.
 ///
-///  @param file 
+///  @param file
 ///
 ///  @param password The document password.
 ///
@@ -1505,17 +1501,17 @@
 ///
 ///  @param folder Document's folder.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPDocumentResponse*
 ///
 -(NSNumber*) putSlidesDocumentFromHtmlWithCompletionBlock: (NSString*) name
-         file: (NSURL*) file
-         password: (NSString*) password
-         storage: (NSString*) storage
-         folder: (NSString*) folder
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                                     file: (NSURL*) file
+                                                 password: (NSString*) password
+                                                  storage: (NSString*) storage
+                                                   folder: (NSString*) folder
 
+                                        completionHandler: (void (^)(ASPDocumentResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -1527,20 +1523,20 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `file` when calling `putSlidesDocumentFromHtml`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/fromHtml"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(password != nil) {
         
@@ -1556,15 +1552,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"text/javascript"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -1573,13 +1569,13 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
@@ -1590,7 +1586,7 @@
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"PUT"
@@ -1603,12 +1599,12 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPDocumentResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPDocumentResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
@@ -2060,7 +2056,7 @@
 
 ///
 /// Saves presentation in html format with options
-/// 
+///
 ///  @param name The presentation name
 ///
 ///  @param options Tiff export options
@@ -2073,18 +2069,18 @@
 ///
 ///  @param outPath The optional output path.
 ///
-///  @returns ASPBaseResponse*
+///  @returns NSURL*
 ///
 -(NSNumber*) postSlidesSaveAsHtmlWithCompletionBlock: (NSString*) name
-         options: (ASPHtmlExportOptions*) options
-         password: (NSString*) password
-         storage: (NSString*) storage
-         folder: (NSString*) folder
-         outPath: (NSString*) outPath
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                             options: (ASPHtmlExportOptions*) options
+                                            password: (NSString*) password
+                                             storage: (NSString*) storage
+                                              folder: (NSString*) folder
+                                             outPath: (NSString*) outPath
 
+                                   completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -2096,20 +2092,20 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `options` when calling `postSlidesSaveAsHtml`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/saveAs/html"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(password != nil) {
         
@@ -2129,15 +2125,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"text/javascript"]];
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -2146,20 +2142,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json", @"text/json", @"application/xml", @"text/xml", @"text/javascript", @"application/x-www-form-urlencoded"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = options;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"POST"
@@ -2172,17 +2168,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"NSURL*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Saves presentation in pdf format with options
-/// 
+///
 ///  @param name The presentation name
 ///
 ///  @param options Pdf export options
@@ -2195,18 +2191,18 @@
 ///
 ///  @param outPath The optional output path.
 ///
-///  @returns ASPBaseResponse*
+///  @returns NSURL*
 ///
 -(NSNumber*) postSlidesSaveAsPdfWithCompletionBlock: (NSString*) name
-         options: (ASPPdfExportOptions*) options
-         password: (NSString*) password
-         storage: (NSString*) storage
-         folder: (NSString*) folder
-         outPath: (NSString*) outPath
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                            options: (ASPPdfExportOptions*) options
+                                           password: (NSString*) password
+                                            storage: (NSString*) storage
+                                             folder: (NSString*) folder
+                                            outPath: (NSString*) outPath
 
+                                  completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -2218,20 +2214,20 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `options` when calling `postSlidesSaveAsPdf`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/saveAs/pdf"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(password != nil) {
         
@@ -2251,15 +2247,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -2268,20 +2264,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = options;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"POST"
@@ -2294,17 +2290,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"NSURL*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Saves presentation in tiff format with options
-/// 
+///
 ///  @param name The presentation name
 ///
 ///  @param options Tiff export options
@@ -2317,18 +2313,18 @@
 ///
 ///  @param outPath The optional output path.
 ///
-///  @returns ASPBaseResponse*
+///  @returns NSURL*
 ///
 -(NSNumber*) postSlidesSaveAsTiffWithCompletionBlock: (NSString*) name
-         options: (ASPTiffExportOptions*) options
-         password: (NSString*) password
-         storage: (NSString*) storage
-         folder: (NSString*) folder
-         outPath: (NSString*) outPath
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                             options: (ASPTiffExportOptions*) options
+                                            password: (NSString*) password
+                                             storage: (NSString*) storage
+                                              folder: (NSString*) folder
+                                             outPath: (NSString*) outPath
 
+                                   completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -2340,20 +2336,20 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `options` when calling `postSlidesSaveAsTiff`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/saveAs/tiff"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(password != nil) {
         
@@ -2373,15 +2369,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -2390,20 +2386,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = options;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"POST"
@@ -2416,12 +2412,12 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"NSURL*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
 }
 
 ///
@@ -3486,25 +3482,25 @@
 
 ///
 /// Read slide info.
-/// 
-///  @param name 
 ///
-///  @param slideIndex 
+///  @param name
 ///
-///  @param folder 
+///  @param slideIndex
 ///
-///  @param storage 
+///  @param folder
 ///
-///  @returns ASPBaseResponse*
+///  @param storage
+///
+///  @returns ASPSlideResponse*
 ///
 -(NSNumber*) getSlidesSlideWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                    slideIndex: (NSNumber*) slideIndex
+                                        folder: (NSString*) folder
+                                       storage: (NSString*) storage
 
+                             completionHandler: (void (^)(ASPSlideResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -3516,14 +3512,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideIndex` when calling `getSlidesSlide`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -3532,7 +3528,7 @@
         pathParams[@"slideIndex"] = slideIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -3544,15 +3540,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"text/javascript"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -3561,20 +3557,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -3587,12 +3583,12 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPSlideResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPSlideResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
@@ -3819,28 +3815,28 @@
 
 ///
 /// Set presentation slide background color.
-/// 
-///  @param name 
 ///
-///  @param slideIndex 
+///  @param name
 ///
-///  @param color 
+///  @param slideIndex
 ///
-///  @param folder 
+///  @param color
 ///
-///  @param storage 
+///  @param folder
+///
+///  @param storage
 ///
 ///  @returns ASPSlideBackgroundResponse*
 ///
 -(NSNumber*) putSlidesSlideBackgroundWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         color: (NSString*) color
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPSlideBackgroundResponse* output, NSError* error))completionBlock { 
-        
+                                              slideIndex: (NSNumber*) slideIndex
+                                                   color: (NSString*) color
+                                                  folder: (NSString*) folder
+                                                 storage: (NSString*) storage
 
+                                       completionHandler: (void (^)(ASPSlideBackgroundResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -3857,14 +3853,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `color` when calling `putSlidesSlideBackground`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/background"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -3873,7 +3869,7 @@
         pathParams[@"slideIndex"] = slideIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -3885,15 +3881,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"application/xml", @"text/xml", @"text/javascript"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -3902,20 +3898,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
-    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json", @"text/json", @"application/xml", @"text/xml", @"text/javascript", @"application/x-www-form-urlencoded"]];
-
+    NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = color;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"PUT"
@@ -3930,10 +3926,10 @@
                                   responseContentType: responseContentType
                                          responseType: @"ASPSlideBackgroundResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPSlideBackgroundResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPSlideBackgroundResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
@@ -4504,14 +4500,14 @@
 
 ///
 /// Replace text by a new value.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide's index.
 ///
 ///  @param oldValue Text to replace.
 ///
-///  @param newerValue New text value.
+///  @param newValue New text value.
 ///
 ///  @param ignoreCase Is case must be ignored.
 ///
@@ -4522,16 +4518,16 @@
 ///  @returns ASPSlideStringReplaceResponse*
 ///
 -(NSNumber*) postSlidesSlideReplaceTextWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         oldValue: (NSString*) oldValue
-         newerValue: (NSString*) newerValue
-         ignoreCase: (NSNumber*) ignoreCase
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPSlideStringReplaceResponse* output, NSError* error))completionBlock { 
-        
+                                                slideIndex: (NSNumber*) slideIndex
+                                                  oldValue: (NSString*) oldValue
+                                                  newValue: (NSString*) newValue
+                                                ignoreCase: (NSNumber*) ignoreCase
+                                                    folder: (NSString*) folder
+                                                   storage: (NSString*) storage
 
+                                         completionHandler: (void (^)(ASPSlideStringReplaceResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -4548,19 +4544,19 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `oldValue` when calling `postSlidesSlideReplaceText`"];
     }
     
-    // verify the required parameter 'newerValue' is set
-    if (newerValue == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `newerValue` when calling `postSlidesSlideReplaceText`"];
+    // verify the required parameter 'newValue' is set
+    if (newValue == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `newValue` when calling `postSlidesSlideReplaceText`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/replaceText"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -4569,15 +4565,15 @@
         pathParams[@"slideIndex"] = slideIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(oldValue != nil) {
         
         queryParams[@"oldValue"] = oldValue;
     }
-    if(newerValue != nil) {
+    if(newValue != nil) {
         
-        queryParams[@"newerValue"] = newerValue;
+        queryParams[@"newValue"] = newValue;
     }
     if(ignoreCase != nil) {
         
@@ -4593,15 +4589,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json", @"text/json", @"application/xml", @"text/xml", @"text/javascript"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -4610,20 +4606,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"POST"
@@ -4638,15 +4634,15 @@
                                   responseContentType: responseContentType
                                          responseType: @"ASPSlideStringReplaceResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPSlideStringReplaceResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPSlideStringReplaceResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Read slides shapes info.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide index.
@@ -4655,16 +4651,16 @@
 ///
 ///  @param storage Presentation storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPShapeResponse*
 ///
 -(NSNumber*) getSlidesSlideShapesWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                          slideIndex: (NSNumber*) slideIndex
+                                              folder: (NSString*) folder
+                                             storage: (NSString*) storage
 
+                                   completionHandler: (void (^)(ASPShapeResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -4676,14 +4672,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `slideIndex` when calling `getSlidesSlideShapes`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -4692,7 +4688,7 @@
         pathParams[@"slideIndex"] = slideIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -4704,15 +4700,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -4721,20 +4717,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -4747,17 +4743,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPShapeResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPShapeResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Creates new shape.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide index.
@@ -4768,17 +4764,17 @@
 ///
 ///  @param storage Presentation storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPNewShapeResponse*
 ///
 -(NSNumber*) postAddNewShapeWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shape: (ASPShape*) shape
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                     slideIndex: (NSNumber*) slideIndex
+                                          shape: (ASPShape*) shape
+                                         folder: (NSString*) folder
+                                        storage: (NSString*) storage
 
+                              completionHandler: (void (^)(ASPNewShapeResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -4795,14 +4791,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `shape` when calling `postAddNewShape`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -4811,7 +4807,7 @@
         pathParams[@"slideIndex"] = slideIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -4823,15 +4819,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -4840,20 +4836,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = shape;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"POST"
@@ -4866,17 +4862,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPNewShapeResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPNewShapeResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Render shape to specified picture format.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide index.
@@ -4895,21 +4891,21 @@
 ///
 ///  @param bounds Shape thumbnail bounds type.
 ///
-///  @returns ASPBaseResponse*
+///  @returns NSURL*
 ///
 -(NSNumber*) getShapeWithFormatWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapeIndex: (NSNumber*) shapeIndex
-         format: (NSString*) format
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-         scaleX: (NSNumber*) scaleX
-         scaleY: (NSNumber*) scaleY
-         bounds: (NSString*) bounds
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                        slideIndex: (NSNumber*) slideIndex
+                                        shapeIndex: (NSNumber*) shapeIndex
+                                            format: (NSString*) format
+                                            folder: (NSString*) folder
+                                           storage: (NSString*) storage
+                                            scaleX: (NSNumber*) scaleX
+                                            scaleY: (NSNumber*) scaleY
+                                            bounds: (NSString*) bounds
 
+                                 completionHandler: (void (^)(NSURL* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -4931,14 +4927,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `format` when calling `getShapeWithFormat`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -4950,7 +4946,7 @@
         pathParams[@"shapeIndex"] = shapeIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(format != nil) {
         
@@ -4978,15 +4974,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
+    headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -4995,20 +4991,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -5021,17 +5017,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"NSURL*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((NSURL*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Reads a list of paragraphs in shape's textBody.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Index of slide starting from 1
@@ -5042,17 +5038,17 @@
 ///
 ///  @param storage Presentation storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPShapeParagraphsResponse*
 ///
 -(NSNumber*) getSlideShapeParagraphsWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapeIndex: (NSNumber*) shapeIndex
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                             slideIndex: (NSNumber*) slideIndex
+                                             shapeIndex: (NSNumber*) shapeIndex
+                                                 folder: (NSString*) folder
+                                                storage: (NSString*) storage
 
+                                      completionHandler: (void (^)(ASPShapeParagraphsResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5069,14 +5065,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `shapeIndex` when calling `getSlideShapeParagraphs`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5088,7 +5084,7 @@
         pathParams[@"shapeIndex"] = shapeIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5100,15 +5096,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5117,20 +5113,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -5143,17 +5139,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPShapeParagraphsResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPShapeParagraphsResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Reads paragraph in shape's textBody.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Index of slide starting from 1
@@ -5166,18 +5162,18 @@
 ///
 ///  @param storage Document's storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPShapeParagraphResponse*
 ///
 -(NSNumber*) getShapeParagraphWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapeIndex: (NSNumber*) shapeIndex
-         paragraphIndex: (NSNumber*) paragraphIndex
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                       slideIndex: (NSNumber*) slideIndex
+                                       shapeIndex: (NSNumber*) shapeIndex
+                                   paragraphIndex: (NSNumber*) paragraphIndex
+                                           folder: (NSString*) folder
+                                          storage: (NSString*) storage
 
+                                completionHandler: (void (^)(ASPShapeParagraphResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5199,14 +5195,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `paragraphIndex` when calling `getShapeParagraph`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5221,7 +5217,7 @@
         pathParams[@"paragraphIndex"] = paragraphIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5233,15 +5229,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5250,20 +5246,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -5276,17 +5272,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPShapeParagraphResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPShapeParagraphResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Reads paragraph portion in shape's textBody.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Index of slide starting from 1
@@ -5301,19 +5297,19 @@
 ///
 ///  @param storage Document's storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPParagraphPortionResponse*
 ///
 -(NSNumber*) getParagraphPortionWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapeIndex: (NSNumber*) shapeIndex
-         paragraphIndex: (NSNumber*) paragraphIndex
-         portionIndex: (NSNumber*) portionIndex
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                         slideIndex: (NSNumber*) slideIndex
+                                         shapeIndex: (NSNumber*) shapeIndex
+                                     paragraphIndex: (NSNumber*) paragraphIndex
+                                       portionIndex: (NSNumber*) portionIndex
+                                             folder: (NSString*) folder
+                                            storage: (NSString*) storage
 
+                                  completionHandler: (void (^)(ASPParagraphPortionResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5340,14 +5336,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `portionIndex` when calling `getParagraphPortion`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5365,7 +5361,7 @@
         pathParams[@"portionIndex"] = portionIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5377,15 +5373,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5394,20 +5390,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -5420,47 +5416,47 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPParagraphPortionResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPParagraphPortionResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Updates paragraph portion properties.
-/// 
-///  @param name 
 ///
-///  @param slideIndex 
+///  @param name
 ///
-///  @param shapeIndex 
+///  @param slideIndex
 ///
-///  @param paragraphIndex 
+///  @param shapeIndex
 ///
-///  @param portionIndex 
+///  @param paragraphIndex
 ///
-///  @param portion 
+///  @param portionIndex
 ///
-///  @param folder 
+///  @param portion
 ///
-///  @param storage 
+///  @param folder
 ///
-///  @returns ASPBaseResponse*
+///  @param storage
+///
+///  @returns ASPParagraphPortionResponse*
 ///
 -(NSNumber*) putSetParagraphPortionPropertiesWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapeIndex: (NSNumber*) shapeIndex
-         paragraphIndex: (NSNumber*) paragraphIndex
-         portionIndex: (NSNumber*) portionIndex
-         portion: (ASPPortion*) portion
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                                      slideIndex: (NSNumber*) slideIndex
+                                                      shapeIndex: (NSNumber*) shapeIndex
+                                                  paragraphIndex: (NSNumber*) paragraphIndex
+                                                    portionIndex: (NSNumber*) portionIndex
+                                                         portion: (ASPPortion*) portion
+                                                          folder: (NSString*) folder
+                                                         storage: (NSString*) storage
 
+                                               completionHandler: (void (^)(ASPParagraphPortionResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5492,14 +5488,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `portion` when calling `putSetParagraphPortionProperties`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5517,7 +5513,7 @@
         pathParams[@"portionIndex"] = portionIndex;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5529,15 +5525,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5546,20 +5542,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = portion;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"PUT"
@@ -5572,17 +5568,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPParagraphPortionResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPParagraphPortionResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Read slide shapes or shape info.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide index.
@@ -5593,17 +5589,17 @@
 ///
 ///  @param storage Presentation storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPNewShapeResponse*
 ///
 -(NSNumber*) getSlidesSlideShapesParentWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapePath: (NSString*) shapePath
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                                slideIndex: (NSNumber*) slideIndex
+                                                 shapePath: (NSString*) shapePath
+                                                    folder: (NSString*) folder
+                                                   storage: (NSString*) storage
 
+                                         completionHandler: (void (^)(ASPNewShapeResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5620,14 +5616,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `shapePath` when calling `getSlidesSlideShapesParent`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapePath}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5639,7 +5635,7 @@
         pathParams[@"shapePath"] = shapePath;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5651,15 +5647,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5668,20 +5664,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"GET"
@@ -5694,17 +5690,17 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPNewShapeResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPNewShapeResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
 /// Updates shape properties.
-/// 
+///
 ///  @param name Presentation name.
 ///
 ///  @param slideIndex Slide index.
@@ -5717,18 +5713,18 @@
 ///
 ///  @param storage Presentation storage.
 ///
-///  @returns ASPBaseResponse*
+///  @returns ASPNewShapeResponse*
 ///
 -(NSNumber*) putSlideShapeInfoWithCompletionBlock: (NSString*) name
-         slideIndex: (NSNumber*) slideIndex
-         shapePath: (NSString*) shapePath
-         shape: (ASPShape*) shape
-         folder: (NSString*) folder
-         storage: (NSString*) storage
-        
-        completionHandler: (void (^)(ASPBaseResponse* output, NSError* error))completionBlock { 
-        
+                                       slideIndex: (NSNumber*) slideIndex
+                                        shapePath: (NSString*) shapePath
+                                            shape: (ASPShape*) shape
+                                           folder: (NSString*) folder
+                                          storage: (NSString*) storage
 
+                                completionHandler: (void (^)(ASPNewShapeResponse* output, NSError* error))completionBlock {
+    
+    
     
     // verify the required parameter 'name' is set
     if (name == nil) {
@@ -5750,14 +5746,14 @@
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `shape` when calling `putSlideShapeInfo`"];
     }
     
-
+    
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/slides/{name}/slides/{slideIndex}/shapes/{shapePath}"];
-
+    
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
         [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
     }
-
+    
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
     if (name != nil) {
         pathParams[@"name"] = name;
@@ -5769,7 +5765,7 @@
         pathParams[@"shapePath"] = shapePath;
     }
     
-
+    
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if(folder != nil) {
         
@@ -5781,15 +5777,15 @@
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
     
-
+    
+    
     // HTTP header `Accept`
     headerParams[@"Accept"] = [ASPApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
-
+    
     // response content type
     NSString *responseContentType;
     if ([headerParams objectForKey:@"Accept"]) {
@@ -5798,20 +5794,20 @@
     else {
         responseContentType = @"";
     }
-
+    
     // request content type
     NSString *requestContentType = [ASPApiClient selectHeaderContentType:@[@"application/json"]];
-
+    
     // Authentication setting
     NSArray *authSettings = @[];
-
+    
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
     bodyParam = shape;
     
-
+    
     
     return [self.apiClient requestWithCompletionBlock: resourcePath
                                                method: @"PUT"
@@ -5824,12 +5820,12 @@
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"ASPBaseResponse*"
+                                         responseType: @"ASPNewShapeResponse*"
                                       completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((ASPBaseResponse*)data, error);
-              }
-          ];
+                                          
+                                          completionBlock((ASPNewShapeResponse*)data, error);
+                                      }
+            ];
 }
 
 ///
