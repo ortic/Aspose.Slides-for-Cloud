@@ -1,0 +1,32 @@
+{
+  "name": "asposeslidescloud",
+  "version": "1.0.0",
+  "description": "Aspose.Slides Cloud SDK for Node.js",
+  "main": "lib/SlidesApi.js",
+  "homepage": "http://www.aspose.com/cloud/powerpoint-api.aspx",
+  "scripts": {
+    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asposeslides/Aspose_Slides_Cloud.git"
+  },
+  "keywords": [
+    "Aspose",
+    "Cloud",
+    "Slides",
+    "powerpoint"
+  ],
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "dependencies": {
+    "asposestoragecloud": ">= 1.0.0",
+	 "node-uuid": "~1.4.3",
+     "combined-stream": "~1.0.5",
+      "isstream": "~0.1.2"
+  },
+  "author": "Farooq Sheikh <farooq.sheikh@aspose.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
