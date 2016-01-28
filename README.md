@@ -17,7 +17,7 @@ Directory | Description
 [Python SDK](SDKs/Aspose.Slides_Cloud_SDK_for_Python)  | Aspose.Slides Cloud SDK for Python.
 [iOS SDK](SDKs/Aspose.Slides_Cloud_SDK_for_ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
 [Node.js SDK](SDKs/Aspose.Slides_Cloud_SDK_for_NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
-[Ruby SDK](SDKs/Aspose.Slides_Cloud_SDK_for_Ruby)  | Aspose.Slides Cloud SDK for Ruby.
+[Ruby SDK](SDKs/Aspose.Slides_Cloud_SDK_For_Ruby)  | Aspose.Slides Cloud SDK for Ruby.
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
