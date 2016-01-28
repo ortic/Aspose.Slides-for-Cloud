@@ -10,7 +10,7 @@ class SlidesTests < Minitest::Test
 	
 	def setup
         	#Get App key and App SID from https://cloud.aspose.com
-        	AsposeApp.app_key_and_sid("53b8b19adffa41a3e87dbbd8858977ae", "0B17F60A-6D69-426B-9ABD-79F35A6E9F7B")
+        	AsposeApp.app_key_and_sid("", "")
 		@slides_api = SlidesApi.new
 	end
 
