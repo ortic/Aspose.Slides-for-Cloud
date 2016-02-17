@@ -18,7 +18,7 @@ Directory | Description
 [iOS SDK](SDKs/Aspose.Slides_Cloud_SDK_for_ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
 [Node.js SDK](SDKs/Aspose.Slides_Cloud_SDK_for_NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
 [Ruby SDK](SDKs/Aspose.Slides_Cloud_SDK_For_Ruby)  | Aspose.Slides Cloud SDK for Ruby.
-[.NET SDK](SDKs/Aspose.Slides_Cloud_SDK_For_CSharp)  | Aspose.Slides Cloud SDK for CSharp.
+[.NET SDK](SDKs/Aspose.Slides_Cloud_SDK_for_CSharp)  | Aspose.Slides Cloud SDK for CSharp.
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
