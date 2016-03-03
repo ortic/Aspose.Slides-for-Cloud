@@ -12,9 +12,13 @@ Aspose.Slides for Cloud is implemented as a REST API. If you use SDK, it hides t
 
 Directory | Description
 --------- | -----------
-[Java SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Java)  |  Aspose.Slides Cloud SDK for Java.
-[PHP SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_PHP)  | Aspose.Slides Cloud SDK for PHP.
-[Python SDK](https://github.com/asposeslides/Aspose_Slides_Cloud/tree/master/SDKs/Aspose.Slides_Cloud_SDK_for_Python)  | Aspose.Slides Cloud SDK for Python.
+[Java SDK](SDKs/Aspose.Slides_Cloud_SDK_for_Java)  |  Aspose.Slides Cloud SDK for Java.
+[PHP SDK](SDKs/Aspose.Slides_Cloud_SDK_for_PHP)  | Aspose.Slides Cloud SDK for PHP.
+[Python SDK](SDKs/Aspose.Slides_Cloud_SDK_for_Python)  | Aspose.Slides Cloud SDK for Python.
+[iOS SDK](SDKs/Aspose.Slides_Cloud_SDK_for_ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
+[Node.js SDK](SDKs/Aspose.Slides_Cloud_SDK_for_NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
+[Ruby SDK](SDKs/Aspose.Slides_Cloud_SDK_For_Ruby)  | Aspose.Slides Cloud SDK for Ruby.
+[.NET SDK](SDKs/Aspose.Slides_Cloud_SDK_For_CSharp)  | Aspose.Slides Cloud SDK for CSharp.
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)

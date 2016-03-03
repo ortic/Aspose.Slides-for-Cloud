@@ -396,6 +396,7 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
 	$result = $this->slides->PutNewPresentation($fileName, $password = "", $storage = "", $folder = "", $file);
 	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
 	$this->assertEquals(201, $result->Code);
+<<<<<<< HEAD
     }
 
     
@@ -432,20 +433,57 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
 	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
 	$result = $this->slides->PutSetParagraphPortionProperties($fileName, $slideIndex = "1", $shapeIndex = "1", $paragraphIndex = "1", $portionIndex = "1", $storage = "", $folder = "", $body);
 	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
+=======
+    }
+
+    
+    public function testPutNewPresentationFromStoredTemplate() {	
+	$fileName = "sample" . rand() . ".pptx";
+	$templatePath = "sample.pptx";
+	$file = $templatePath;
+	$result = $this->storageApi->PutCreate($templatePath, "", $storage = "", getcwd() . '\\Data\\Input\\' . $templatePath);
+	
+	$result = $this->slides->PutNewPresentationFromStoredTemplate($fileName, $templatePath, $templateStorage = null, $password = null, $storage = null, $folder = null, $file);
+	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
+	$this->assertEquals(201, $result->Code);
+    }
+
+    
+    public function testPutPresentationMerge() {
+	$fileName = "sample.pptx";
+	$mergeFile1 = "welcome.pptx";
+	
+	$body = array("Presentations"=>array($mergeFile1));
+	
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->storageApi->PutCreate($mergeFile1, "", $storage = "", getcwd() . '\\Data\\Input\\' . $mergeFile1);	
+		
+	$result = $this->slides->PutPresentationMerge($fileName, $storage = "", $folder = "", $body);
+	$this->assertInstanceOf('\Aspose\Slides\Models\DocumentResponse', $result);
+>>>>>>> upstream/master
 	$this->assertEquals(200, $result->Code);
     }
 
     
+<<<<<<< HEAD
     public function testPutSlideShapeInfo() {
 	$body = array("Text" => "Shape Info");
 	$fileName = "sample.pptx";
 	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
 	$result = $this->slides->PutSlideShapeInfo($fileName, $slideIndex = "1", $shapePath = "1", $storage = "", $folder = "", $body);
+=======
+    public function testPutSetParagraphPortionProperties() {
+	$body = array("Text" => "Paragraph portion text", "FontColor" => "#FF000000");
+	$fileName = "sample.pptx";
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->slides->PutSetParagraphPortionProperties($fileName, $slideIndex = "1", $shapeIndex = "1", $paragraphIndex = "1", $portionIndex = "1", $storage = "", $folder = "", $body);
+>>>>>>> upstream/master
 	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
 	$this->assertEquals(200, $result->Code);
     }
 
     
+<<<<<<< HEAD
     public function testPutSlidesConvert() {
 	$file = getcwd() . '/Data/Input/test_slides.pptx';
 	$fileName = "sample.pptx";
@@ -474,18 +512,59 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
 	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
 	$result = $this->slides->PutSlidesSetDocumentProperty($fileName, $propertyName = "Author", $storage = "", $folder = "", $body);
 	$this->assertInstanceOf('\Aspose\Slides\Models\DocumentPropertyResponse', $result);
+=======
+    public function testPutSlideShapeInfo() {
+	$body = array("Text" => "Shape Info");
+	$fileName = "sample.pptx";
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->slides->PutSlideShapeInfo($fileName, $slideIndex = "1", $shapePath = "1", $storage = "", $folder = "", $body);
+	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
 	$this->assertEquals(200, $result->Code);
     }
 
     
+    public function testPutSlidesConvert() {
+	$file = getcwd() . '/Data/Input/test_slides.pptx';
+	$fileName = "sample.pptx";
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->slides->PutSlidesConvert($password = "", $format = "pdf", $outPath = "", $file);
+	$fh = fopen(getcwd() . '/Data/Output/test_slides.pdf', 'w');
+	fwrite($fh, $result);
+	fclose($fh);
+	$this->assertFileExists(getcwd() . '/Data/Output/test_slides.pdf');
+    }
+
+    
+    public function testPutSlidesDocumentFromHtml() {
+	$file = getcwd() . '/Data/Input/Test.html';
+	$fileName = "sample.pptx";
+
+	$result = $this->slides->PutSlidesDocumentFromHtml($fileName, $password = "", $storage = "", $folder = "", $file);
+	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
+>>>>>>> upstream/master
+	$this->assertEquals(200, $result->Code);
+    }
+
+    
+<<<<<<< HEAD
     public function testPutSlidesSlideBackground() {
 	$fileName = "sample.pptx";
 	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
 	$result = $this->slides->PutSlidesSlideBackground($fileName, $slideIndex = "1", $folder = "", $storage = "", $body = "\"#FFFF0000\"");
 	$this->assertInstanceOf('\Aspose\Slides\Models\SlideBackgroundResponse', $result);
+=======
+    public function testPutSlidesSetDocumentProperty() {
+	$body = json_encode(array("Value" => "Author","Value" => "Imran Anwar"));
+	$fileName = "sample-input.pptx";
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->slides->PutSlidesSetDocumentProperty($fileName, $propertyName = "Author", $storage = "", $folder = "", $body);
+	$this->assertInstanceOf('\Aspose\Slides\Models\DocumentPropertyResponse', $result);
+>>>>>>> upstream/master
 	$this->assertEquals(200, $result->Code);
     }
+
     
+<<<<<<< HEAD
         public function testPostSlidesSaveAsHtml()
     {
 	$fileName = "sample.pptx";
@@ -540,4 +619,14 @@ class SlidesApiTest extends PHPUnit_Framework_TestCase {
 	$this->assertInstanceOf('\Aspose\Slides\Models\ResponseMessage', $result);
 	$this->assertEquals(201, $result->Code);
     }
+=======
+    public function testPutSlidesSlideBackground() {
+	$fileName = "sample.pptx";
+	$result = $this->storageApi->PutCreate($fileName, "", $storage = "", getcwd() . '\\Data\\Input\\' . $fileName);
+	$result = $this->slides->PutSlidesSlideBackground($fileName, $slideIndex = "1", $folder = "", $storage = "", $body = "\"#FFFF0000\"");
+	$this->assertInstanceOf('\Aspose\Slides\Models\SlideBackgroundResponse', $result);
+	$this->assertEquals(200, $result->Code);
+    }
+
+>>>>>>> upstream/master
 }    

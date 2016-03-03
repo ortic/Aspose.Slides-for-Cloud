@@ -1,0 +1,873 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3079F0911BE75B0A00406229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3079F0901BE75B0A00406229 /* main.m */; };
+		3079F0941BE75B0A00406229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3079F0931BE75B0A00406229 /* AppDelegate.m */; };
+		3079F0971BE75B0A00406229 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3079F0961BE75B0A00406229 /* ViewController.m */; };
+		3079F09A1BE75B0A00406229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3079F0981BE75B0A00406229 /* Main.storyboard */; };
+		3079F09C1BE75B0A00406229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3079F09B1BE75B0A00406229 /* Assets.xcassets */; };
+		3079F09F1BE75B0A00406229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3079F09D1BE75B0A00406229 /* LaunchScreen.storyboard */; };
+		3087AC501BFC67AE00240821 /* ASPNewShapeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC3F1BFC67AE00240821 /* ASPNewShapeResponse.m */; };
+		3087AC511BFC67AE00240821 /* ASPParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC411BFC67AE00240821 /* ASPParagraph.m */; };
+		3087AC521BFC67AE00240821 /* ASPParagraphPortionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC431BFC67AE00240821 /* ASPParagraphPortionResponse.m */; };
+		3087AC531BFC67AE00240821 /* ASPParagraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC451BFC67AE00240821 /* ASPParagraphs.m */; };
+		3087AC541BFC67AE00240821 /* ASPShapeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC471BFC67AE00240821 /* ASPShapeList.m */; };
+		3087AC551BFC67AE00240821 /* ASPShapeParagraphResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC491BFC67AE00240821 /* ASPShapeParagraphResponse.m */; };
+		3087AC561BFC67AE00240821 /* ASPShapeParagraphsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC4B1BFC67AE00240821 /* ASPShapeParagraphsResponse.m */; };
+		3087AC571BFC67AE00240821 /* ASPShapeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC4D1BFC67AE00240821 /* ASPShapeResponse.m */; };
+		3087AC581BFC67AE00240821 /* ASPSlideResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3087AC4F1BFC67AE00240821 /* ASPSlideResponse.m */; };
+		30B28D201BE75DEB00C3EBDC /* ASPSlidesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28C8E1BE75DEB00C3EBDC /* ASPSlidesApi.m */; };
+		30B28D261BE75DEB00C3EBDC /* ASPArrowHeadProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28C9C1BE75DEB00C3EBDC /* ASPArrowHeadProperties.m */; };
+		30B28D281BE75DEB00C3EBDC /* ASPColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CA01BE75DEB00C3EBDC /* ASPColorScheme.m */; };
+		30B28D291BE75DEB00C3EBDC /* ASPColorSchemeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CA21BE75DEB00C3EBDC /* ASPColorSchemeResponse.m */; };
+		30B28D2A1BE75DEB00C3EBDC /* ASPCommonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CA41BE75DEB00C3EBDC /* ASPCommonResponse.m */; };
+		30B28D2B1BE75DEB00C3EBDC /* ASPCustomDashPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CA61BE75DEB00C3EBDC /* ASPCustomDashPattern.m */; };
+		30B28D2C1BE75DEB00C3EBDC /* ASPDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CA81BE75DEB00C3EBDC /* ASPDocument.m */; };
+		30B28D2D1BE75DEB00C3EBDC /* ASPDocumentProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CAA1BE75DEB00C3EBDC /* ASPDocumentProperties.m */; };
+		30B28D2E1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CAC1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.m */; };
+		30B28D2F1BE75DEB00C3EBDC /* ASPDocumentProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CAE1BE75DEB00C3EBDC /* ASPDocumentProperty.m */; };
+		30B28D301BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CB01BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.m */; };
+		30B28D311BE75DEB00C3EBDC /* ASPDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CB21BE75DEB00C3EBDC /* ASPDocumentResponse.m */; };
+		30B28D321BE75DEB00C3EBDC /* ASPFillFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CB41BE75DEB00C3EBDC /* ASPFillFormat.m */; };
+		30B28D331BE75DEB00C3EBDC /* ASPFontScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CB61BE75DEB00C3EBDC /* ASPFontScheme.m */; };
+		30B28D341BE75DEB00C3EBDC /* ASPFontSchemeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CB81BE75DEB00C3EBDC /* ASPFontSchemeResponse.m */; };
+		30B28D351BE75DEB00C3EBDC /* ASPFontSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CBA1BE75DEB00C3EBDC /* ASPFontSet.m */; };
+		30B28D361BE75DEB00C3EBDC /* ASPFormatScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CBC1BE75DEB00C3EBDC /* ASPFormatScheme.m */; };
+		30B28D371BE75DEB00C3EBDC /* ASPFormatSchemeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CBE1BE75DEB00C3EBDC /* ASPFormatSchemeResponse.m */; };
+		30B28D381BE75DEB00C3EBDC /* ASPHtmlExportOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CC01BE75DEB00C3EBDC /* ASPHtmlExportOptions.m */; };
+		30B28D391BE75DEB00C3EBDC /* ASPImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CC21BE75DEB00C3EBDC /* ASPImage.m */; };
+		30B28D3A1BE75DEB00C3EBDC /* ASPImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CC41BE75DEB00C3EBDC /* ASPImages.m */; };
+		30B28D3B1BE75DEB00C3EBDC /* ASPImagesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CC61BE75DEB00C3EBDC /* ASPImagesResponse.m */; };
+		30B28D3C1BE75DEB00C3EBDC /* ASPLineFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CC81BE75DEB00C3EBDC /* ASPLineFormat.m */; };
+		30B28D3E1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CCC1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.m */; };
+		30B28D3F1BE75DEB00C3EBDC /* ASPPdfExportOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CCE1BE75DEB00C3EBDC /* ASPPdfExportOptions.m */; };
+		30B28D401BE75DEB00C3EBDC /* ASPPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CD01BE75DEB00C3EBDC /* ASPPlaceholder.m */; };
+		30B28D411BE75DEB00C3EBDC /* ASPPlaceholderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CD21BE75DEB00C3EBDC /* ASPPlaceholderResponse.m */; };
+		30B28D421BE75DEB00C3EBDC /* ASPPlaceholders.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CD41BE75DEB00C3EBDC /* ASPPlaceholders.m */; };
+		30B28D431BE75DEB00C3EBDC /* ASPPlaceholdersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CD61BE75DEB00C3EBDC /* ASPPlaceholdersResponse.m */; };
+		30B28D441BE75DEB00C3EBDC /* ASPPortion.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CD81BE75DEB00C3EBDC /* ASPPortion.m */; };
+		30B28D451BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CDA1BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.m */; };
+		30B28D461BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CDC1BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.m */; };
+		30B28D471BE75DEB00C3EBDC /* ASPPresentationToMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CDE1BE75DEB00C3EBDC /* ASPPresentationToMerge.m */; };
+		30B28D481BE75DEB00C3EBDC /* ASPResourceUri.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CE01BE75DEB00C3EBDC /* ASPResourceUri.m */; };
+		30B28D491BE75DEB00C3EBDC /* ASPResourceUriElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CE21BE75DEB00C3EBDC /* ASPResourceUriElement.m */; };
+		30B28D4A1BE75DEB00C3EBDC /* ASPShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CE41BE75DEB00C3EBDC /* ASPShape.m */; };
+		30B28D4B1BE75DEB00C3EBDC /* ASPSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CE61BE75DEB00C3EBDC /* ASPSlide.m */; };
+		30B28D4C1BE75DEB00C3EBDC /* ASPSlideBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CE81BE75DEB00C3EBDC /* ASPSlideBackground.m */; };
+		30B28D4D1BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CEA1BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.m */; };
+		30B28D4E1BE75DEB00C3EBDC /* ASPSlideComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CEC1BE75DEB00C3EBDC /* ASPSlideComment.m */; };
+		30B28D4F1BE75DEB00C3EBDC /* ASPSlideComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CEE1BE75DEB00C3EBDC /* ASPSlideComments.m */; };
+		30B28D501BE75DEB00C3EBDC /* ASPSlideCommentsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CF01BE75DEB00C3EBDC /* ASPSlideCommentsResponse.m */; };
+		30B28D511BE75DEB00C3EBDC /* ASPSlideListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CF21BE75DEB00C3EBDC /* ASPSlideListResponse.m */; };
+		30B28D521BE75DEB00C3EBDC /* ASPSlides.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CF41BE75DEB00C3EBDC /* ASPSlides.m */; };
+		30B28D531BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CF61BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.m */; };
+		30B28D541BE75DEB00C3EBDC /* ASPSplitDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CF81BE75DEB00C3EBDC /* ASPSplitDocumentResponse.m */; };
+		30B28D551BE75DEB00C3EBDC /* ASPSplitDocumentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CFA1BE75DEB00C3EBDC /* ASPSplitDocumentResult.m */; };
+		30B28D561BE75DEB00C3EBDC /* ASPTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CFC1BE75DEB00C3EBDC /* ASPTextItem.m */; };
+		30B28D571BE75DEB00C3EBDC /* ASPTextItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28CFE1BE75DEB00C3EBDC /* ASPTextItems.m */; };
+		30B28D581BE75DEB00C3EBDC /* ASPTextItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D001BE75DEB00C3EBDC /* ASPTextItemsResponse.m */; };
+		30B28D591BE75DEB00C3EBDC /* ASPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D021BE75DEB00C3EBDC /* ASPTheme.m */; };
+		30B28D5A1BE75DEB00C3EBDC /* ASPThemeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D041BE75DEB00C3EBDC /* ASPThemeResponse.m */; };
+		30B28D5B1BE75DEB00C3EBDC /* ASPTiffExportOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D061BE75DEB00C3EBDC /* ASPTiffExportOptions.m */; };
+		30B28D5C1BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D081BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.m */; };
+		30B28D701BE75DF800C3EBDC /* demo.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D681BE75DF800C3EBDC /* demo.pptx */; };
+		30B28D711BE75DF800C3EBDC /* ReadMe.html in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D691BE75DF800C3EBDC /* ReadMe.html */; };
+		30B28D721BE75DF800C3EBDC /* sample-input.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6A1BE75DF800C3EBDC /* sample-input.pptx */; };
+		30B28D731BE75DF800C3EBDC /* sample.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6B1BE75DF800C3EBDC /* sample.pptx */; };
+		30B28D741BE75DF800C3EBDC /* Test.html in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6C1BE75DF800C3EBDC /* Test.html */; };
+		30B28D751BE75DF800C3EBDC /* welcome.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6D1BE75DF800C3EBDC /* welcome.pptx */; };
+		30B28D761BE75DF800C3EBDC /* ASPSlidesApiTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B28D6F1BE75DF800C3EBDC /* ASPSlidesApiTestCase.m */; };
+		30B28D771BE75EAE00C3EBDC /* demo.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D681BE75DF800C3EBDC /* demo.pptx */; };
+		30B28D781BE75EAE00C3EBDC /* ReadMe.html in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D691BE75DF800C3EBDC /* ReadMe.html */; };
+		30B28D791BE75EAE00C3EBDC /* sample-input.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6A1BE75DF800C3EBDC /* sample-input.pptx */; };
+		30B28D7A1BE75EAE00C3EBDC /* sample.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6B1BE75DF800C3EBDC /* sample.pptx */; };
+		30B28D7B1BE75EAE00C3EBDC /* Test.html in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6C1BE75DF800C3EBDC /* Test.html */; };
+		30B28D7C1BE75EAE00C3EBDC /* welcome.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 30B28D6D1BE75DF800C3EBDC /* welcome.pptx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3079F0A61BE75B0A00406229 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3079F0841BE75B0A00406229 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3079F08B1BE75B0A00406229;
+			remoteInfo = Aspose.Slides_Cloud_SDK_for_ObjectiveC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3079F08C1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aspose.Slides_Cloud_SDK_for_ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3079F0901BE75B0A00406229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3079F0921BE75B0A00406229 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3079F0931BE75B0A00406229 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3079F0951BE75B0A00406229 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3079F0961BE75B0A00406229 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3079F0991BE75B0A00406229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3079F09B1BE75B0A00406229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3079F09E1BE75B0A00406229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3079F0A01BE75B0A00406229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3079F0A51BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3079F0AB1BE75B0A00406229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3087AC3E1BFC67AE00240821 /* ASPNewShapeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPNewShapeResponse.h; sourceTree = "<group>"; };
+		3087AC3F1BFC67AE00240821 /* ASPNewShapeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPNewShapeResponse.m; sourceTree = "<group>"; };
+		3087AC401BFC67AE00240821 /* ASPParagraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPParagraph.h; sourceTree = "<group>"; };
+		3087AC411BFC67AE00240821 /* ASPParagraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPParagraph.m; sourceTree = "<group>"; };
+		3087AC421BFC67AE00240821 /* ASPParagraphPortionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPParagraphPortionResponse.h; sourceTree = "<group>"; };
+		3087AC431BFC67AE00240821 /* ASPParagraphPortionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPParagraphPortionResponse.m; sourceTree = "<group>"; };
+		3087AC441BFC67AE00240821 /* ASPParagraphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPParagraphs.h; sourceTree = "<group>"; };
+		3087AC451BFC67AE00240821 /* ASPParagraphs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPParagraphs.m; sourceTree = "<group>"; };
+		3087AC461BFC67AE00240821 /* ASPShapeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPShapeList.h; sourceTree = "<group>"; };
+		3087AC471BFC67AE00240821 /* ASPShapeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPShapeList.m; sourceTree = "<group>"; };
+		3087AC481BFC67AE00240821 /* ASPShapeParagraphResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPShapeParagraphResponse.h; sourceTree = "<group>"; };
+		3087AC491BFC67AE00240821 /* ASPShapeParagraphResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPShapeParagraphResponse.m; sourceTree = "<group>"; };
+		3087AC4A1BFC67AE00240821 /* ASPShapeParagraphsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPShapeParagraphsResponse.h; sourceTree = "<group>"; };
+		3087AC4B1BFC67AE00240821 /* ASPShapeParagraphsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPShapeParagraphsResponse.m; sourceTree = "<group>"; };
+		3087AC4C1BFC67AE00240821 /* ASPShapeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPShapeResponse.h; sourceTree = "<group>"; };
+		3087AC4D1BFC67AE00240821 /* ASPShapeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPShapeResponse.m; sourceTree = "<group>"; };
+		3087AC4E1BFC67AE00240821 /* ASPSlideResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideResponse.h; sourceTree = "<group>"; };
+		3087AC4F1BFC67AE00240821 /* ASPSlideResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideResponse.m; sourceTree = "<group>"; };
+		30B28C8D1BE75DEB00C3EBDC /* ASPSlidesApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlidesApi.h; sourceTree = "<group>"; };
+		30B28C8E1BE75DEB00C3EBDC /* ASPSlidesApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlidesApi.m; sourceTree = "<group>"; };
+		30B28C9B1BE75DEB00C3EBDC /* ASPArrowHeadProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPArrowHeadProperties.h; sourceTree = "<group>"; };
+		30B28C9C1BE75DEB00C3EBDC /* ASPArrowHeadProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPArrowHeadProperties.m; sourceTree = "<group>"; };
+		30B28C9F1BE75DEB00C3EBDC /* ASPColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPColorScheme.h; sourceTree = "<group>"; };
+		30B28CA01BE75DEB00C3EBDC /* ASPColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPColorScheme.m; sourceTree = "<group>"; };
+		30B28CA11BE75DEB00C3EBDC /* ASPColorSchemeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPColorSchemeResponse.h; sourceTree = "<group>"; };
+		30B28CA21BE75DEB00C3EBDC /* ASPColorSchemeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPColorSchemeResponse.m; sourceTree = "<group>"; };
+		30B28CA31BE75DEB00C3EBDC /* ASPCommonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPCommonResponse.h; sourceTree = "<group>"; };
+		30B28CA41BE75DEB00C3EBDC /* ASPCommonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPCommonResponse.m; sourceTree = "<group>"; };
+		30B28CA51BE75DEB00C3EBDC /* ASPCustomDashPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPCustomDashPattern.h; sourceTree = "<group>"; };
+		30B28CA61BE75DEB00C3EBDC /* ASPCustomDashPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPCustomDashPattern.m; sourceTree = "<group>"; };
+		30B28CA71BE75DEB00C3EBDC /* ASPDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocument.h; sourceTree = "<group>"; };
+		30B28CA81BE75DEB00C3EBDC /* ASPDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocument.m; sourceTree = "<group>"; };
+		30B28CA91BE75DEB00C3EBDC /* ASPDocumentProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocumentProperties.h; sourceTree = "<group>"; };
+		30B28CAA1BE75DEB00C3EBDC /* ASPDocumentProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocumentProperties.m; sourceTree = "<group>"; };
+		30B28CAB1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocumentPropertiesResponse.h; sourceTree = "<group>"; };
+		30B28CAC1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocumentPropertiesResponse.m; sourceTree = "<group>"; };
+		30B28CAD1BE75DEB00C3EBDC /* ASPDocumentProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocumentProperty.h; sourceTree = "<group>"; };
+		30B28CAE1BE75DEB00C3EBDC /* ASPDocumentProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocumentProperty.m; sourceTree = "<group>"; };
+		30B28CAF1BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocumentPropertyResponse.h; sourceTree = "<group>"; };
+		30B28CB01BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocumentPropertyResponse.m; sourceTree = "<group>"; };
+		30B28CB11BE75DEB00C3EBDC /* ASPDocumentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDocumentResponse.h; sourceTree = "<group>"; };
+		30B28CB21BE75DEB00C3EBDC /* ASPDocumentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDocumentResponse.m; sourceTree = "<group>"; };
+		30B28CB31BE75DEB00C3EBDC /* ASPFillFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFillFormat.h; sourceTree = "<group>"; };
+		30B28CB41BE75DEB00C3EBDC /* ASPFillFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFillFormat.m; sourceTree = "<group>"; };
+		30B28CB51BE75DEB00C3EBDC /* ASPFontScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFontScheme.h; sourceTree = "<group>"; };
+		30B28CB61BE75DEB00C3EBDC /* ASPFontScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFontScheme.m; sourceTree = "<group>"; };
+		30B28CB71BE75DEB00C3EBDC /* ASPFontSchemeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFontSchemeResponse.h; sourceTree = "<group>"; };
+		30B28CB81BE75DEB00C3EBDC /* ASPFontSchemeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFontSchemeResponse.m; sourceTree = "<group>"; };
+		30B28CB91BE75DEB00C3EBDC /* ASPFontSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFontSet.h; sourceTree = "<group>"; };
+		30B28CBA1BE75DEB00C3EBDC /* ASPFontSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFontSet.m; sourceTree = "<group>"; };
+		30B28CBB1BE75DEB00C3EBDC /* ASPFormatScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFormatScheme.h; sourceTree = "<group>"; };
+		30B28CBC1BE75DEB00C3EBDC /* ASPFormatScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFormatScheme.m; sourceTree = "<group>"; };
+		30B28CBD1BE75DEB00C3EBDC /* ASPFormatSchemeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFormatSchemeResponse.h; sourceTree = "<group>"; };
+		30B28CBE1BE75DEB00C3EBDC /* ASPFormatSchemeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFormatSchemeResponse.m; sourceTree = "<group>"; };
+		30B28CBF1BE75DEB00C3EBDC /* ASPHtmlExportOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPHtmlExportOptions.h; sourceTree = "<group>"; };
+		30B28CC01BE75DEB00C3EBDC /* ASPHtmlExportOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPHtmlExportOptions.m; sourceTree = "<group>"; };
+		30B28CC11BE75DEB00C3EBDC /* ASPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPImage.h; sourceTree = "<group>"; };
+		30B28CC21BE75DEB00C3EBDC /* ASPImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPImage.m; sourceTree = "<group>"; };
+		30B28CC31BE75DEB00C3EBDC /* ASPImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPImages.h; sourceTree = "<group>"; };
+		30B28CC41BE75DEB00C3EBDC /* ASPImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPImages.m; sourceTree = "<group>"; };
+		30B28CC51BE75DEB00C3EBDC /* ASPImagesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPImagesResponse.h; sourceTree = "<group>"; };
+		30B28CC61BE75DEB00C3EBDC /* ASPImagesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPImagesResponse.m; sourceTree = "<group>"; };
+		30B28CC71BE75DEB00C3EBDC /* ASPLineFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPLineFormat.h; sourceTree = "<group>"; };
+		30B28CC81BE75DEB00C3EBDC /* ASPLineFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPLineFormat.m; sourceTree = "<group>"; };
+		30B28CCB1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPOrderedMergeRequest.h; sourceTree = "<group>"; };
+		30B28CCC1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPOrderedMergeRequest.m; sourceTree = "<group>"; };
+		30B28CCD1BE75DEB00C3EBDC /* ASPPdfExportOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPdfExportOptions.h; sourceTree = "<group>"; };
+		30B28CCE1BE75DEB00C3EBDC /* ASPPdfExportOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPdfExportOptions.m; sourceTree = "<group>"; };
+		30B28CCF1BE75DEB00C3EBDC /* ASPPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPlaceholder.h; sourceTree = "<group>"; };
+		30B28CD01BE75DEB00C3EBDC /* ASPPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPlaceholder.m; sourceTree = "<group>"; };
+		30B28CD11BE75DEB00C3EBDC /* ASPPlaceholderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPlaceholderResponse.h; sourceTree = "<group>"; };
+		30B28CD21BE75DEB00C3EBDC /* ASPPlaceholderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPlaceholderResponse.m; sourceTree = "<group>"; };
+		30B28CD31BE75DEB00C3EBDC /* ASPPlaceholders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPlaceholders.h; sourceTree = "<group>"; };
+		30B28CD41BE75DEB00C3EBDC /* ASPPlaceholders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPlaceholders.m; sourceTree = "<group>"; };
+		30B28CD51BE75DEB00C3EBDC /* ASPPlaceholdersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPlaceholdersResponse.h; sourceTree = "<group>"; };
+		30B28CD61BE75DEB00C3EBDC /* ASPPlaceholdersResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPlaceholdersResponse.m; sourceTree = "<group>"; };
+		30B28CD71BE75DEB00C3EBDC /* ASPPortion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPortion.h; sourceTree = "<group>"; };
+		30B28CD81BE75DEB00C3EBDC /* ASPPortion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPortion.m; sourceTree = "<group>"; };
+		30B28CD91BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPresentationsMergeRequest.h; sourceTree = "<group>"; };
+		30B28CDA1BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPresentationsMergeRequest.m; sourceTree = "<group>"; };
+		30B28CDB1BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPresentationStringReplaceResponse.h; sourceTree = "<group>"; };
+		30B28CDC1BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPresentationStringReplaceResponse.m; sourceTree = "<group>"; };
+		30B28CDD1BE75DEB00C3EBDC /* ASPPresentationToMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPresentationToMerge.h; sourceTree = "<group>"; };
+		30B28CDE1BE75DEB00C3EBDC /* ASPPresentationToMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPresentationToMerge.m; sourceTree = "<group>"; };
+		30B28CDF1BE75DEB00C3EBDC /* ASPResourceUri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPResourceUri.h; sourceTree = "<group>"; };
+		30B28CE01BE75DEB00C3EBDC /* ASPResourceUri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPResourceUri.m; sourceTree = "<group>"; };
+		30B28CE11BE75DEB00C3EBDC /* ASPResourceUriElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPResourceUriElement.h; sourceTree = "<group>"; };
+		30B28CE21BE75DEB00C3EBDC /* ASPResourceUriElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPResourceUriElement.m; sourceTree = "<group>"; };
+		30B28CE31BE75DEB00C3EBDC /* ASPShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPShape.h; sourceTree = "<group>"; };
+		30B28CE41BE75DEB00C3EBDC /* ASPShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPShape.m; sourceTree = "<group>"; };
+		30B28CE51BE75DEB00C3EBDC /* ASPSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlide.h; sourceTree = "<group>"; };
+		30B28CE61BE75DEB00C3EBDC /* ASPSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlide.m; sourceTree = "<group>"; };
+		30B28CE71BE75DEB00C3EBDC /* ASPSlideBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideBackground.h; sourceTree = "<group>"; };
+		30B28CE81BE75DEB00C3EBDC /* ASPSlideBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideBackground.m; sourceTree = "<group>"; };
+		30B28CE91BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideBackgroundResponse.h; sourceTree = "<group>"; };
+		30B28CEA1BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideBackgroundResponse.m; sourceTree = "<group>"; };
+		30B28CEB1BE75DEB00C3EBDC /* ASPSlideComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideComment.h; sourceTree = "<group>"; };
+		30B28CEC1BE75DEB00C3EBDC /* ASPSlideComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideComment.m; sourceTree = "<group>"; };
+		30B28CED1BE75DEB00C3EBDC /* ASPSlideComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideComments.h; sourceTree = "<group>"; };
+		30B28CEE1BE75DEB00C3EBDC /* ASPSlideComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideComments.m; sourceTree = "<group>"; };
+		30B28CEF1BE75DEB00C3EBDC /* ASPSlideCommentsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideCommentsResponse.h; sourceTree = "<group>"; };
+		30B28CF01BE75DEB00C3EBDC /* ASPSlideCommentsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideCommentsResponse.m; sourceTree = "<group>"; };
+		30B28CF11BE75DEB00C3EBDC /* ASPSlideListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideListResponse.h; sourceTree = "<group>"; };
+		30B28CF21BE75DEB00C3EBDC /* ASPSlideListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideListResponse.m; sourceTree = "<group>"; };
+		30B28CF31BE75DEB00C3EBDC /* ASPSlides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlides.h; sourceTree = "<group>"; };
+		30B28CF41BE75DEB00C3EBDC /* ASPSlides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlides.m; sourceTree = "<group>"; };
+		30B28CF51BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSlideStringReplaceResponse.h; sourceTree = "<group>"; };
+		30B28CF61BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlideStringReplaceResponse.m; sourceTree = "<group>"; };
+		30B28CF71BE75DEB00C3EBDC /* ASPSplitDocumentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSplitDocumentResponse.h; sourceTree = "<group>"; };
+		30B28CF81BE75DEB00C3EBDC /* ASPSplitDocumentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSplitDocumentResponse.m; sourceTree = "<group>"; };
+		30B28CF91BE75DEB00C3EBDC /* ASPSplitDocumentResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPSplitDocumentResult.h; sourceTree = "<group>"; };
+		30B28CFA1BE75DEB00C3EBDC /* ASPSplitDocumentResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSplitDocumentResult.m; sourceTree = "<group>"; };
+		30B28CFB1BE75DEB00C3EBDC /* ASPTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPTextItem.h; sourceTree = "<group>"; };
+		30B28CFC1BE75DEB00C3EBDC /* ASPTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPTextItem.m; sourceTree = "<group>"; };
+		30B28CFD1BE75DEB00C3EBDC /* ASPTextItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPTextItems.h; sourceTree = "<group>"; };
+		30B28CFE1BE75DEB00C3EBDC /* ASPTextItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPTextItems.m; sourceTree = "<group>"; };
+		30B28CFF1BE75DEB00C3EBDC /* ASPTextItemsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPTextItemsResponse.h; sourceTree = "<group>"; };
+		30B28D001BE75DEB00C3EBDC /* ASPTextItemsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPTextItemsResponse.m; sourceTree = "<group>"; };
+		30B28D011BE75DEB00C3EBDC /* ASPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPTheme.h; sourceTree = "<group>"; };
+		30B28D021BE75DEB00C3EBDC /* ASPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPTheme.m; sourceTree = "<group>"; };
+		30B28D031BE75DEB00C3EBDC /* ASPThemeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPThemeResponse.h; sourceTree = "<group>"; };
+		30B28D041BE75DEB00C3EBDC /* ASPThemeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPThemeResponse.m; sourceTree = "<group>"; };
+		30B28D051BE75DEB00C3EBDC /* ASPTiffExportOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPTiffExportOptions.h; sourceTree = "<group>"; };
+		30B28D061BE75DEB00C3EBDC /* ASPTiffExportOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPTiffExportOptions.m; sourceTree = "<group>"; };
+		30B28D071BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
+		30B28D081BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
+		30B28D681BE75DF800C3EBDC /* demo.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.pptx; sourceTree = "<group>"; };
+		30B28D691BE75DF800C3EBDC /* ReadMe.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ReadMe.html; sourceTree = "<group>"; };
+		30B28D6A1BE75DF800C3EBDC /* sample-input.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-input.pptx"; sourceTree = "<group>"; };
+		30B28D6B1BE75DF800C3EBDC /* sample.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.pptx; sourceTree = "<group>"; };
+		30B28D6C1BE75DF800C3EBDC /* Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Test.html; sourceTree = "<group>"; };
+		30B28D6D1BE75DF800C3EBDC /* welcome.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome.pptx; sourceTree = "<group>"; };
+		30B28D6F1BE75DF800C3EBDC /* ASPSlidesApiTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPSlidesApiTestCase.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3079F0891BE75B0A00406229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3079F0A21BE75B0A00406229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3079F0831BE75B0A00406229 = {
+			isa = PBXGroup;
+			children = (
+				3079F08E1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC */,
+				3079F0A81BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests */,
+				3079F08D1BE75B0A00406229 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3079F08D1BE75B0A00406229 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3079F08C1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC.app */,
+				3079F0A51BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3079F08E1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				30B28C8B1BE75DEB00C3EBDC /* slides */,
+				3079F0921BE75B0A00406229 /* AppDelegate.h */,
+				3079F0931BE75B0A00406229 /* AppDelegate.m */,
+				3079F0951BE75B0A00406229 /* ViewController.h */,
+				3079F0961BE75B0A00406229 /* ViewController.m */,
+				3079F0981BE75B0A00406229 /* Main.storyboard */,
+				3079F09B1BE75B0A00406229 /* Assets.xcassets */,
+				3079F09D1BE75B0A00406229 /* LaunchScreen.storyboard */,
+				3079F0A01BE75B0A00406229 /* Info.plist */,
+				3079F08F1BE75B0A00406229 /* Supporting Files */,
+			);
+			path = Aspose.Slides_Cloud_SDK_for_ObjectiveC;
+			sourceTree = "<group>";
+		};
+		3079F08F1BE75B0A00406229 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3079F0901BE75B0A00406229 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3079F0A81BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests */ = {
+			isa = PBXGroup;
+			children = (
+				30B28D671BE75DF800C3EBDC /* resources */,
+				30B28D6E1BE75DF800C3EBDC /* slides */,
+				3079F0AB1BE75B0A00406229 /* Info.plist */,
+			);
+			path = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests;
+			sourceTree = "<group>";
+		};
+		30B28C8B1BE75DEB00C3EBDC /* slides */ = {
+			isa = PBXGroup;
+			children = (
+				30B28C8C1BE75DEB00C3EBDC /* api */,
+				30B28C9A1BE75DEB00C3EBDC /* model */,
+			);
+			path = slides;
+			sourceTree = "<group>";
+		};
+		30B28C8C1BE75DEB00C3EBDC /* api */ = {
+			isa = PBXGroup;
+			children = (
+				30B28C8D1BE75DEB00C3EBDC /* ASPSlidesApi.h */,
+				30B28C8E1BE75DEB00C3EBDC /* ASPSlidesApi.m */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		30B28C9A1BE75DEB00C3EBDC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3087AC3E1BFC67AE00240821 /* ASPNewShapeResponse.h */,
+				3087AC3F1BFC67AE00240821 /* ASPNewShapeResponse.m */,
+				3087AC401BFC67AE00240821 /* ASPParagraph.h */,
+				3087AC411BFC67AE00240821 /* ASPParagraph.m */,
+				3087AC421BFC67AE00240821 /* ASPParagraphPortionResponse.h */,
+				3087AC431BFC67AE00240821 /* ASPParagraphPortionResponse.m */,
+				3087AC441BFC67AE00240821 /* ASPParagraphs.h */,
+				3087AC451BFC67AE00240821 /* ASPParagraphs.m */,
+				3087AC461BFC67AE00240821 /* ASPShapeList.h */,
+				3087AC471BFC67AE00240821 /* ASPShapeList.m */,
+				3087AC481BFC67AE00240821 /* ASPShapeParagraphResponse.h */,
+				3087AC491BFC67AE00240821 /* ASPShapeParagraphResponse.m */,
+				3087AC4A1BFC67AE00240821 /* ASPShapeParagraphsResponse.h */,
+				3087AC4B1BFC67AE00240821 /* ASPShapeParagraphsResponse.m */,
+				3087AC4C1BFC67AE00240821 /* ASPShapeResponse.h */,
+				3087AC4D1BFC67AE00240821 /* ASPShapeResponse.m */,
+				3087AC4E1BFC67AE00240821 /* ASPSlideResponse.h */,
+				3087AC4F1BFC67AE00240821 /* ASPSlideResponse.m */,
+				30B28C9B1BE75DEB00C3EBDC /* ASPArrowHeadProperties.h */,
+				30B28C9C1BE75DEB00C3EBDC /* ASPArrowHeadProperties.m */,
+				30B28C9F1BE75DEB00C3EBDC /* ASPColorScheme.h */,
+				30B28CA01BE75DEB00C3EBDC /* ASPColorScheme.m */,
+				30B28CA11BE75DEB00C3EBDC /* ASPColorSchemeResponse.h */,
+				30B28CA21BE75DEB00C3EBDC /* ASPColorSchemeResponse.m */,
+				30B28CA31BE75DEB00C3EBDC /* ASPCommonResponse.h */,
+				30B28CA41BE75DEB00C3EBDC /* ASPCommonResponse.m */,
+				30B28CA51BE75DEB00C3EBDC /* ASPCustomDashPattern.h */,
+				30B28CA61BE75DEB00C3EBDC /* ASPCustomDashPattern.m */,
+				30B28CA71BE75DEB00C3EBDC /* ASPDocument.h */,
+				30B28CA81BE75DEB00C3EBDC /* ASPDocument.m */,
+				30B28CA91BE75DEB00C3EBDC /* ASPDocumentProperties.h */,
+				30B28CAA1BE75DEB00C3EBDC /* ASPDocumentProperties.m */,
+				30B28CAB1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.h */,
+				30B28CAC1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.m */,
+				30B28CAD1BE75DEB00C3EBDC /* ASPDocumentProperty.h */,
+				30B28CAE1BE75DEB00C3EBDC /* ASPDocumentProperty.m */,
+				30B28CAF1BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.h */,
+				30B28CB01BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.m */,
+				30B28CB11BE75DEB00C3EBDC /* ASPDocumentResponse.h */,
+				30B28CB21BE75DEB00C3EBDC /* ASPDocumentResponse.m */,
+				30B28CB31BE75DEB00C3EBDC /* ASPFillFormat.h */,
+				30B28CB41BE75DEB00C3EBDC /* ASPFillFormat.m */,
+				30B28CB51BE75DEB00C3EBDC /* ASPFontScheme.h */,
+				30B28CB61BE75DEB00C3EBDC /* ASPFontScheme.m */,
+				30B28CB71BE75DEB00C3EBDC /* ASPFontSchemeResponse.h */,
+				30B28CB81BE75DEB00C3EBDC /* ASPFontSchemeResponse.m */,
+				30B28CB91BE75DEB00C3EBDC /* ASPFontSet.h */,
+				30B28CBA1BE75DEB00C3EBDC /* ASPFontSet.m */,
+				30B28CBB1BE75DEB00C3EBDC /* ASPFormatScheme.h */,
+				30B28CBC1BE75DEB00C3EBDC /* ASPFormatScheme.m */,
+				30B28CBD1BE75DEB00C3EBDC /* ASPFormatSchemeResponse.h */,
+				30B28CBE1BE75DEB00C3EBDC /* ASPFormatSchemeResponse.m */,
+				30B28CBF1BE75DEB00C3EBDC /* ASPHtmlExportOptions.h */,
+				30B28CC01BE75DEB00C3EBDC /* ASPHtmlExportOptions.m */,
+				30B28CC11BE75DEB00C3EBDC /* ASPImage.h */,
+				30B28CC21BE75DEB00C3EBDC /* ASPImage.m */,
+				30B28CC31BE75DEB00C3EBDC /* ASPImages.h */,
+				30B28CC41BE75DEB00C3EBDC /* ASPImages.m */,
+				30B28CC51BE75DEB00C3EBDC /* ASPImagesResponse.h */,
+				30B28CC61BE75DEB00C3EBDC /* ASPImagesResponse.m */,
+				30B28CC71BE75DEB00C3EBDC /* ASPLineFormat.h */,
+				30B28CC81BE75DEB00C3EBDC /* ASPLineFormat.m */,
+				30B28CCB1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.h */,
+				30B28CCC1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.m */,
+				30B28CCD1BE75DEB00C3EBDC /* ASPPdfExportOptions.h */,
+				30B28CCE1BE75DEB00C3EBDC /* ASPPdfExportOptions.m */,
+				30B28CCF1BE75DEB00C3EBDC /* ASPPlaceholder.h */,
+				30B28CD01BE75DEB00C3EBDC /* ASPPlaceholder.m */,
+				30B28CD11BE75DEB00C3EBDC /* ASPPlaceholderResponse.h */,
+				30B28CD21BE75DEB00C3EBDC /* ASPPlaceholderResponse.m */,
+				30B28CD31BE75DEB00C3EBDC /* ASPPlaceholders.h */,
+				30B28CD41BE75DEB00C3EBDC /* ASPPlaceholders.m */,
+				30B28CD51BE75DEB00C3EBDC /* ASPPlaceholdersResponse.h */,
+				30B28CD61BE75DEB00C3EBDC /* ASPPlaceholdersResponse.m */,
+				30B28CD71BE75DEB00C3EBDC /* ASPPortion.h */,
+				30B28CD81BE75DEB00C3EBDC /* ASPPortion.m */,
+				30B28CD91BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.h */,
+				30B28CDA1BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.m */,
+				30B28CDB1BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.h */,
+				30B28CDC1BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.m */,
+				30B28CDD1BE75DEB00C3EBDC /* ASPPresentationToMerge.h */,
+				30B28CDE1BE75DEB00C3EBDC /* ASPPresentationToMerge.m */,
+				30B28CDF1BE75DEB00C3EBDC /* ASPResourceUri.h */,
+				30B28CE01BE75DEB00C3EBDC /* ASPResourceUri.m */,
+				30B28CE11BE75DEB00C3EBDC /* ASPResourceUriElement.h */,
+				30B28CE21BE75DEB00C3EBDC /* ASPResourceUriElement.m */,
+				30B28CE31BE75DEB00C3EBDC /* ASPShape.h */,
+				30B28CE41BE75DEB00C3EBDC /* ASPShape.m */,
+				30B28CE51BE75DEB00C3EBDC /* ASPSlide.h */,
+				30B28CE61BE75DEB00C3EBDC /* ASPSlide.m */,
+				30B28CE71BE75DEB00C3EBDC /* ASPSlideBackground.h */,
+				30B28CE81BE75DEB00C3EBDC /* ASPSlideBackground.m */,
+				30B28CE91BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.h */,
+				30B28CEA1BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.m */,
+				30B28CEB1BE75DEB00C3EBDC /* ASPSlideComment.h */,
+				30B28CEC1BE75DEB00C3EBDC /* ASPSlideComment.m */,
+				30B28CED1BE75DEB00C3EBDC /* ASPSlideComments.h */,
+				30B28CEE1BE75DEB00C3EBDC /* ASPSlideComments.m */,
+				30B28CEF1BE75DEB00C3EBDC /* ASPSlideCommentsResponse.h */,
+				30B28CF01BE75DEB00C3EBDC /* ASPSlideCommentsResponse.m */,
+				30B28CF11BE75DEB00C3EBDC /* ASPSlideListResponse.h */,
+				30B28CF21BE75DEB00C3EBDC /* ASPSlideListResponse.m */,
+				30B28CF31BE75DEB00C3EBDC /* ASPSlides.h */,
+				30B28CF41BE75DEB00C3EBDC /* ASPSlides.m */,
+				30B28CF51BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.h */,
+				30B28CF61BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.m */,
+				30B28CF71BE75DEB00C3EBDC /* ASPSplitDocumentResponse.h */,
+				30B28CF81BE75DEB00C3EBDC /* ASPSplitDocumentResponse.m */,
+				30B28CF91BE75DEB00C3EBDC /* ASPSplitDocumentResult.h */,
+				30B28CFA1BE75DEB00C3EBDC /* ASPSplitDocumentResult.m */,
+				30B28CFB1BE75DEB00C3EBDC /* ASPTextItem.h */,
+				30B28CFC1BE75DEB00C3EBDC /* ASPTextItem.m */,
+				30B28CFD1BE75DEB00C3EBDC /* ASPTextItems.h */,
+				30B28CFE1BE75DEB00C3EBDC /* ASPTextItems.m */,
+				30B28CFF1BE75DEB00C3EBDC /* ASPTextItemsResponse.h */,
+				30B28D001BE75DEB00C3EBDC /* ASPTextItemsResponse.m */,
+				30B28D011BE75DEB00C3EBDC /* ASPTheme.h */,
+				30B28D021BE75DEB00C3EBDC /* ASPTheme.m */,
+				30B28D031BE75DEB00C3EBDC /* ASPThemeResponse.h */,
+				30B28D041BE75DEB00C3EBDC /* ASPThemeResponse.m */,
+				30B28D051BE75DEB00C3EBDC /* ASPTiffExportOptions.h */,
+				30B28D061BE75DEB00C3EBDC /* ASPTiffExportOptions.m */,
+				30B28D071BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.h */,
+				30B28D081BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		30B28D671BE75DF800C3EBDC /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				30B28D681BE75DF800C3EBDC /* demo.pptx */,
+				30B28D691BE75DF800C3EBDC /* ReadMe.html */,
+				30B28D6A1BE75DF800C3EBDC /* sample-input.pptx */,
+				30B28D6B1BE75DF800C3EBDC /* sample.pptx */,
+				30B28D6C1BE75DF800C3EBDC /* Test.html */,
+				30B28D6D1BE75DF800C3EBDC /* welcome.pptx */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		30B28D6E1BE75DF800C3EBDC /* slides */ = {
+			isa = PBXGroup;
+			children = (
+				30B28D6F1BE75DF800C3EBDC /* ASPSlidesApiTestCase.m */,
+			);
+			path = slides;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3079F08B1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3079F0AE1BE75B0A00406229 /* Build configuration list for PBXNativeTarget "Aspose.Slides_Cloud_SDK_for_ObjectiveC" */;
+			buildPhases = (
+				3079F0881BE75B0A00406229 /* Sources */,
+				3079F0891BE75B0A00406229 /* Frameworks */,
+				3079F08A1BE75B0A00406229 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aspose.Slides_Cloud_SDK_for_ObjectiveC;
+			productName = Aspose.Slides_Cloud_SDK_for_ObjectiveC;
+			productReference = 3079F08C1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3079F0A41BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3079F0B11BE75B0A00406229 /* Build configuration list for PBXNativeTarget "Aspose.Slides_Cloud_SDK_for_ObjectiveCTests" */;
+			buildPhases = (
+				3079F0A11BE75B0A00406229 /* Sources */,
+				3079F0A21BE75B0A00406229 /* Frameworks */,
+				3079F0A31BE75B0A00406229 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3079F0A71BE75B0A00406229 /* PBXTargetDependency */,
+			);
+			name = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests;
+			productName = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests;
+			productReference = 3079F0A51BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3079F0841BE75B0A00406229 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Aspose;
+				TargetAttributes = {
+					3079F08B1BE75B0A00406229 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					3079F0A41BE75B0A00406229 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 3079F08B1BE75B0A00406229;
+					};
+				};
+			};
+			buildConfigurationList = 3079F0871BE75B0A00406229 /* Build configuration list for PBXProject "Aspose.Slides_Cloud_SDK_for_ObjectiveC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3079F0831BE75B0A00406229;
+			productRefGroup = 3079F08D1BE75B0A00406229 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3079F08B1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC */,
+				3079F0A41BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3079F08A1BE75B0A00406229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30B28D791BE75EAE00C3EBDC /* sample-input.pptx in Resources */,
+				30B28D7C1BE75EAE00C3EBDC /* welcome.pptx in Resources */,
+				30B28D771BE75EAE00C3EBDC /* demo.pptx in Resources */,
+				3079F09F1BE75B0A00406229 /* LaunchScreen.storyboard in Resources */,
+				3079F09C1BE75B0A00406229 /* Assets.xcassets in Resources */,
+				30B28D7B1BE75EAE00C3EBDC /* Test.html in Resources */,
+				30B28D7A1BE75EAE00C3EBDC /* sample.pptx in Resources */,
+				3079F09A1BE75B0A00406229 /* Main.storyboard in Resources */,
+				30B28D781BE75EAE00C3EBDC /* ReadMe.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3079F0A31BE75B0A00406229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30B28D741BE75DF800C3EBDC /* Test.html in Resources */,
+				30B28D721BE75DF800C3EBDC /* sample-input.pptx in Resources */,
+				30B28D711BE75DF800C3EBDC /* ReadMe.html in Resources */,
+				30B28D701BE75DF800C3EBDC /* demo.pptx in Resources */,
+				30B28D751BE75DF800C3EBDC /* welcome.pptx in Resources */,
+				30B28D731BE75DF800C3EBDC /* sample.pptx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3079F0881BE75B0A00406229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30B28D311BE75DEB00C3EBDC /* ASPDocumentResponse.m in Sources */,
+				30B28D2B1BE75DEB00C3EBDC /* ASPCustomDashPattern.m in Sources */,
+				30B28D581BE75DEB00C3EBDC /* ASPTextItemsResponse.m in Sources */,
+				30B28D411BE75DEB00C3EBDC /* ASPPlaceholderResponse.m in Sources */,
+				30B28D4C1BE75DEB00C3EBDC /* ASPSlideBackground.m in Sources */,
+				30B28D431BE75DEB00C3EBDC /* ASPPlaceholdersResponse.m in Sources */,
+				30B28D521BE75DEB00C3EBDC /* ASPSlides.m in Sources */,
+				30B28D551BE75DEB00C3EBDC /* ASPSplitDocumentResult.m in Sources */,
+				30B28D351BE75DEB00C3EBDC /* ASPFontSet.m in Sources */,
+				30B28D5B1BE75DEB00C3EBDC /* ASPTiffExportOptions.m in Sources */,
+				30B28D2E1BE75DEB00C3EBDC /* ASPDocumentPropertiesResponse.m in Sources */,
+				30B28D2A1BE75DEB00C3EBDC /* ASPCommonResponse.m in Sources */,
+				30B28D401BE75DEB00C3EBDC /* ASPPlaceholder.m in Sources */,
+				3087AC531BFC67AE00240821 /* ASPParagraphs.m in Sources */,
+				30B28D2F1BE75DEB00C3EBDC /* ASPDocumentProperty.m in Sources */,
+				30B28D451BE75DEB00C3EBDC /* ASPPresentationsMergeRequest.m in Sources */,
+				30B28D321BE75DEB00C3EBDC /* ASPFillFormat.m in Sources */,
+				30B28D4B1BE75DEB00C3EBDC /* ASPSlide.m in Sources */,
+				3087AC541BFC67AE00240821 /* ASPShapeList.m in Sources */,
+				30B28D331BE75DEB00C3EBDC /* ASPFontScheme.m in Sources */,
+				30B28D441BE75DEB00C3EBDC /* ASPPortion.m in Sources */,
+				30B28D261BE75DEB00C3EBDC /* ASPArrowHeadProperties.m in Sources */,
+				3087AC511BFC67AE00240821 /* ASPParagraph.m in Sources */,
+				30B28D501BE75DEB00C3EBDC /* ASPSlideCommentsResponse.m in Sources */,
+				30B28D291BE75DEB00C3EBDC /* ASPColorSchemeResponse.m in Sources */,
+				3079F0971BE75B0A00406229 /* ViewController.m in Sources */,
+				3087AC571BFC67AE00240821 /* ASPShapeResponse.m in Sources */,
+				30B28D3F1BE75DEB00C3EBDC /* ASPPdfExportOptions.m in Sources */,
+				3079F0941BE75B0A00406229 /* AppDelegate.m in Sources */,
+				30B28D461BE75DEB00C3EBDC /* ASPPresentationStringReplaceResponse.m in Sources */,
+				30B28D4D1BE75DEB00C3EBDC /* ASPSlideBackgroundResponse.m in Sources */,
+				30B28D541BE75DEB00C3EBDC /* ASPSplitDocumentResponse.m in Sources */,
+				3079F0911BE75B0A00406229 /* main.m in Sources */,
+				30B28D531BE75DEB00C3EBDC /* ASPSlideStringReplaceResponse.m in Sources */,
+				30B28D371BE75DEB00C3EBDC /* ASPFormatSchemeResponse.m in Sources */,
+				30B28D471BE75DEB00C3EBDC /* ASPPresentationToMerge.m in Sources */,
+				30B28D301BE75DEB00C3EBDC /* ASPDocumentPropertyResponse.m in Sources */,
+				3087AC561BFC67AE00240821 /* ASPShapeParagraphsResponse.m in Sources */,
+				30B28D5A1BE75DEB00C3EBDC /* ASPThemeResponse.m in Sources */,
+				30B28D2D1BE75DEB00C3EBDC /* ASPDocumentProperties.m in Sources */,
+				30B28D571BE75DEB00C3EBDC /* ASPTextItems.m in Sources */,
+				30B28D591BE75DEB00C3EBDC /* ASPTheme.m in Sources */,
+				30B28D5C1BE75DEB00C3EBDC /* JSONValueTransformer+ISO8601.m in Sources */,
+				30B28D3B1BE75DEB00C3EBDC /* ASPImagesResponse.m in Sources */,
+				30B28D511BE75DEB00C3EBDC /* ASPSlideListResponse.m in Sources */,
+				30B28D3E1BE75DEB00C3EBDC /* ASPOrderedMergeRequest.m in Sources */,
+				30B28D341BE75DEB00C3EBDC /* ASPFontSchemeResponse.m in Sources */,
+				30B28D421BE75DEB00C3EBDC /* ASPPlaceholders.m in Sources */,
+				30B28D361BE75DEB00C3EBDC /* ASPFormatScheme.m in Sources */,
+				30B28D3A1BE75DEB00C3EBDC /* ASPImages.m in Sources */,
+				30B28D481BE75DEB00C3EBDC /* ASPResourceUri.m in Sources */,
+				30B28D2C1BE75DEB00C3EBDC /* ASPDocument.m in Sources */,
+				30B28D561BE75DEB00C3EBDC /* ASPTextItem.m in Sources */,
+				30B28D381BE75DEB00C3EBDC /* ASPHtmlExportOptions.m in Sources */,
+				30B28D4A1BE75DEB00C3EBDC /* ASPShape.m in Sources */,
+				30B28D491BE75DEB00C3EBDC /* ASPResourceUriElement.m in Sources */,
+				30B28D201BE75DEB00C3EBDC /* ASPSlidesApi.m in Sources */,
+				3087AC501BFC67AE00240821 /* ASPNewShapeResponse.m in Sources */,
+				30B28D281BE75DEB00C3EBDC /* ASPColorScheme.m in Sources */,
+				3087AC581BFC67AE00240821 /* ASPSlideResponse.m in Sources */,
+				30B28D391BE75DEB00C3EBDC /* ASPImage.m in Sources */,
+				3087AC521BFC67AE00240821 /* ASPParagraphPortionResponse.m in Sources */,
+				30B28D4E1BE75DEB00C3EBDC /* ASPSlideComment.m in Sources */,
+				30B28D4F1BE75DEB00C3EBDC /* ASPSlideComments.m in Sources */,
+				3087AC551BFC67AE00240821 /* ASPShapeParagraphResponse.m in Sources */,
+				30B28D3C1BE75DEB00C3EBDC /* ASPLineFormat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3079F0A11BE75B0A00406229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30B28D761BE75DF800C3EBDC /* ASPSlidesApiTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3079F0A71BE75B0A00406229 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3079F08B1BE75B0A00406229 /* Aspose.Slides_Cloud_SDK_for_ObjectiveC */;
+			targetProxy = 3079F0A61BE75B0A00406229 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3079F0981BE75B0A00406229 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3079F0991BE75B0A00406229 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3079F09D1BE75B0A00406229 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3079F09E1BE75B0A00406229 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3079F0AC1BE75B0A00406229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3079F0AD1BE75B0A00406229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3079F0AF1BE75B0A00406229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Aspose.Slides_Cloud_SDK_for_ObjectiveC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Slides-Cloud-SDK-for-ObjectiveC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3079F0B01BE75B0A00406229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Aspose.Slides_Cloud_SDK_for_ObjectiveC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Slides-Cloud-SDK-for-ObjectiveC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3079F0B21BE75B0A00406229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Slides-Cloud-SDK-for-ObjectiveCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aspose.Slides_Cloud_SDK_for_ObjectiveC.app/Aspose.Slides_Cloud_SDK_for_ObjectiveC";
+			};
+			name = Debug;
+		};
+		3079F0B31BE75B0A00406229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Aspose.Slides_Cloud_SDK_for_ObjectiveCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Slides-Cloud-SDK-for-ObjectiveCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aspose.Slides_Cloud_SDK_for_ObjectiveC.app/Aspose.Slides_Cloud_SDK_for_ObjectiveC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3079F0871BE75B0A00406229 /* Build configuration list for PBXProject "Aspose.Slides_Cloud_SDK_for_ObjectiveC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3079F0AC1BE75B0A00406229 /* Debug */,
+				3079F0AD1BE75B0A00406229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3079F0AE1BE75B0A00406229 /* Build configuration list for PBXNativeTarget "Aspose.Slides_Cloud_SDK_for_ObjectiveC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3079F0AF1BE75B0A00406229 /* Debug */,
+				3079F0B01BE75B0A00406229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3079F0B11BE75B0A00406229 /* Build configuration list for PBXNativeTarget "Aspose.Slides_Cloud_SDK_for_ObjectiveCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3079F0B21BE75B0A00406229 /* Debug */,
+				3079F0B31BE75B0A00406229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3079F0841BE75B0A00406229 /* Project object */;
+}
