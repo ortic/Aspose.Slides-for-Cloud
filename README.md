@@ -20,6 +20,7 @@ Directory | Description
 [Node.js SDK](SDKs/Aspose.Slides_Cloud_SDK_for_NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
 [Ruby SDK](SDKs/Aspose.Slides_Cloud_SDK_For_Ruby)  | Aspose.Slides Cloud SDK for Ruby.
 [.NET SDK](SDKs/Aspose.Slides_Cloud_SDK_For_CSharp)  | Aspose.Slides Cloud SDK for .NET.
+[Perl SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Perl)  | Aspose.Slides Cloud SDK for Perl.
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
