@@ -8,7 +8,7 @@
       string basePath;
       private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();
 
-      public SlidesApi(String apiKey, String appSid, String basePath = "http://api.aspose.com/v1.1")
+      public SlidesApi(String apiKey, String appSid, String basePath )
       {
 	apiInvoker.apiKey = apiKey;
         apiInvoker.appSid = appSid;
