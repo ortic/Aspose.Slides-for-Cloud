@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposeSlides", "AsposeSlides.csproj", "{94C66518-A893-451C-ABA7-555AC23D6005}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidesTest", "SlidesTest\SlidesTest.csproj", "{2E0C163E-0BB6-4F55-9C3B-04A0641EA659}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49EC31BB-3A94-4372-A989-188520267C10}"
 	ProjectSection(SolutionItems) = preProject
 		AsposeSlides.vsmdi = AsposeSlides.vsmdi
@@ -12,10 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposeSlides", "AsposeSlides.csproj", "{94C66518-A893-451C-ABA7-555AC23D6005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidesTest", "SlidesTest\SlidesTest.csproj", "{2E0C163E-0BB6-4F55-9C3B-04A0641EA659}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = AsposeSlides.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
