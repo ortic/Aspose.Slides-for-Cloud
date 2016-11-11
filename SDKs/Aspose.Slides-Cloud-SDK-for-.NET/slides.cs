@@ -13,7 +13,7 @@ namespace AsposeSlides
 
             string APIKEY = "xxxxx";
             string APPSID = "xxxxx";
-            string BASEPATH = "http://api.aspose.com/v1.1";
+            string BASEPATH = "http://api.aspose.cloud/v1.1";
 
 
             try

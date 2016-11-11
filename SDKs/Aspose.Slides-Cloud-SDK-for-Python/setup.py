@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
     name = 'asposeslidescloud',
     packages = find_packages(),
-    version = '1.0.0',
+    version = '1.0.1',
     description = 'Aspose.Slides Cloud SDK for Python allows you to use Aspose.Slides APIs in your Python applications',
     author='Farooq Sheikh',
     author_email='farooq.sheikh@aspose.com',

@@ -7,7 +7,7 @@ use utf8;
 use Log::Any qw($log);
 use Carp;
 
-use constant VERSION => '1.0.0';
+use constant VERSION => '1.01';
 
 # class/static variables
 our $api_client;

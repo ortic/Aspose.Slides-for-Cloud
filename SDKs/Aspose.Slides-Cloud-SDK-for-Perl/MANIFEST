@@ -95,6 +95,7 @@ lib/AsposeSlidesCloud/Object/ThemeResponse.pm
 lib/AsposeSlidesCloud/Object/TiffExportOptions.pm
 lib/AsposeSlidesCloud/Object/Underline.pm
 lib/AsposeSlidesCloud/SlidesApi.pm
+Makefile.PL
 MANIFEST
 README
 t/01_slides_api.t
@@ -105,4 +106,5 @@ t/data/sample-input.pptx
 t/data/sample.pptx
 t/data/Test.html
 t/data/welcome.pptx
-Makefile.PL
+META.yml
+META.json
