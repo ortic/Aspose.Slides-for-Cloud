@@ -12,14 +12,14 @@ Aspose.Slides for Cloud is implemented as a REST API. If you use SDK, it hides t
 
 Directory | Description
 --------- | -----------
-[Java SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Java)  |  Aspose.Slides Cloud SDK for Java.
-[Android SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Android) | Aspose.Slides Cloud SDK for Android.
-[PHP SDK](SDKs/Aspose.Slides-Cloud-SDK-for-PHP)  | Aspose.Slides Cloud SDK for PHP.
-[Python SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Python)  | Aspose.Slides Cloud SDK for Python.
-[iOS SDK](SDKs/Aspose.Slides-Cloud-SDK-for-ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
-[Node.js SDK](SDKs/Aspose.Slides-Cloud-SDK-for-NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
-[Ruby SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Ruby)  | Aspose.Slides Cloud SDK for Ruby.
 [.NET SDK](SDKs/Aspose.Slides-Cloud-SDK-for-.NET)  | Aspose.Slides Cloud SDK for .NET.
+[Java SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Java)  |  Aspose.Slides Cloud SDK for Java.
+[PHP SDK](SDKs/Aspose.Slides-Cloud-SDK-for-PHP)  | Aspose.Slides Cloud SDK for PHP.
+[Ruby SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Ruby)  | Aspose.Slides Cloud SDK for Ruby.
+[Python SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Python)  | Aspose.Slides Cloud SDK for Python.
+[Node.js SDK](SDKs/Aspose.Slides-Cloud-SDK-for-NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
+[Android SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Android) | Aspose.Slides Cloud SDK for Android.
+[IOS SDK](SDKs/Aspose.Slides-Cloud-SDK-for-ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
 [Perl SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Perl)  | Aspose.Slides Cloud SDK for Perl.
 ## Resources
 
