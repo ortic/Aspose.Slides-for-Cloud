@@ -2,7 +2,7 @@
 This repository contains Aspose.Slides Cloud SDK for .Net source code. This SDK allows you to work with Aspose.Slides Cloud REST APIs in your .NET applications quickly and easily.
 
 <p align="center">
-  <a title="Download complete Aspose.PDF for Cloud source code" href="https://github.com/asposeslides/Aspose_slides_Cloud/archive/master.zip">
+  <a title="Download complete Aspose.Slides for Cloud source code" href="https://github.com/asposeslides/Aspose_slides_Cloud/archive/master.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
