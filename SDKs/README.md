@@ -10,7 +10,6 @@ This folder contains SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cl
 Directory | Description
 --------- | -----------
 [.NET SDK](Aspose.Slides-Cloud-SDK-for-.NET)  | Aspose.Slides Cloud SDK for .NET.
-
 [Java SDK](Aspose.Slides-Cloud-SDK-for-Java)  |  Aspose.Slides Cloud SDK for Java.
 [PHP SDK](Aspose.Slides-Cloud-SDK-for-PHP)  | Aspose.Slides Cloud SDK for PHP.
 [Ruby SDK](Aspose.Slides-Cloud-SDK-for-Ruby)  | Aspose.Slides Cloud SDK for Ruby.
