@@ -9,12 +9,13 @@ This folder contains SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cl
 
 Directory | Description
 --------- | -----------
-[Java SDK](Aspose.Slides-Cloud-SDK-for-Java)  |  Aspose.Slides Cloud SDK for Java.
-[Android SDK](Aspose.Slides-Cloud-SDK-for-Android) | Aspose.Slides Cloud SDK for Android.
-[PHP SDK](Aspose.Slides-Cloud-SDK-for-PHP)  | Aspose.Slides Cloud SDK for PHP.
-[Python SDK](Aspose.Slides-Cloud-SDK-for-Python)  | Aspose.Slides Cloud SDK for Python.
-[iOS SDK](Aspose.Slides-Cloud-SDK-for-ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
-[Node.js SDK](Aspose.Slides-Cloud-SDK-for-NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
-[Ruby SDK](Aspose.Slides-Cloud-SDK-for-Ruby)  | Aspose.Slides Cloud SDK for Ruby.
 [.NET SDK](Aspose.Slides-Cloud-SDK-for-.NET)  | Aspose.Slides Cloud SDK for .NET.
+
+[Java SDK](Aspose.Slides-Cloud-SDK-for-Java)  |  Aspose.Slides Cloud SDK for Java.
+[PHP SDK](Aspose.Slides-Cloud-SDK-for-PHP)  | Aspose.Slides Cloud SDK for PHP.
+[Ruby SDK](Aspose.Slides-Cloud-SDK-for-Ruby)  | Aspose.Slides Cloud SDK for Ruby.
+[Python SDK](Aspose.Slides-Cloud-SDK-for-Python)  | Aspose.Slides Cloud SDK for Python.
+[Node.js SDK](Aspose.Slides-Cloud-SDK-for-NodeJS)  | Aspose.Slides Cloud SDK for Node.js.
+[Android SDK](Aspose.Slides-Cloud-SDK-for-Android) | Aspose.Slides Cloud SDK for Android.
+[iOS SDK](Aspose.Slides-Cloud-SDK-for-ObjectiveC)  | Aspose.Slides Cloud SDK for iOS.
 [Perl SDK](Aspose.Slides-Cloud-SDK-for-Perl)  | Aspose.Slides Cloud SDK for Perl.
