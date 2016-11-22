@@ -3,7 +3,7 @@
 This repository contains Aspose.Slides Cloud SDK for Node.js source code. This SDK allows you to work with Aspose.Slides Cloud REST APIs in your Node.js applications quickly and easily. 
 
 ##How to Use the SDK?
-The complete source code is available in this repository folder, you can either directly use it in your project or use Maven. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/slidescloud/Available+SDKs).
+The complete source code is available in this repository folder, you can either directly use it in your project or use NPM. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/slidescloud/Available+SDKs).
 
 ## Quick SDK Tutorial
 ```javascript
