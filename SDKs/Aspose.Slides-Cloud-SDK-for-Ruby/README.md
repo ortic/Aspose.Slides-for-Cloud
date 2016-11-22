@@ -1,10 +1,9 @@
 # Aspose.Slides Cloud SDK For Ruby
 This SDK lets you use [Aspose Cloud Slides APIs](http://www.aspose.com/cloud/powerpoint-api.aspx) in your web apps.
 
-## Installing
-You can simply install Aspose Slides Cloud SDK with gem:
+##How to Use the SDK?
+The complete source code is available in this repository folder, you can either directly use it in your project or use Maven. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/slidescloud/Available+SDKs).
 
-`gem install aspose_slides_cloud`
 
 ## Usage
 APIs of this SDK can be called as follows:
@@ -35,8 +34,5 @@ end
 ## Unit Tests
 Aspose Slides SDK includes a suite of unit tests within the [test](https://github.com/asposeslides/Aspose_Slides_Cloud/blob/master/SDKs/Aspose.Slides_Cloud_SDK_For_Ruby/test/slides_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Slides SDK.
 
-## Contact
-Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
-
-## License
-Aspose Slides SDK is available under the MIT license. See the [LICENSE](https://github.com/asposeslides/Aspose_Slides_Cloud/blob/master/SDKs/Aspose.Slides_Cloud_SDK_For_Ruby/LICENSE) file for more info.
+##Contact Us
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
