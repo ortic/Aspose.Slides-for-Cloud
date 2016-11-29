@@ -3,7 +3,7 @@
 namespace Aspose\Slides;
 
 use Aspose\Slides\ApiException as Exception;
-use Aspose\Slides\ApiClient;
+use Aspose\Slides\APIClient;
 
 class SlidesApi {
 
