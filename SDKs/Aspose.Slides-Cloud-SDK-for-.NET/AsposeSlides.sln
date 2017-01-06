@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49EC31BB-3A94-4372-A989-188520267C10}"
 	ProjectSection(SolutionItems) = preProject
 		AsposeSlides.vsmdi = AsposeSlides.vsmdi
@@ -23,13 +25,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|x86.ActiveCfg = Debug|x86
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Debug|x86.Build.0 = Debug|x86
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|Any CPU.ActiveCfg = Release|x86
-		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|Mixed Platforms.Build.0 = Release|x86
+		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|x86.ActiveCfg = Release|x86
 		{94C66518-A893-451C-ABA7-555AC23D6005}.Release|x86.Build.0 = Release|x86
 		{2E0C163E-0BB6-4F55-9C3B-04A0641EA659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
