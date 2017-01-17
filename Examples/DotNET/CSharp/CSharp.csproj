@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67A7DC15-1BFB-42B4-883C-E7338905FF14}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aspose.Tasks.Cloud.Examples.CSharp</RootNamespace>
+    <AssemblyName>Aspose.Tasks.Cloud.Examples.CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Slides-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Slides-Cloud.1.0.3\lib\Aspose.Slides-Cloud.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Storage-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Storage-Cloud.1.0.7\lib\Aspose.Storage-Cloud.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Document-Properties\RemoveProperties.cs" />
+    <Compile Include="Document-Properties\SetProperty.cs" />
+    <Compile Include="Document-Properties\GetProperties.cs" />
+    <Compile Include="Document\ConvertToOtherFormatWithAdditionalSettings.cs" />
+    <Compile Include="Document\ConvertToOtherFormatUsingThirdPartyStorage.cs" />
+    <Compile Include="Document\CreateEmptyPresentation.cs" />
+    <Compile Include="Document\SplitPresentation.cs" />
+    <Compile Include="Document\MergeSelectedSlides.cs" />
+    <Compile Include="Document\MergePresentations.cs" />
+    <Compile Include="Document\ConvertToOtherFormatUsingStorage.cs" />
+    <Compile Include="Images\GetNumberOfImagesInPresentationUsingThirdPartyStorage.cs" />
+    <Compile Include="Images\GetNumberOfImagesInSlideUsingThirdPartyStorage.cs" />
+    <Compile Include="Images\GetNumberOfImagesInSlide.cs" />
+    <Compile Include="Images\GetNumberOfImagesInPresentation.cs" />
+    <Compile Include="RunExamples.cs" />
+    <Compile Include="Document\ConvertToOtherFormat.cs" />
+    <Compile Include="Shapes\ExtractShapeUsingThirdPartyStorage.cs" />
+    <Compile Include="Shapes\GetParticularShape.cs" />
+    <Compile Include="Shapes\ExtractShapes.cs" />
+    <Compile Include="Slides\GetSlideCountUsingThirdPartyStorage.cs" />
+    <Compile Include="Slides\DetectSlidesUsingThirdPartyStorage.cs" />
+    <Compile Include="Slides\GetAspectRatio.cs" />
+    <Compile Include="Slides\GetComments.cs" />
+    <Compile Include="Slides\DetectSlideBackground.cs" />
+    <Compile Include="Slides\GetSlideBackground.cs" />
+    <Compile Include="Slides\ChangePosition.cs" />
+    <Compile Include="Slides\CopySlides.cs" />
+    <Compile Include="Slides\AddNewSlide.cs" />
+    <Compile Include="Slides\DeleteSlide.cs" />
+    <Compile Include="Slides\GetSlideFontScheme.cs" />
+    <Compile Include="Slides\GetSlideColorScheme.cs" />
+    <Compile Include="Slides\GetPlaceholder.cs" />
+    <Compile Include="Slides\GetPlaceholderCount.cs" />
+    <Compile Include="Slides\GetSlideCount.cs" />
+    <Compile Include="Slides\DetectAllSlides.cs" />
+    <Compile Include="Slides\SaveAsImageWithDefaultSizeUsingThirdPartyStorage.cs" />
+    <Compile Include="Slides\SaveAsImageWithSpecifiedSizeUsingThirdPartyStorage.cs" />
+    <Compile Include="Slides\SaveAsImageWithSpecifiedSize.cs" />
+    <Compile Include="Slides\SaveAsImageWithDefaultSize.cs" />
+    <Compile Include="Text\GetAllTextItemsFromSlideUsingThirdPartyStorage.cs" />
+    <Compile Include="Text\GetAllTextItemsUsingThirdPartyStorage.cs" />
+    <Compile Include="Text\ReplaceAllInstancesInSlide.cs" />
+    <Compile Include="Text\ReplaceAllInstancesInPresentation.cs" />
+    <Compile Include="Text\GetAllTextItemsFromSlide.cs" />
+    <Compile Include="Text\GetAllTextItems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
