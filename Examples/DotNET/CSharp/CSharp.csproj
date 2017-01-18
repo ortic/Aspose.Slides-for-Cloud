@@ -7,8 +7,8 @@
     <ProjectGuid>{67A7DC15-1BFB-42B4-883C-E7338905FF14}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aspose.Tasks.Cloud.Examples.CSharp</RootNamespace>
-    <AssemblyName>Aspose.Tasks.Cloud.Examples.CSharp</AssemblyName>
+    <RootNamespace>Aspose.Slides.Cloud.Examples.CSharp</RootNamespace>
+    <AssemblyName>Aspose.Slides.Cloud.Examples.CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
