@@ -20,6 +20,7 @@ Data/*Out*
 TestResults/
 *.vsmdi
 test-results/
+node_modules/
 *.userprefs
 packages/
 Plugins/Aspose_Words_NET_for_PHP/.idea/*
