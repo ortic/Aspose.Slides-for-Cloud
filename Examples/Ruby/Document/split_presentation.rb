@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class Document
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,15 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
-  	file_name = "sample.pptx"
+  # Splitting presentations. Create one image per slide.
+  def split_presentation
+  	file_name = "sample-input.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	response = @slides_api.post_slides_split(file_name, {to: 3, from: 2, format: "png"})
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+document = Document.new()
+puts document.post_slides_split

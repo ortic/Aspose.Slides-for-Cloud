@@ -16,15 +16,17 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
-  	file_name = "sample.pptx"
+  # Reorder presentation slide position
+  def reorder_presentation_slide_position
+  	file_name = "sample-input.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	old_position = 1 
+  	new_position = 2
+  	response = @slides_api.post_slides_reorder_position(file_name, old_position, new_position)
   end
 
 end
 
 slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+puts slides.reorder_presentation_slide_position

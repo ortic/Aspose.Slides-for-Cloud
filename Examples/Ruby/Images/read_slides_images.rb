@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class Images
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,15 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
-  	file_name = "sample.pptx"
+  # Read presentation images info.
+  def read_slides_images
+  	file_name = "sample-input.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	response = @slides_api.get_slides_images(file_name)
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+images = Images.new()
+puts images.read_slides_images

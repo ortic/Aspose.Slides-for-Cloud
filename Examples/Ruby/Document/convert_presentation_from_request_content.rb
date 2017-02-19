@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class Document
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,14 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
+  # Convert presentation from request content to format specified.
+  def convert_presentation_from_request_content
   	file_name = "sample.pptx"
-  	upload_file(file_name)
-  
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	convert_to_format = "pdf"
+  	response = @slides_api.put_slides_convert(File.open("../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+document = Document.new()
+puts document.convert_presentation_from_request_content

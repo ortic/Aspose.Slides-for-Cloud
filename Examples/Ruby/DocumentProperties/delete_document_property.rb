@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class DocumentProperties
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,16 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
-  	file_name = "sample.pptx"
+  # Delete document property.
+  def delete_document_property
+  	file_name = "sample-input.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	property_name = "AsposeAuthor"
+  	response = @slides_api.delete_slides_document_property(file_name, property_name)
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+documentProperties = DocumentProperties.new()
+puts documentProperties.delete_document_property

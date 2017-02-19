@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class Text
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,17 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
+  # Replace text by a new value.
+  def replace_presentation_text
   	file_name = "sample.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	old_value = "aspose" 
+  	new_value = "Aspose File Format APIs"
+  	response = @slides_api.post_slides_presentation_replace_text(file_name, old_value, new_value)
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+text = Text.new()
+puts text.replace_presentation_text

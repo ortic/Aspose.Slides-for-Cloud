@@ -7,7 +7,7 @@ class Slides
 
   def initialize
     #Get App key and App SID from https://cloud.aspose.com
-    AsposeApp.app_key_and_sid("da77c9f5da014d91faf2961ecec2de66", "B01A15E5-1B83-4B9A-8EB3-0F2BFA6AC766")
+    AsposeApp.app_key_and_sid("", "")
     @slides_api = SlidesApi.new
   end
 
@@ -16,6 +16,7 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Read slide theme color scheme info.
   def get_slides_theme_color_scheme
   	file_name = "sample.pptx"
   	upload_file(file_name)

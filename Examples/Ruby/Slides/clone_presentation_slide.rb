@@ -16,15 +16,16 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
+  def clone_presentation_slide
   	file_name = "sample.pptx"
   	upload_file(file_name)
   
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	position = 1
+  	slide_to_clone = 1
+  	response = @slides_api.post_clone_presentation_slide(file_name, position, slide_to_clone)
   end
 
 end
 
 slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+puts slides.clone_presentation_slide

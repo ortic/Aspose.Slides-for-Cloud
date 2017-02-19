@@ -16,15 +16,16 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
-  	file_name = "sample.pptx"
+  # Read slide placeholder info.
+  def read_slide_placeholder_info
+  	file_name = "sample-input.pptx"
   	upload_file(file_name)
-  
-  	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+  	slide_index = 1 
+  	placeholder_index = 0
+  	response = @slides_api.get_slides_placeholder(file_name, slide_index, placeholder_index)
   end
 
 end
 
 slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+puts slides.read_slide_placeholder_info

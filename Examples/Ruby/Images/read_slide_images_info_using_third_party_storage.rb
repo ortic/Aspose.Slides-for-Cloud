@@ -1,6 +1,6 @@
 require 'aspose_slides_cloud'
 
-class Slides
+class Images
 
   include AsposeSlidesCloud
   include AsposeStorageCloud
@@ -16,15 +16,17 @@ class Slides
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_slides_theme_font_scheme
+  def read_slide_images_info_using_third_party_storage
   	file_name = "sample.pptx"
   	upload_file(file_name)
-  
   	slide_index = 1
-  	response = @slides_api.get_slides_theme_font_scheme(file_name, slide_index)
+    folder = ""
+    storage = "MyDropboxStorage"
+
+  	response = @slides_api.get_slides_slide_images(file_name, slide_index, {storage: storage, folder: folder})
   end
 
 end
 
-slides = Slides.new()
-puts slides.get_slides_theme_font_scheme
+images = Images.new()
+puts images.read_slide_images_info_using_third_party_storage
