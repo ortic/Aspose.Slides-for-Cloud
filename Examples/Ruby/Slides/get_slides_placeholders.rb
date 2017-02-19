@@ -13,7 +13,7 @@ class Slides
 
   def upload_file(file_name)
     @storage_api = StorageApi.new 
-    response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
+    response = @storage_api.put_create(file_name, File.open("../../../data/" << file_name,"r") { |io| io.read } )
   end
 
   def get_slides_placeholders

@@ -13,13 +13,13 @@ class Document
 
   def upload_file(file_name)
     @storage_api = StorageApi.new 
-    response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
+    response = @storage_api.put_create(file_name, File.open("../../../data/" << file_name,"r") { |io| io.read } )
   end
 
   # Create presentation
   def create_presentation
   	file_name = "newPresentation.pptx"
-  	response = @slides_api.put_new_presentation(file_name, File.open("../data/sample.pptx","r") { |io| io.read })
+  	response = @slides_api.put_new_presentation(file_name, File.open("../../../data/sample.pptx","r") { |io| io.read })
   end
 
 end
