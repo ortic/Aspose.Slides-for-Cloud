@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Slides
@@ -29,3 +30,4 @@ end
 
 slides = Slides.new()
 puts slides.read_slide_info
+#ExEnd:

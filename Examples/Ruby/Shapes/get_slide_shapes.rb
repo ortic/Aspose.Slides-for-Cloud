@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Shapes
@@ -29,3 +30,4 @@ end
 
 shapes = Shapes.new()
 puts shapes.get_slide_shapes
+#ExEnd:

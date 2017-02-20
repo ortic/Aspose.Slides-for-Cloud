@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Document
@@ -28,3 +29,4 @@ end
 
 document = Document.new()
 puts document.get_slides_document_in_specified_format
+#ExEnd:

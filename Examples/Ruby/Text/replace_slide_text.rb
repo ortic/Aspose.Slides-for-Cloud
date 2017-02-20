@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Text
@@ -31,3 +32,4 @@ end
 
 text = Text.new()
 puts text.replace_slide_text
+#ExEnd:

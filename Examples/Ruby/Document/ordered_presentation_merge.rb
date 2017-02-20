@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Document
@@ -43,3 +44,4 @@ end
 
 document = Document.new()
 puts document.ordered_presentation_merge
+#ExEnd:

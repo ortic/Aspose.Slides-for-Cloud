@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Text
@@ -29,3 +30,4 @@ end
 
 text = Text.new()
 puts text.get_slide_text_items
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Slides
@@ -33,3 +34,4 @@ end
 
 slides = Slides.new()
 puts slides.save_slide_as_image_with_specified_size_using_third_party_storage
+#ExEnd:

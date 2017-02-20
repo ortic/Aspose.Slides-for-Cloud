@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Shapes
@@ -31,3 +32,4 @@ end
 
 shapes = Shapes.new()
 puts shapes.extract_shapes_from_a_slide_using_third_part_storage
+#ExEnd:

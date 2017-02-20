@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Document
@@ -31,3 +32,4 @@ end
 
 document = Document.new()
 puts document.convert_to_other_file_format_using_third_part_storage
+#ExEnd:

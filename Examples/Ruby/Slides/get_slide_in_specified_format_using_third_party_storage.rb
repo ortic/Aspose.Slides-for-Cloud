@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Slides
@@ -31,3 +32,4 @@ end
 
 slides = Slides.new()
 puts slides.get_slide_in_specified_format_using_third_party_storage
+#ExEnd:

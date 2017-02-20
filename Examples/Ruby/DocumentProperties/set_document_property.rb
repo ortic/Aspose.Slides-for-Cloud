@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class DocumentProperties
@@ -32,3 +33,4 @@ end
 
 documentProperties = DocumentProperties.new()
 puts documentProperties.set_document_property
+#ExEnd:

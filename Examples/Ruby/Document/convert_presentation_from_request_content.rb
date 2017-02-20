@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_slides_cloud'
 
 class Document
@@ -27,3 +28,4 @@ end
 
 document = Document.new()
 puts document.convert_presentation_from_request_content
+#ExEnd:
