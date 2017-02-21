@@ -27,7 +27,7 @@ $AsposeSlidesCloud::Configuration::debug = 1;
 $AsposeStorageCloud::Configuration::app_sid = $configProps->{'app_sid'};
 $AsposeStorageCloud::Configuration::api_key = $configProps->{'api_key'};
 
-# Instantiate Aspose.Storage and Aspose.Pdf API SDK
+# Instantiate Aspose.Storage and Aspose.Slides API SDK
 my $storageApi = AsposeStorageCloud::StorageApi->new();
 my $slidesApi = AsposeSlidesCloud::SlidesApi->new();
 
@@ -43,7 +43,7 @@ my $response = $storageApi->PutCreate(Path => $name, file => $data_path.$name);
 $response = $slidesApi->PostSlidesReorderPosition(name => $name, oldPosition=>$oldPosition, newPosition=>$newPosition);
 
 if($response->{'Status'} eq 'OK'){
-	#download presentation from cloud storage
+	# Download presentation from cloud storage
 	my $output_file = $out_path. $name;
 	$response = $storageApi->GetDownload(Path => $name);;
 	write_file($output_file, { binmode => ":raw" }, $response->{'Content'});

@@ -6,10 +6,6 @@ use utf8;
 use File::Slurp; # From CPAN
 use JSON;
 
-use AsposeStorageCloud::StorageApi;
-use AsposeStorageCloud::ApiClient;
-use AsposeStorageCloud::Configuration;
-
 use AsposeSlidesCloud::SlidesApi;
 use AsposeSlidesCloud::ApiClient;
 use AsposeSlidesCloud::Configuration;
@@ -24,11 +20,7 @@ $AsposeSlidesCloud::Configuration::app_sid = $configProps->{'app_sid'};
 $AsposeSlidesCloud::Configuration::api_key = $configProps->{'api_key'};
 $AsposeSlidesCloud::Configuration::debug = 1;
 
-$AsposeStorageCloud::Configuration::app_sid = $configProps->{'app_sid'};
-$AsposeStorageCloud::Configuration::api_key = $configProps->{'api_key'};
-
-# Instantiate Aspose.Storage and Aspose.Pdf API SDK
-my $storageApi = AsposeStorageCloud::StorageApi->new();
+# Instantiate Aspose.Slide API SDK
 my $slidesApi = AsposeSlidesCloud::SlidesApi->new();
 
 # Set input file name

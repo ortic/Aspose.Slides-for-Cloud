@@ -27,7 +27,7 @@ $AsposeSlidesCloud::Configuration::debug = 1;
 $AsposeStorageCloud::Configuration::app_sid = $configProps->{'app_sid'};
 $AsposeStorageCloud::Configuration::api_key = $configProps->{'api_key'};
 
-# Instantiate Aspose.Storage and Aspose.Pdf API SDK
+# Instantiate Aspose.Storage and Aspose.Slides API SDK
 my $storageApi = AsposeStorageCloud::StorageApi->new();
 my $slidesApi = AsposeSlidesCloud::SlidesApi->new();
 
