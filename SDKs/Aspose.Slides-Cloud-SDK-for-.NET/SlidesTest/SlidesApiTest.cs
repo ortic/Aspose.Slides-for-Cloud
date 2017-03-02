@@ -83,7 +83,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideListResponse actual;
             actual = target.DeleteSlideByIndex(name, slideIndex, folder, storage);
@@ -105,7 +105,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideListResponse actual;
             actual = target.DeleteSlidesCleanSlidesList(name, folder, storage);
@@ -127,7 +127,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             DocumentPropertiesResponse actual;
             actual = target.DeleteSlidesDocumentProperties(name, folder, storage);
@@ -150,7 +150,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             CommonResponse actual;
             actual = target.DeleteSlidesDocumentProperty(name, propertyName, folder, storage);
@@ -173,7 +173,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideBackgroundResponse actual;
             actual = target.DeleteSlidesSlideBackground(name, slideIndex, folder, storage);
@@ -199,7 +199,7 @@ namespace SlidesTest
             int? portionIndex = 1; 
             string folder = null; 
             string storage = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             ResponseMessage actual;
             actual = target.GetParagraphPortion(name, slideIndex, shapeIndex, paragraphIndex, portionIndex, folder, storage);
             Assert.AreEqual(200, actual.Code);
@@ -219,7 +219,7 @@ namespace SlidesTest
             int? paragraphIndex = 1; 
             string folder = null; 
             string storage = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             ResponseMessage actual;
             actual = target.GetShapeParagraph(name, slideIndex, shapeIndex, paragraphIndex, folder, storage);
             Assert.AreEqual(200, actual.Code);
@@ -242,7 +242,7 @@ namespace SlidesTest
             float? scaleX = null; 
             float? scaleY = null; 
             string bounds = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             ResponseMessage actual;
             actual = target.GetShapeWithFormat(name, slideIndex, shapeIndex, format, folder, storage, scaleX, scaleY, bounds);
             Assert.AreEqual(200, actual.Code);
@@ -264,7 +264,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlideShapeParagraphs(name, slideIndex, shapeIndex, folder, storage);
@@ -290,7 +290,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlideWithFormat(name, slideIndex, format, width, height, folder, storage);
@@ -310,7 +310,7 @@ namespace SlidesTest
             string password = null; 
             string storage = null; 
             string folder = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             ResponseMessage actual;
             actual = target.GetSlidesDocument(name, password, storage, folder);
             Assert.AreEqual(200, actual.Code);
@@ -327,7 +327,7 @@ namespace SlidesTest
             string name = "test_slide.pptx"; 
             string folder = null; 
             string storage = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             DocumentPropertiesResponse actual;
             actual = target.GetSlidesDocumentProperties(name, folder, storage);
             Assert.AreEqual("200", actual.Code);
@@ -348,7 +348,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             DocumentPropertyResponse actual;
             actual = target.GetSlidesDocumentProperty(name, propertyName, folder, storage);
@@ -374,7 +374,7 @@ namespace SlidesTest
             string folder = null; 
             string outPath = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlidesDocumentWithFormat(name, format, jpegQuality, password, storage, folder, outPath);
@@ -396,7 +396,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ImagesResponse actual;
             actual = target.GetSlidesImages(name, folder, storage);
@@ -420,7 +420,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             PlaceholderResponse actual;
             actual = target.GetSlidesPlaceholder(name, slideIndex, placeholderIndex, folder, storage);
@@ -443,7 +443,7 @@ namespace SlidesTest
             int? slideIndex = 1; 
             string folder = null; 
             string storage = null; 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             PlaceholdersResponse actual;
             actual = target.GetSlidesPlaceholders(name, slideIndex, folder, storage);
             Assert.AreEqual("200", actual.Code);
@@ -464,7 +464,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             TextItemsResponse actual;
             actual = target.GetSlidesPresentationTextItems(name, withEmpty, folder, storage);
@@ -487,7 +487,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlidesSlide(name, slideIndex, folder, storage);
@@ -510,7 +510,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideBackgroundResponse actual;
             actual = target.GetSlidesSlideBackground(name, slideIndex, folder, storage);
@@ -533,7 +533,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null;
  
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideCommentsResponse actual;
             actual = target.GetSlidesSlideComments(name, slideIndex, folder, storage);
@@ -556,7 +556,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ImagesResponse actual;
             actual = target.GetSlidesSlideImages(name, slideIndex, folder, storage);
@@ -578,7 +578,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlidesSlideShapes(name, slideIndex, folder, storage);
@@ -601,7 +601,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.GetSlidesSlideShapesParent(name, slideIndex, shapePath, folder, storage);
@@ -625,7 +625,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             TextItemsResponse actual;
             actual = target.GetSlidesSlideTextItems(name, slideIndex, withEmpty, folder, storage);
@@ -647,7 +647,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideListResponse actual;
             actual = target.GetSlidesSlidesList(name, folder, storage);
@@ -670,7 +670,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ThemeResponse actual;
             actual = target.GetSlidesTheme(name, slideIndex, folder, storage);
@@ -693,7 +693,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ColorSchemeResponse actual;
             actual = target.GetSlidesThemeColorScheme(name, slideIndex, folder, storage);
@@ -716,7 +716,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             FontSchemeResponse actual;
             actual = target.GetSlidesThemeFontScheme(name, slideIndex, folder, storage);
@@ -739,7 +739,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             FormatSchemeResponse actual;
             actual = target.GetSlidesThemeFormatScheme(name, slideIndex, folder, storage);
@@ -761,7 +761,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideListResponse actual;
             actual = target.PostAddEmptySlide(name, folder, storage);
@@ -784,7 +784,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideListResponse actual;
             actual = target.PostAddEmptySlideAtPosition(name, position, folder, storage);
@@ -811,7 +811,7 @@ namespace SlidesTest
             body.ShapeType = "Line";
             body.AlternativeText = "aspose.com";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ResponseMessage actual;
             actual = target.PostAddNewShape(name, slideIndex, folder, storage, body);
@@ -834,7 +834,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideListResponse actual;
             actual = target.PostAddSlideCopy(name, slideToClone, folder, storage);
@@ -858,7 +858,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideListResponse actual;
             actual = target.PostClonePresentationSlide(name, position, slideToClone, folder, storage);
@@ -883,7 +883,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideListResponse actual;
             actual = target.PostCopySlideFromSourcePresentation(name, slideToCopy, source, position, folder, storage);
@@ -911,10 +911,10 @@ namespace SlidesTest
             PresentationsMergeRequest body = new PresentationsMergeRequest();
             body.PresentationPaths = new System.Collections.Generic.List<string>  {mergeFile1,mergeFile2};
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(mergeFile1, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + mergeFile1));
-            storageApi.PutCreate(mergeFile2, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + mergeFile2)); 
+            storageApi.PutCreate(mergeFile1, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + mergeFile1));
+            storageApi.PutCreate(mergeFile2, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + mergeFile2)); 
 
             DocumentResponse actual;
             actual = target.PostPresentationMerge(name, storage, folder, body);
@@ -940,9 +940,9 @@ namespace SlidesTest
             string storage = null; 
             string folder = null;
 
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + "test.html");
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "test.html");
 
-            storageApi.PutCreate(templatePath, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + templatePath)); 
+            storageApi.PutCreate(templatePath, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + templatePath)); 
 
             ResponseMessage actual;
             actual = target.PostSlidesDocument(name, templatePath, templateStorage, isImageDataEmbeeded, password, storage, folder, file);
@@ -967,7 +967,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             PresentationStringReplaceResponse actual;
             actual = target.PostSlidesPresentationReplaceText(name, oldValue, newValue, ignoreCase, folder, storage);
@@ -991,7 +991,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideListResponse actual;
             actual = target.PostSlidesReorderPosition(name, oldPosition, newPosition, folder, storage);
@@ -1017,7 +1017,7 @@ namespace SlidesTest
             HtmlExportOptions body = new HtmlExportOptions();
             body.SaveAsZip = true;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ResponseMessage actual;
             actual = target.PostSlidesSaveAsHtml(name, password, storage, folder, outPath, body);
@@ -1043,7 +1043,7 @@ namespace SlidesTest
             PdfExportOptions body = new PdfExportOptions();
             body.JpegQuality = "50";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             ResponseMessage actual;
             actual = target.PostSlidesSaveAsPdf(name, password, storage, folder, outPath, body);
@@ -1069,7 +1069,7 @@ namespace SlidesTest
             TiffExportOptions body = new TiffExportOptions();
             body.ExportFormat = "tiff";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ResponseMessage actual;
             actual = target.PostSlidesSaveAsTiff(name, password, storage, folder, outPath, body);
@@ -1096,7 +1096,7 @@ namespace SlidesTest
             docProperty.Value = "Imran Anwar";
             body.List = new System.Collections.Generic.List<DocumentProperty> { docProperty};
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             DocumentPropertiesResponse actual;
             actual = target.PostSlidesSetDocumentProperties(name, folder, storage, body);
@@ -1122,7 +1122,7 @@ namespace SlidesTest
             string folder = null; 
             string storage = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SlideStringReplaceResponse actual;
             actual = target.PostSlidesSlideReplaceText(name, slideIndex, oldValue, newValue, ignoreCase, folder, storage);
@@ -1150,7 +1150,7 @@ namespace SlidesTest
             string storage = null; 
             string folder = null; 
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
             
             SplitDocumentResponse actual;
             actual = target.PostSlidesSplit(name, width, height, to, from, destFolder, format, storage, folder);
@@ -1172,7 +1172,7 @@ namespace SlidesTest
             string password = null; 
             string storage = null; 
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + "test_slide.pptx");
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "test_slide.pptx");
 
             ResponseMessage actual;
             actual = target.PutNewPresentation(name, password, storage, folder, file);
@@ -1195,7 +1195,7 @@ namespace SlidesTest
             string password = null; 
             string storage = null; 
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + "test_slide.pptx");
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "test_slide.pptx");
 
             ResponseMessage actual;
             actual = target.PutNewPresentationFromStoredTemplate(name, templatePath, templateStorage, password, storage, folder, file);
@@ -1223,7 +1223,7 @@ namespace SlidesTest
             PresentationToMerge ptm2 = new PresentationToMerge(); ptm2.Path = mergeFile2;
             body.Presentations = new System.Collections.Generic.List<PresentationToMerge> {ptm1, ptm2 };
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             DocumentResponse actual;
             actual = target.PutPresentationMerge(name, storage, folder, body);
@@ -1253,7 +1253,7 @@ namespace SlidesTest
             body.FontColor = "#FFFF0000";
             body.FontHeight = 5.0;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ResponseMessage actual;
             actual = target.PutSetParagraphPortionProperties(name, slideIndex, shapeIndex, paragraphIndex, portionIndex, folder, storage, body);
@@ -1279,7 +1279,7 @@ namespace SlidesTest
             Shape body = new Shape();
             body.AlternativeText = "Aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             ResponseMessage actual;
             actual = target.PutSlideShapeInfo(name, slideIndex, shapePath, folder, storage, body);
@@ -1300,7 +1300,7 @@ namespace SlidesTest
             string password = null; 
             string format = "pdf"; 
             string outPath = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + "test_slide.pptx"); 
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "test_slide.pptx"); 
 
             ResponseMessage actual;
             actual = target.PutSlidesConvert(password, format, outPath, file);
@@ -1322,7 +1322,7 @@ namespace SlidesTest
             string password = null; 
             string storage = null; 
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + "test.html"); 
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "test.html"); 
 
             ResponseMessage actual;
             actual = target.PutSlidesDocumentFromHtml(name, password, storage, folder, file);
@@ -1348,7 +1348,7 @@ namespace SlidesTest
             body.Name = "Author";
             body.Value = "Imran Anwar";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             DocumentPropertyResponse actual;
             actual = target.PutSlidesSetDocumentProperty(name, propertyName, folder, storage, body);
@@ -1372,7 +1372,7 @@ namespace SlidesTest
             string storage = null;
             string body = "#FFFF0000"; 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\slides\\resources\\" + name)); 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name)); 
 
             SlideBackgroundResponse actual;
             actual = target.PutSlidesSlideBackground(name, slideIndex, folder, storage, body);

@@ -6,7 +6,7 @@ var assert = require('assert');
 var AppSID = 'XXX'; //sepcify App SID
 var AppKey = 'XXX'; //sepcify App Key
 var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
-var data_path = './data/';
+var data_path = '../../../Data/';
 
 var storageApi = new StorageApi(config); 
 var slidesApi = new SlidesApi(config);
