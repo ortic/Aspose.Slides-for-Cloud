@@ -65,7 +65,7 @@
     <Compile Include="Document\SplitPresentation.cs" />
     <Compile Include="Document\MergeSelectedSlides.cs" />
     <Compile Include="Document\MergePresentations.cs" />
-    <Compile Include="Document\ConvertToOtherFormatUsingStorage.cs" />
+    <Compile Include="Document\ConvertToOtherFormatUsingWithoutStorage.cs" />
     <Compile Include="Images\GetNumberOfImagesInPresentationUsingThirdPartyStorage.cs" />
     <Compile Include="Images\GetNumberOfImagesInSlideUsingThirdPartyStorage.cs" />
     <Compile Include="Images\GetNumberOfImagesInSlide.cs" />

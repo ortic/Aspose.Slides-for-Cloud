@@ -27,7 +27,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            //ConvertToOtherFormat.Run();   
+            ConvertToOtherFormat.Run();   
             //ConvertToOtherFormatUsingStorage.Run();
             //ConvertToOtherFormatUsingThirdPartyStorage.Run();
             //MergePresentations.Run();
@@ -103,7 +103,7 @@ namespace CSharp
             //SaveAsImageWithDefaultSizeUsingThirdPartyStorage.Run();
             //SaveAsImageWithSpecifiedSizeUsingThirdPartyStorage.Run();
             //DetectSlidesUsingThirdPartyStorage.Run();
-            GetSlideCountUsingThirdPartyStorage.Run();
+            //GetSlideCountUsingThirdPartyStorage.Run();
             
             // Stop before exiting
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");

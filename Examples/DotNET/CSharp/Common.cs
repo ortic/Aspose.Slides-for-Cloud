@@ -3,8 +3,8 @@ using System.IO;
 
     class Common
     {
-        public static string APP_SID = "6dd37866-34c8-4449-9331-befa3e86bd6f";
-        public static string APP_KEY = "1ddbe7208305c55333e690284419cd2b";
+        public static string APP_SID = "xxxx";
+        public static string APP_KEY = "xxxx";
         public static string FOLDER = "";
         public static string STORAGE = "";
         public static string BASEPATH = "http://api.aspose.cloud/v1.1";
@@ -13,7 +13,7 @@ using System.IO;
 
         public static string GetDataDir()
         {
-            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
+            var parent = ((Directory.GetParent(Directory.GetCurrentDirectory()).Parent).Parent).Parent;
             string startDirectory = null;
             if (parent != null)
             {
