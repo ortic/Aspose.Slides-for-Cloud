@@ -1,6 +1,6 @@
 ## Aspose.Slides for Cloud - .NET SDK Examples
 
-This repository contains .NET examples for [Aspose.Slides for Cloud](http://www.aspose.com/products/slides/cloud) which will help you learn Aspose.Slides for Cloud and write your own applications.
+This repository contains C# examples for [Aspose.Slides for Cloud](http://www.aspose.com/products/slides/cloud) which will help you learn Aspose.Slides for Cloud and write your own applications.
 
 
 <p align="center">
