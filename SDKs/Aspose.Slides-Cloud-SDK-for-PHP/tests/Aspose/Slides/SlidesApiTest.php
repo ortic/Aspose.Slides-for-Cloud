@@ -1,7 +1,7 @@
 <?php
 
 use Aspose\Slides\SlidesApi;
-use Aspose\Cells\AsposeApp;
+use Aspose\Slides\AsposeApp;
 use Aspose\Storage\StorageApi;
 
 class SlidesApiTest extends PHPUnit_Framework_TestCase {
