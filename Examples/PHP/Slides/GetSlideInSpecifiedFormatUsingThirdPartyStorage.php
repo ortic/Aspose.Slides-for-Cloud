@@ -1,3 +1,4 @@
+//ExStart:
 <?php
 require_once realpath(__DIR__ . '/..') . '/vendor/autoload.php';
 require_once realpath(__DIR__ . '/..') . '/Utils.php';
@@ -29,3 +30,4 @@ $slides = new Slides();
 $slides->getSlideWithFormat();
 
 ?>
+//ExEnd:

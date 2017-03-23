@@ -1,3 +1,4 @@
+//ExStart:
 <?php
 require_once realpath(__DIR__ . '/..') . '/vendor/autoload.php';
 require_once realpath(__DIR__ . '/..') . '/Utils.php';
@@ -37,3 +38,4 @@ $documentProperties = new DocumentProperties();
 $documentProperties->postSlidesSetDocumentProperties();
 
 ?>
+//ExEnd:
