@@ -21,6 +21,7 @@
 }
 
 - (void)getSlidesPresentationTextItems {
+//ExStart:GetSlidesPresentationTextItems
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -31,9 +32,11 @@
                                                     completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:GetSlidesPresentationTextItems
 }
 
 - (void)getPresentationTextItemsUsingThirdPartyStorage {
+//ExStart:GetPresentationTextItemsUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -44,9 +47,11 @@
                                                     completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:GetPresentationTextItemsUsingThirdPartyStorage
 }
 
 - (void)getSlideTextItemsUsingThirdPartyStorage {
+//ExStart:GetSlideTextItemsUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -58,9 +63,11 @@
                                              completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                  NSLog(@"%@", output);
                                              }];
+//ExEnd:GetSlideTextItemsUsingThirdPartyStorage
 }
 
 - (void)getSlidesSlideTextItems {
+//ExStart:GetSlidesSlideTextItems
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -72,9 +79,11 @@
                                              completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                                  NSLog(@"%@", output);
                                              }];
+//ExEnd:GetSlidesSlideTextItems
 }
 
 - (void)postSlidesPresentationReplaceText {
+//ExStart:PostSlidesPresentationReplaceText
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -87,9 +96,11 @@
                                                        completionHandler:^(ASPPresentationStringReplaceResponse *output, NSError *error) {
                                                            NSLog(@"%@", output);
                                                        }];
+//ExEnd:PostSlidesPresentationReplaceText
 }
 
 - (void)postSlidesSlideReplaceText {
+//ExStart:PostSlidesSlideReplaceText
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -105,6 +116,7 @@
                                                 completionHandler:^(ASPSlideStringReplaceResponse *output, NSError *error) {
                                                     NSLog(@"%@", output);
                                                 }];
+//ExEnd:PostSlidesSlideReplaceText
 }
 
 @end

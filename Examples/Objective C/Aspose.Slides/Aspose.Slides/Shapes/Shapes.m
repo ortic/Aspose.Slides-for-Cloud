@@ -21,6 +21,7 @@
 }
 
 - (void)extractShapesFromASlideUsingThirdPartStorage {
+//ExStart:ExtractShapesFromASlideUsingThirdPartStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -31,9 +32,11 @@
                                           completionHandler:^(ASPShapeResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:ExtractShapesFromASlideUsingThirdPartStorage
 }
 
 - (void)getSlidesSlideShapesParent {
+//ExStart:GetSlidesSlideShapesParent
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -45,9 +48,11 @@
                                                 completionHandler:^(ASPNewShapeResponse *output, NSError *error) {
                                                     NSLog(@"%@", output);
                                                 }];
+//ExEnd:GetSlidesSlideShapesParent
 }
 
 - (void)getSlidesSlideShapes {
+//ExStart:GetSlidesSlideShapes
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -58,6 +63,7 @@
                                           completionHandler:^(ASPShapeResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetSlidesSlideShapes
     
     
     

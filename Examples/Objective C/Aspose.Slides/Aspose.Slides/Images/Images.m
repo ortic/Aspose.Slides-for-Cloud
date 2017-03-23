@@ -21,6 +21,7 @@
 }
 
 - (void)getSlidesSlideImages {
+//ExStart:GetSlidesSlideImages
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -31,9 +32,11 @@
                                           completionHandler:^(ASPImagesResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetSlidesSlideImages
 }
 
 - (void)getSlidesSlideImagesUsingThirdPartyStorage {
+//ExStart:GetSlidesSlideImagesUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -44,9 +47,11 @@
                                           completionHandler:^(ASPImagesResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetSlidesSlideImagesUsingThirdPartyStorage
 }
 
 - (void)getSlidesImages {
+//ExStart:GetSlidesImages
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -56,9 +61,11 @@
                                      completionHandler:^(ASPImagesResponse *output, NSError *error) {
                                          NSLog(@"%@", output);
                                      }];
+//ExEnd:GetSlidesImages
 }
 
 - (void)getSlidesImagesUsingThirdPartStorage {
+//ExStart:GetSlidesImagesUsingThirdPartStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -68,6 +75,7 @@
                                      completionHandler:^(ASPImagesResponse *output, NSError *error) {
                                          NSLog(@"%@", output);
                                      }];
+//ExEnd:GetSlidesImagesUsingThirdPartStorage
 }
 
 @end

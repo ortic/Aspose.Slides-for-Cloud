@@ -21,6 +21,7 @@
 }
 
 - (void)deleteSlidesDocumentProperties {
+//ExStart:DeleteSlidesDocumentProperties
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -30,9 +31,11 @@
                                                     completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:DeleteSlidesDocumentProperties
 }
 
 - (void)deleteSlidesDocumentProperty {
+//ExStart:DeleteSlidesDocumentProperty
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -45,9 +48,11 @@
                                                   completionHandler:^(ASPCommonResponse *output, NSError *error) {
                                                       NSLog(@"%@", output);
                                                   }];
+//ExEnd:DeleteSlidesDocumentProperty
 }
 
 - (void)getSlidesDocumentProperties {
+//ExStart:GetSlidesDocumentProperties
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -57,9 +62,11 @@
                                                  completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:GetSlidesDocumentProperties
 }
 
 - (void)postSlidesSetDocumentProperties {
+//ExStart:PostSlidesSetDocumentProperties
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -78,9 +85,11 @@
                                                      completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                                          NSLog(@"%@", output);
                                                      }];
+//ExEnd:PostSlidesSetDocumentProperties
 }
 
 - (void)putSlidesSetDocumentProperty {
+//ExStart:PutSlidesSetDocumentProperty
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -98,6 +107,7 @@
                                                   completionHandler:^(ASPDocumentPropertyResponse *output, NSError *error) {
                                                       NSLog(@"%@", output);
                                                   }];
+//ExEnd:PutSlidesSetDocumentProperty
 }
 
 @end

@@ -21,6 +21,7 @@
 }
 
 - (void)putSlidesConvert {
+//ExStart:PutSlidesConvert
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"pptx"];
     
     [self.slidesApi putSlidesConvertWithCompletionBlock:pathToFile
@@ -30,9 +31,11 @@
                                       completionHandler:^(NSURL *output, NSError *error) {
                                           NSLog(@"%@", output);
                                       }];
+//ExEnd:PutSlidesConvert
 }
 
 - (void)getSlidesDocumentWithFormat {
+//ExStart:GetSlidesDocumentWithFormat
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -46,9 +49,11 @@
                                                  completionHandler:^(NSURL *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:GetSlidesDocumentWithFormat
 }
 
 - (void)postPresentationMerge {
+//ExStart:PostPresentationMerge
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     NSString *mergeFileName1 = @"welcome.pptx";
@@ -66,9 +71,11 @@
                                            completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                NSLog(@"%@", output);
                                            }];
+//ExEnd:PostPresentationMerge
 }
 
 - (void)postSlidesSplit {
+//ExStart:PostSlidesSplit
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -84,9 +91,11 @@
                                      completionHandler:^(ASPSplitDocumentResponse *output, NSError *error) {
                                          NSLog(@"%@", output);
                                      }];
+//ExEnd:PostSlidesSplit
 }
 
 - (void)putNewPresentation {
+//ExStart:PutNewPresentation
     NSString *fileName = [NSString stringWithFormat:@"%@%d%@", @"newPresentation", arc4random_uniform(100), @".pptx"];
     
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"pptx"];
@@ -99,9 +108,11 @@
                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:PutNewPresentation
 }
 
 - (void)putPresentationMerge {
+//ExStart:PutPresentationMerge
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     NSString *mergeFileName1 = @"welcome.pptx";
@@ -128,6 +139,7 @@
                                           completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:PutPresentationMerge
 }
 
 @end

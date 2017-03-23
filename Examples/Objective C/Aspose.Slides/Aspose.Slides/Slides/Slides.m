@@ -21,6 +21,7 @@
 }
 
 - (void)deleteSlideByIndex {
+//ExStart:DeleteSlideByIndex
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -31,9 +32,11 @@
                                         completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:DeleteSlideByIndex
 }
 
 - (void)deleteSlidesCleanSlidesList {
+//ExStart:DeleteSlidesCleanSlidesList
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -43,9 +46,11 @@
                                                  completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:DeleteSlidesCleanSlidesList
 }
 
 - (void)deleteSlidesSlideBackground {
+//ExStart:DeleteSlidesSlideBackground
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -56,9 +61,11 @@
                                                  completionHandler:^(ASPSlideBackgroundResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:DeleteSlidesSlideBackground
 }
 
 - (void)getSlideInSpecifiedFormatUsingThirdPartyStorage {
+//ExStart:GetSlideInSpecifiedFormatUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -72,9 +79,11 @@
                                         completionHandler:^(NSURL *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:GetSlideInSpecifiedFormatUsingThirdPartyStorage
 }
 
 - (void)getSlideWithFormat {
+//ExStart:GetSlideWithFormat
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -88,9 +97,11 @@
                                         completionHandler:^(NSURL *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:GetSlideWithFormat
 }
 
 - (void)getSlidesPlaceholder {
+//ExStart:GetSlidesPlaceholder
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -102,9 +113,11 @@
                                           completionHandler:^(ASPPlaceholderResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetSlidesPlaceholder
 }
 
 - (void)getSlidesPlaceholders {
+//ExStart:GetSlidesPlaceholders
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -115,9 +128,11 @@
                                            completionHandler:^(ASPPlaceholdersResponse *output, NSError *error) {
                                                NSLog(@"%@", output);
                                            }];
+//ExEnd:GetSlidesPlaceholders
 }
 
 - (void)getSlidesSlide {
+//ExStart:GetSlidesSlide
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -128,9 +143,11 @@
                                     completionHandler:^(ASPSlideResponse *output, NSError *error) {
                                         NSLog(@"%@", output);
                                     }];
+//ExEnd:GetSlidesSlide
 }
 
 - (void)getSlidesSlideBackground {
+//ExStart:GetSlidesSlideBackground
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -141,9 +158,11 @@
                                               completionHandler:^(ASPSlideBackgroundResponse *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:GetSlidesSlideBackground
 }
 
 - (void)getSlidesSlideComments {
+//ExStart:GetSlidesSlideComments
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -154,9 +173,11 @@
                                             completionHandler:^(ASPSlideCommentsResponse *output, NSError *error) {
                                                 NSLog(@"%@", output);
                                             }];
+//ExEnd:GetSlidesSlideComments
 }
 
 - (void)getSlidesSlidesList {
+//ExStart:GetSlidesSlidesList
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -166,9 +187,11 @@
                                          completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:GetSlidesSlidesList
 }
 
 - (void)getSlidesThemeColorScheme {
+//ExStart:GetSlidesThemeColorScheme
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -179,9 +202,11 @@
                                                completionHandler:^(ASPColorSchemeResponse *output, NSError *error) {
                                                    NSLog(@"%@", output);
                                                }];
+//ExEnd:GetSlidesThemeColorScheme
 }
 
 - (void)getSlidesThemeFontScheme {
+//ExStart:GetSlidesThemeFontScheme
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -192,9 +217,11 @@
                                               completionHandler:^(ASPFontSchemeResponse *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:GetSlidesThemeFontScheme
 }
 
 - (void)postAddEmptySlide {
+//ExStart:PostAddEmptySlide
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -204,9 +231,11 @@
                                        completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:PostAddEmptySlide
 }
 
 - (void)postClonePresentationSlide {
+//ExStart:PostClonePresentationSlide
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -218,9 +247,11 @@
                                                 completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                                     NSLog(@"%@", output);
                                                 }];
+//ExEnd:PostClonePresentationSlide
 }
 
 - (void)postSlidesReorderPosition {
+//ExStart:PostSlidesReorderPosition
     NSString *fileName = @"sample-input.pptx";
     [Utils uploadFile:fileName];
     
@@ -232,9 +263,11 @@
                                                completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                                    NSLog(@"%@", output);
                                                }];
+//ExEnd:PostSlidesReorderPosition
 }
 
 - (void)readPresentationSlidesInfo {
+//ExStart:ReadPresentationSlidesInfo
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -244,9 +277,11 @@
                                          completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:ReadPresentationSlidesInfo
 }
 
 - (void)readPresentationSlidesInfoUsingThirdPartyStorage {
+//ExStart:ReadPresentationSlidesInfoUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -256,10 +291,12 @@
                                          completionHandler:^(ASPSlideListResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:ReadPresentationSlidesInfoUsingThirdPartyStorage
 
 }
 
 - (void)saveSlideAsImageWithSpecifiedSize {
+//ExStart:SaveSlideAsImageWithSpecifiedSize
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -273,9 +310,11 @@
                                         completionHandler:^(NSURL *output, NSError *error) {
                                              NSLog(@"%@", output);
                                         }];
+//ExEnd:SaveSlideAsImageWithSpecifiedSize
 }
 
 - (void)saveSlideAsImageWithSpecifiedSizeUsingThirdPartyStorage {
+//ExStart:SaveSlideAsImageWithSpecifiedSizeUsingThirdPartyStorage
     NSString *fileName = @"sample.pptx";
     [Utils uploadFile:fileName];
     
@@ -289,6 +328,7 @@
                                         completionHandler:^(NSURL *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:SaveSlideAsImageWithSpecifiedSizeUsingThirdPartyStorage
 }
 
 @end
