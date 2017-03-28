@@ -4,7 +4,7 @@ This directory contains examples for [Aspose.Slides for Cloud Objective C SDK](h
 ### How to Run the Examples
 1. Log into https://cloud.aspose.com/ and get your **App Key** and **App SID**. For details please check this article
 
-   [Create New App and Get App Key and SID](https://docs.asposeptyltd.com/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
+   [Create New App and Get App Key and SID](https://docs.aspose.com/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
 
 2. Edit [Utils.m](https://github.com/aspose-slides/Aspose.Slides-for-Cloud/blob/master/Examples/Objective%20C/Aspose.Slides/Aspose.Slides/Utils.m) class and pass your App Key and SID as an arguments to this method.
 ```ruby
