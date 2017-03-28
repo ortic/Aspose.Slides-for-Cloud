@@ -1,5 +1,5 @@
 # Aspose.Slides Cloud SDK For Ruby
-This SDK lets you use [Aspose Cloud Slides APIs](http://www.aspose.com/cloud/powerpoint-api.aspx) in your web apps.
+This SDK lets you use [Aspose Cloud Slides APIs](https://www.aspose.com/products/slides/cloud) in your web apps.
 
 <p align="center">
   <a title="Download complete Aspose.Slides for Cloud source code" href="https://github.com/asposeslides/Aspose_slides_Cloud/archive/master.zip">
