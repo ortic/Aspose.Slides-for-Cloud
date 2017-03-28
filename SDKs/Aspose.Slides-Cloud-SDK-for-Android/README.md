@@ -9,7 +9,7 @@ This repository contains Aspose.Slides Cloud SDK for Android source code. This S
 </p>
 
 ##How to Use the SDK?
-The complete source code is available in this repository folder. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/slidescloud/Available+SDKs).
+The complete source code is available in this repository folder. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
 ##Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
