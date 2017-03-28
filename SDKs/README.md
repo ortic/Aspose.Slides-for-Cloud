@@ -1,5 +1,5 @@
 ## Aspose.Slides for Cloud SDKs
-This folder contains SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cloud/powerpoint-api.aspx) for various platforms.
+This folder contains SDKs for [Aspose.Slides for Cloud](https://www.aspose.com/products/slides/cloud) for various platforms.
 
 <p align="center">
   <a title="Download ZIP" href="https://github.com/aspose-slides/Aspose.Slides-for-Cloud/archive/master.zip">
