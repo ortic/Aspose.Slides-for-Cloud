@@ -1,4 +1,4 @@
-# Aspose.Slides_Cloud_SDK_For_Objective_C
+# Aspose.Slides Cloud SDK For Objective C
 This SDK allows you to work with Aspose.Slides for Cloud APIs in your iOS app quickly and easily.
 
 <p align="center">
@@ -7,7 +7,7 @@ This SDK allows you to work with Aspose.Slides for Cloud APIs in your iOS app qu
   </a>
 </p>
 
-##How to Use the SDK?
+## How to Use the SDK?
 The complete source code is available in this repository folder, you can either directly use it in your project or use Cocoapods. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
 ## Unit Tests
