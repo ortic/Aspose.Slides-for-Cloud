@@ -7,8 +7,10 @@ This repository contains Aspose.Slides Cloud SDK for PHP source code. This SDK a
   </a>
 </p>
 
-##How to Use the SDK?
+## How to Use the SDK?
+
 The complete source code is available in this repository folder, you can either directly use it in your project or use Composer. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
-##Contact Us
+## Contact Us
+
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
