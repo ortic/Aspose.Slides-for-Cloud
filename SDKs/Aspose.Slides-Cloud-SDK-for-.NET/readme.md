@@ -6,8 +6,9 @@ This repository contains Aspose.Slides Cloud SDK for .Net source code. This SDK 
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
-##How to use the SDK?
+## How to use the SDK?
+
 The complete source code is available in this repository folder, you can either directly use it in your project or use Composer. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
-##Contact Us
+## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
