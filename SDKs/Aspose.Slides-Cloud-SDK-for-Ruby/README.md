@@ -38,7 +38,7 @@ class SlidesUsage
 end
 ```
 ## Unit Tests
-Aspose Slides SDK includes a suite of unit tests within the [test](https://github.com/asposeslides/Aspose_Slides_Cloud/blob/master/SDKs/Aspose.Slides_Cloud_SDK_For_Ruby/test/slides_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Slides SDK.
+Aspose Slides SDK includes a suite of unit tests within the [test](https://github.com/aspose-slides/Aspose.Slides-for-Cloud/blob/master/SDKs/Aspose.Slides-Cloud-SDK-for-Ruby/test/slides_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Slides SDK.
 
-##Contact Us
+## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
