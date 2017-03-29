@@ -1,4 +1,4 @@
-#Aspose.Slides Cloud SDK for Python
+## Aspose.Slides Cloud SDK for Python
 
 This repository contains Aspose.Slides Cloud SDK for Python source code. This SDK allows you to work with Aspose.Slides Cloud REST APIs in your Python applications quickly and easily. 
 
@@ -8,8 +8,10 @@ This repository contains Aspose.Slides Cloud SDK for Python source code. This SD
   </a>
 </p>
 
-##How to Use the SDK?
+## How to Use the SDK?
+
 The complete source code is available in this repository folder. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
-##Contact Us
+## Contact Us
+
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
