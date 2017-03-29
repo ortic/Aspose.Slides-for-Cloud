@@ -1,4 +1,4 @@
-##Aspose.Slides Cloud SDK for Java
+## Aspose.Slides Cloud SDK for Java
 
 This repository contains Aspose.Slides Cloud SDK for Java source code. This SDK allows you to work with Aspose.Slides Cloud REST APIs in your Java applications quickly and easily. 
 
@@ -8,8 +8,9 @@ This repository contains Aspose.Slides Cloud SDK for Java source code. This SDK 
   </a>
 </p>
 
-##How to Use the SDK?
+## How to Use the SDK?
+
 The complete source code is available in this repository folder, you can either directly use it in your project or use Maven. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
-##Contact Us
+## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
