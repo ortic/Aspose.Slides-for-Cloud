@@ -7,7 +7,7 @@ This SDK lets you use [Aspose Cloud Slides APIs](https://www.aspose.com/products
   </a>
 </p>
 
-##How to Use the SDK?
+## How to Use the SDK?
 The complete source code is available in this repository folder, you can either directly use it in your project or use RubyGems. For more details, please visit our [documentation website](https://docs.aspose.com/display/slidescloud/Available+SDKs).
 
 
