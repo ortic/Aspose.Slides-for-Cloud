@@ -32,8 +32,6 @@ import com.aspose.slides.model.TextItemsResponse;
 import com.aspose.slides.model.ThemeResponse;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.UUID;
 
 import org.junit.After;
@@ -74,16 +72,6 @@ public class SlidesApiTest {
 
 	@After
 	public void tearDown() {
-	}
-	
-	private static Path getPath(Class example, String filename) {
-		final File f = new File(example.getProtectionDomain().getCodeSource().getLocation().getPath());
-		String path = f.getAbsolutePath();
-		int subPathIndex = path.indexOf("Examples");
-		String subPath = path.substring(0, subPathIndex) + "Data/" + filename;
-
-		Path p = Paths.get(subPath);
-		return p;
 	}
 
 	/**
@@ -143,14 +131,15 @@ public class SlidesApiTest {
 		String folder = null;
 		File file;
 		try {
-			
-			file =getPath(SlidesApiTest.class, "test_convert_slide.pptx").toFile();
+			file = new File(getClass().getResource("/test_convert_slide.pptx").toURI());
 			//ResponseMessage result = slidesApi.PostSlidesDocument(name, templatePath, templateStorage, isImageDataEmbeeded, password, storage, folder, file);
 			
 			
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
+		} catch(java.net.URISyntaxException uriExp){
+			System.out.println("uri exp:" + uriExp.getMessage());
 		}
 	}
 
@@ -189,14 +178,15 @@ public class SlidesApiTest {
 		String folder = "";
 		File file;
 		try {
-			
-			file =getPath(SlidesApiTest.class, "test_convert_slide.pptx").toFile();
+			file = new File(getClass().getResource("/test_convert_slide.pptx").toURI());
 			 DocumentResponse result = slidesApi.PutNewPresentation(name, password, storage, folder, file);
 			 System.out.println("Empty presentation file has been created successfully");
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} 
+		} catch(java.net.URISyntaxException uriExp){
+			System.out.println("uri exp:" + uriExp.getMessage());
+		}
 
 	}
 
@@ -214,14 +204,17 @@ public class SlidesApiTest {
 		String folder = "";
 		File file;
 		try {
-			
-			file = getPath(SlidesApiTest.class, "test_convert_slide.pptx").toFile();
+			file = new File(getClass().getResource("/test_convert_slide.pptx").toURI());
 			//ResponseMessage result = slidesApi.PutNewPresentationFromStoredTemplate(name, templatePath, templateStorage, password, storage, folder, file);
+			
 			
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} 
+		} catch(java.net.URISyntaxException uriExp){
+			System.out.println("uri exp:" + uriExp.getMessage());
+		}
+
 	}
 
 	/**
@@ -235,13 +228,16 @@ public class SlidesApiTest {
 		String outPath = "";
 		File file;
 		try {
-			file = getPath(SlidesApiTest.class, "test_convert_slide.pptx").toFile();
+			file = new File(getClass().getResource("/test_convert_slide.pptx").toURI());
 			ResponseMessage result = slidesApi.PutSlidesConvert(password, format, outPath, file);		
 			
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} 
+		} catch(java.net.URISyntaxException uriExp){
+			System.out.println("uri exp:" + uriExp.getMessage());
+		}
+
 	}
 
 	/**
