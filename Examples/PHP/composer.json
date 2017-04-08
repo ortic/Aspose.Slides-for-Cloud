@@ -1,0 +1,5 @@
+{
+	"require": {
+    	"aspose/slides-sdk-php": "dev-master"
+    }
+}

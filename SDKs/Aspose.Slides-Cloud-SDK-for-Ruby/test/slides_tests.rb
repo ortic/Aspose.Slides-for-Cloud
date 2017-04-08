@@ -19,14 +19,14 @@ class SlidesTests < Minitest::Test
 
 	def upload_file(file_name)
         	@storage_api = StorageApi.new
-		response = @storage_api.put_create(file_name, File.open("data/" << file_name,"r") { |io| io.read } )
+		response = @storage_api.put_create(file_name, File.open("../../../data/" << file_name,"r") { |io| io.read } )
 		assert(response, message="Failed to upload {file_name} file.")
 	end
 
 	def test_put_slides_convert
         	file_name = "sample.pptx"
         	convert_to_format = "pdf"
-        	response = @slides_api.put_slides_convert(File.open("data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
+        	response = @slides_api.put_slides_convert(File.open("../../../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
 	 	assert(response, message="Failed to convert presentation from request content to format specified.")
 	end
 
@@ -43,7 +43,7 @@ class SlidesTests < Minitest::Test
         	template_path = "sample.pptx"
         	upload_file(template_path)
         
-        	response = @slides_api.put_new_presentation_from_stored_template(file_name, template_path, File.open("data/Test.html","r") { |io| io.read })
+        	response = @slides_api.put_new_presentation_from_stored_template(file_name, template_path, File.open("../../../data/Test.html","r") { |io| io.read })
 	 	assert(response, message="Failed to add new presentation from stored template.")
 	end
 
@@ -52,7 +52,7 @@ class SlidesTests < Minitest::Test
         	template_path = "sample.pptx"
         	upload_file(template_path)
         
-        	response = @slides_api.post_slides_document(file_name, template_path, File.open("data/Test.html","r") { |io| io.read })
+        	response = @slides_api.post_slides_document(file_name, template_path, File.open("../../../data/Test.html","r") { |io| io.read })
 	 	assert(response, message="Failed to create presentation.")
 	end
 
@@ -120,7 +120,7 @@ class SlidesTests < Minitest::Test
 	def test_put_slides_document_from_html
         	file_name = "newPresentation.pptx"
         
-        	response = @slides_api.put_slides_document_from_html(file_name, File.open("data/ReadMe.html","r") { |io| io.read })
+        	response = @slides_api.put_slides_document_from_html(file_name, File.open("../../../data/ReadMe.html","r") { |io| io.read })
 	 	assert(response, message="Failed to create presentation document from html.")
 	end
 
@@ -497,7 +497,7 @@ class SlidesTests < Minitest::Test
     	def test_put_new_presentation
         	file_name = "newPresentation.pptx"
         
-        	response = @slides_api.put_new_presentation(file_name, File.open("data/sample.pptx","r") { |io| io.read })
+        	response = @slides_api.put_new_presentation(file_name, File.open("../../../data/sample.pptx","r") { |io| io.read })
         	assert(response, message="Failed to create presentation")
     	end
 

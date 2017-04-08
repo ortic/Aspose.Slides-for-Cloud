@@ -227,7 +227,7 @@ module AsposeSlidesCloud
       # close and delete temp file
       tmp_file.close!
 
-      File.open(path, 'w') { |file| file.write(response.body) }
+      File.open(path, 'wb') { |file| file.write(response.body) }
       Configuration.logger.info "File written to #{path}. Please move the file to a proper "\
                                 "folder for further processing and delete the temp afterwards"
       File.new(path)
