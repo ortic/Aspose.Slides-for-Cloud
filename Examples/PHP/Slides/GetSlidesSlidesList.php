@@ -18,7 +18,7 @@ class Slides {
 
 	public function getSlidesSlidesList() {
 		$fileName = "sample.pptx";
-		Utils::uploadFile($fileName);
+		//Utils::uploadFile($fileName);
 		$result = $this->slidesApi->GetSlidesSlidesList($fileName, $folder = "", $storage = "");
 		print_r($result);
 	}
