@@ -83,7 +83,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             format = "tiff"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../data/' + name)
             response = self.slidesApi.GetSlidesDocumentWithFormat(name, format)            
             
             self.assertEqual(response.Status,'OK')
