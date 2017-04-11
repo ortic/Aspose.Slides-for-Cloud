@@ -67,7 +67,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesDocument(name)            
 
             self.assertEqual(response.Status,'OK')
@@ -83,7 +83,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             format = "tiff"
             
-            response = self.storageApi.PutCreate(name,'../../../data/' + name)
+            response = self.storageApi.PutCreate(name,'../../.../../../Data/' + name)
             response = self.slidesApi.GetSlidesDocumentWithFormat(name, format)            
             
             self.assertEqual(response.Status,'OK')
@@ -100,8 +100,8 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = name  + '.pptx'
             templatePath = "sample.pptx"
             
-            response = self.storageApi.PutCreate(templatePath,'./data/' + templatePath)
-            response = self.slidesApi.PostSlidesDocument(name, templatePath=templatePath, file = './data/Test.html')            
+            response = self.storageApi.PutCreate(templatePath,'../../../Data/' + templatePath)
+            response = self.slidesApi.PostSlidesDocument(name, templatePath=templatePath, file = '../../../Data/Test.html')            
 
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
             self.assertEqual(response.Status,'Created')
@@ -119,7 +119,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             to = 3
             format = "png"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSplit(name, ffrom=ffrom, to=to, format=format)            
 
             self.assertIsInstance(response,SplitDocumentResponse.SplitDocumentResponse)
@@ -138,7 +138,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             
             templatePath = "sample.pptx"
             
-            response = self.slidesApi.PutNewPresentation(name, file = './data/' + templatePath)            
+            response = self.slidesApi.PutNewPresentation(name, file = '../../../Data/' + templatePath)            
             
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
             self.assertEqual(response.Status,'Created')
@@ -156,7 +156,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             
             templatePath = "sample.pptx"
             
-            response = self.storageApi.PutCreate(templatePath,'./data/' + templatePath)
+            response = self.storageApi.PutCreate(templatePath,'../../../Data/' + templatePath)
             
             response = self.slidesApi.PutNewPresentationFromStoredTemplate(name, templatePath, file=None)            
 
@@ -174,7 +174,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             format = "pdf"
             
-            response = self.slidesApi.PutSlidesConvert(file = './data/' + name, format=format)            
+            response = self.slidesApi.PutSlidesConvert(file = '../../../Data/' + name, format=format)            
 
             self.assertEqual(response.Status,'OK')
         
@@ -189,7 +189,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
             name = name  + '.pptx'
             
-            response = self.slidesApi.PutSlidesDocumentFromHtml(name, file = './data/ReadMe.html')            
+            response = self.slidesApi.PutSlidesDocumentFromHtml(name, file = '../../../Data/ReadMe.html')            
 
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
             self.assertEqual(response.Status,'Created')
@@ -204,7 +204,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample-input.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesImages(name)            
 
             self.assertIsInstance(response,ImagesResponse.ImagesResponse)
@@ -221,7 +221,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideImages(name, slideIndex)            
 
             self.assertIsInstance(response,ImagesResponse.ImagesResponse)
@@ -243,9 +243,9 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body.PresentationPaths = [mergeFile1, mergeFile2]
             
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
-            response = self.storageApi.PutCreate(mergeFile1,'./data/' + mergeFile1)
-            response = self.storageApi.PutCreate(mergeFile2,'./data/' + mergeFile2)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
+            response = self.storageApi.PutCreate(mergeFile1,'../../../Data/' + mergeFile1)
+            response = self.storageApi.PutCreate(mergeFile2,'../../../Data/' + mergeFile2)
             
             response = self.slidesApi.PostPresentationMerge(name, body)            
 
@@ -267,9 +267,9 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body = OrderedMergeRequest.OrderedMergeRequest()
             body.Presentations = [mergeFile1, mergeFile2]
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
-            response = self.storageApi.PutCreate(mergeFile1,'./data/' + mergeFile1)
-            response = self.storageApi.PutCreate(mergeFile2,'./data/' + mergeFile2)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
+            response = self.storageApi.PutCreate(mergeFile1,'../../../Data/' + mergeFile1)
+            response = self.storageApi.PutCreate(mergeFile2,'../../../Data/' + mergeFile2)
             
             response = self.slidesApi.PutPresentationMerge(name, body)            
 
@@ -288,7 +288,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             slideIndex = 1
             placeholderIndex = 0
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesPlaceholder(name, slideIndex, placeholderIndex)            
 
             self.assertIsInstance(response,PlaceholderResponse.PlaceholderResponse)
@@ -305,7 +305,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample-input.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesPlaceholders(name, slideIndex)            
 
             self.assertIsInstance(response,PlaceholdersResponse.PlaceholdersResponse)
@@ -321,7 +321,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample-input.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.DeleteSlidesDocumentProperties(name)            
 
             self.assertIsInstance(response,DocumentPropertiesResponse.DocumentPropertiesResponse)
@@ -338,7 +338,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample-input.pptx"
             propertyName = "AsposeAuthor"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.DeleteSlidesDocumentProperty(name, propertyName)            
 
             self.assertIsInstance(response,CommonResponse.CommonResponse)
@@ -354,7 +354,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample-input.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesDocumentProperties(name)            
 
             self.assertIsInstance(response,DocumentPropertiesResponse.DocumentPropertiesResponse)
@@ -378,7 +378,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             
             
             body.List = [docprop1]
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSetDocumentProperties(name, body)            
 
             self.assertIsInstance(response,DocumentPropertiesResponse.DocumentPropertiesResponse)
@@ -400,7 +400,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body.Value = "Farooq Sheikh"
         
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PutSlidesSetDocumentProperty(name, propertyName, body)            
 
             self.assertIsInstance(response,DocumentPropertyResponse.DocumentPropertyResponse)
@@ -420,7 +420,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             paragraphIndex = 1
             portionIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetParagraphPortion(name, slideIndex, shapeIndex, paragraphIndex, portionIndex)            
 
             self.assertIsInstance(response,PortionResponse.PortionResponse)
@@ -439,7 +439,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             shapeIndex = 1
             paragraphIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetShapeParagraph(name, slideIndex, shapeIndex, paragraphIndex)            
 
             self.assertIsInstance(response,ParagraphResponse.ParagraphResponse)
@@ -457,7 +457,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             slideIndex = 1
             shapeIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlideShapeParagraphs(name, slideIndex, shapeIndex)            
 
             self.assertIsInstance(response,ParagraphsResponse.ParagraphsResponse)
@@ -474,7 +474,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideShapes(name, slideIndex)            
 
             self.assertIsInstance(response,ShapeListResponse.ShapeListResponse)
@@ -492,7 +492,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             slideIndex = 1
             shapePath = "1"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideShapesParent(name, slideIndex, shapePath)            
 
             self.assertIsInstance(response,ShapeResponse.ShapeResponse)
@@ -518,7 +518,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body.FontColor = "#FFFF0000"
             
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PutSetParagraphPortionProperties(name, slideIndex, shapeIndex, paragraphIndex, portionIndex, body)            
 
             self.assertIsInstance(response,PortionResponse.PortionResponse)
@@ -539,7 +539,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body = Shape.Shape()
             body.AlternativeText = "Aspose"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PutSlideShapeInfo(name, slideIndex, shapePath, body)            
 
             self.assertIsInstance(response,ShapeResponse.ShapeResponse)
@@ -556,7 +556,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.DeleteSlideByIndex(name, slideIndex)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -572,7 +572,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.DeleteSlidesCleanSlidesList(name)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -589,7 +589,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.DeleteSlidesSlideBackground(name, slideIndex)            
 
             self.assertIsInstance(response,SlideBackgroundResponse.SlideBackgroundResponse)
@@ -606,7 +606,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlide(name, slideIndex)            
 
             self.assertIsInstance(response,SlideResponse.SlideResponse)
@@ -623,7 +623,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideBackground(name, slideIndex)            
 
             self.assertIsInstance(response,SlideBackgroundResponse.SlideBackgroundResponse)
@@ -640,7 +640,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideComments(name, slideIndex)            
 
             self.assertIsInstance(response,SlideCommentsResponse.SlideCommentsResponse)
@@ -656,7 +656,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlidesList(name)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -674,7 +674,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             slideIndex = 1
             format = "pdf"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlideWithFormat(name, slideIndex, format)            
 
             self.assertEqual(response.Status,'OK')
@@ -689,7 +689,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostAddEmptySlide(name)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -706,7 +706,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             position = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostAddEmptySlideAtPosition(name, position)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -723,7 +723,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideToClone = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostAddSlideCopy(name, slideToClone)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -741,7 +741,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             position = 1
             slideToClone = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostClonePresentationSlide(name, position, slideToClone)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -760,8 +760,8 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             source = "sample-input.pptx"
             position = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
-            response = self.storageApi.PutCreate(source,'./data/' + source)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
+            response = self.storageApi.PutCreate(source,'../../../Data/' + source)
             response = self.slidesApi.PostCopySlideFromSourcePresentation(name, slideToCopy, source, position)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -779,7 +779,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             oldPosition = 1
             newPosition = 2
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesReorderPosition(name, oldPosition, newPosition)            
 
             self.assertIsInstance(response,SlideListResponse.SlideListResponse)
@@ -796,7 +796,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PutSlidesSlideBackground(name, slideIndex, body = "#FFFF0000")            
 
             self.assertIsInstance(response,SlideBackgroundResponse.SlideBackgroundResponse)
@@ -812,7 +812,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesPresentationTextItems(name)            
 
             self.assertIsInstance(response,TextItemsResponse.TextItemsResponse)
@@ -829,7 +829,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesSlideTextItems(name, slideIndex)            
 
             self.assertIsInstance(response,TextItemsResponse.TextItemsResponse)
@@ -845,7 +845,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
         try:
             name = "sample.pptx"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesPresentationReplaceText(name, oldValue = "aspose", newValue = "aspose2")            
 
             self.assertIsInstance(response,PresentationStringReplaceResponse.PresentationStringReplaceResponse)
@@ -862,7 +862,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSlideReplaceText(name, slideIndex, oldValue = "aspose", newValue = "aspose2")            
 
             self.assertIsInstance(response,SlideStringReplaceResponse.SlideStringReplaceResponse)
@@ -879,7 +879,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesTheme(name, slideIndex)            
 
             self.assertIsInstance(response,ThemeResponse.ThemeResponse)
@@ -896,7 +896,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesThemeColorScheme(name, slideIndex)            
 
             self.assertIsInstance(response,ColorSchemeResponse.ColorSchemeResponse)
@@ -913,7 +913,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesThemeFontScheme(name, slideIndex)            
 
             self.assertIsInstance(response,FontSchemeResponse.FontSchemeResponse)
@@ -930,7 +930,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             slideIndex = 1
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesThemeFormatScheme(name, slideIndex)            
 
             self.assertIsInstance(response,FormatSchemeResponse.FormatSchemeResponse)
@@ -951,7 +951,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body.AlternativeText = "Aspose" 
             body.ShapeType = "Line"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostAddNewShape(name, slideIndex, body)            
 
             self.assertIsInstance(response,ShapeResponse.ShapeResponse)
@@ -970,7 +970,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             shapeIndex = 1
             format = "png"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetShapeWithFormat(name, slideIndex, shapeIndex, format)            
 
             self.assertEqual(response.Status,'OK')
@@ -989,7 +989,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body = PdfExportOptions.PdfExportOptions()
             body.JpegQuality = 50
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSaveAsPdf(name, body)            
             
             self.assertEqual(response.Status,'OK')
@@ -1008,7 +1008,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body = TiffExportOptions.TiffExportOptions()
             body.ExportFormat = "tiff"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSaveAsTiff(name, body)            
             
             self.assertEqual(response.Status,'OK')
@@ -1027,7 +1027,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             body = HtmlExportOptions.HtmlExportOptions()
             body.SaveAsZip = True
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.PostSlidesSaveAsHtml(name, body)            
 
             self.assertEqual(response.Status,'OK')
@@ -1043,7 +1043,7 @@ class TestAsposeSlidesCloud(unittest.TestCase):
             name = "sample.pptx"
             propertyName = "Author"
             
-            response = self.storageApi.PutCreate(name,'./data/' + name)
+            response = self.storageApi.PutCreate(name,'../../../Data/' + name)
             response = self.slidesApi.GetSlidesDocumentProperty(name, propertyName)            
 
             self.assertIsInstance(response,DocumentPropertyResponse.DocumentPropertyResponse)

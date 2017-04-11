@@ -1,1 +1,1 @@
-include ':app', ':aspose-cloud-slides-android'
+include ':app', ':Aspose-Slides-Cloud-SDK-for-Android', ':Aspose.Storage-Cloud-SDK-for-Android'
