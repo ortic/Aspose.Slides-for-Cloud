@@ -57,7 +57,7 @@ ApiClient.prototype.Sign = function(unsignedURL, privateKey){
 	
 	var signature = crypto.createHmac('sha1', privateKey)
 		.update(unsignedURL)
-		.digest('base64')
+		.digest('hex')
 		.replace('=', '');
 	
 
