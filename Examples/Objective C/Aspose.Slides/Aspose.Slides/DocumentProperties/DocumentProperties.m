@@ -54,7 +54,7 @@
 - (void)getSlidesDocumentProperties {
 //ExStart:GetSlidesDocumentProperties
     NSString *fileName = @"sample-input.pptx";
-    [Utils uploadFile:fileName];
+    //[Utils uploadFile:fileName];
     
     [self.slidesApi getSlidesDocumentPropertiesWithCompletionBlock:fileName
                                                             folder:nil

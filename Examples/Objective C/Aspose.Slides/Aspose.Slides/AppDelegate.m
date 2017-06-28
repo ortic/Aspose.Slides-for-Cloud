@@ -27,21 +27,21 @@
     [Utils setAppKeyAndAppSID];
     
     Document *document = [[Document alloc] init];
-    [document putSlidesConvert];
-    [document getSlidesDocumentWithFormat];
+    //[document putSlidesConvert];
+    /*[document getSlidesDocumentWithFormat];
     [document postPresentationMerge];
     [document postSlidesSplit];
     [document putNewPresentation];
-    [document putPresentationMerge];
+    [document putPresentationMerge];*/
     
     DocumentProperties *documentProperties = [[DocumentProperties alloc] init];
-    [documentProperties deleteSlidesDocumentProperties];
-    [documentProperties deleteSlidesDocumentProperty];
+    //[documentProperties deleteSlidesDocumentProperties];
+    //[documentProperties deleteSlidesDocumentProperty];
     [documentProperties getSlidesDocumentProperties];
-    [documentProperties postSlidesSetDocumentProperties];
-    [documentProperties putSlidesSetDocumentProperty];
+    //[documentProperties postSlidesSetDocumentProperties];
+    //[documentProperties putSlidesSetDocumentProperty];
     
-    Images *images = [[Images alloc] init];
+    /*Images *images = [[Images alloc] init];
     [images getSlidesSlideImages];
     [images getSlidesSlideImagesUsingThirdPartyStorage];
     [images getSlidesImages];
@@ -80,7 +80,7 @@
     [text getSlideTextItemsUsingThirdPartyStorage];
     [text getSlidesSlideTextItems];
     [text postSlidesPresentationReplaceText];
-    [text postSlidesSlideReplaceText];
+    [text postSlidesSlideReplaceText];*/
     
     return YES;
 }
