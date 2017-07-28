@@ -15,10 +15,11 @@ module AsposeSlidesCloud
     # @option opts [String] :password The document password.
     # @option opts [String] :format The format.
     # @option opts [String] :out_path Path to save result
+    # @option opts [String] :fonts_folder The optional custom fonts folder.
     # @return [File]
     def put_slides_convert(file, opts = {})
       if Configuration.debugging
-        Configuration.logger.debug "Calling API: SlidesApi#put_slides_convert ..."
+        Configuration.debugging "Calling API: SlidesApi#put_slides_convert ..."
       end
       
       # verify the required parameter 'file' is set
@@ -32,6 +33,7 @@ module AsposeSlidesCloud
       query_params[:'password'] = opts[:'password'] if opts[:'password']
       query_params[:'format'] = opts[:'format'] if opts[:'format']
       query_params[:'outPath'] = opts[:'out_path'] if opts[:'out_path']
+      query_params[:'fontsFolder'] = opts[:'fonts_folder'] if opts[:'fonts_folder']
 
       # header parameters
       header_params = {}
@@ -53,17 +55,11 @@ module AsposeSlidesCloud
       
 
       auth_names = []
-      result = @api_client.call_api(:PUT, path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'File')
+      result = @api_client.call_api(:PUT, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'File')
       if Configuration.debugging
         Configuration.logger.debug "API called: SlidesApi#put_slides_convert. Result: #{result.inspect}"
       end
-      return result
+      result
     end
 
     # Get slides document in specified format

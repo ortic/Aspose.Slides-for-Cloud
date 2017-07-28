@@ -86,6 +86,7 @@ module AsposeSlidesCloud
       end
       
       url = sign(url, opts[:query_params])
+      puts url
       Typhoeus::Request.new(url, req_opts)
 
     end

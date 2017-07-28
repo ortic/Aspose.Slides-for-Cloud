@@ -24,11 +24,21 @@ class SlidesTests < Minitest::Test
 	end
 
 	def test_put_slides_convert
-        	file_name = "sample.pptx"
-        	convert_to_format = "pdf"
-        	response = @slides_api.put_slides_convert(File.open("../../../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
+        file_name = "sample.pptx"
+        convert_to_format = "pdf"
+
+        response = @slides_api.put_slides_convert(File.open("../../../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
 	 	assert(response, message="Failed to convert presentation from request content to format specified.")
 	end
+
+    def test_using_fontsLocation_parameter_to_specify_custom_fonts
+        file_name = "sample.pptx"
+        convert_to_format = "pdf"
+        fonts_folder = "fonts";
+
+        response = @slides_api.put_slides_convert(File.open("../../../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format, fonts_folder: fonts_folder})
+        assert(response, message="Failed to convert presentation from request content to format specified using custom fonts.")
+    end
 
 	def test_get_slides_document_with_format
         	file_name = "sample.pptx"

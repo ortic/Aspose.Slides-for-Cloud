@@ -62,6 +62,43 @@ class APIClient {
     }
 
     /**
+    * Fine MIME Content-type for a file
+    */
+    public static function mimeTypeOfFile($file) {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mimeType = finfo_file($finfo, $file);
+        finfo_close($finfo);
+
+        return $mimeType;
+    }
+
+    public function signURL($url, $queryParams) {
+        
+        // parse the url
+        $UrlToSign = rtrim($url, "/");
+        $url = parse_url($UrlToSign);
+        $urlQuery = http_build_query($queryParams);
+
+        $urlPartToSign = $url['scheme'] . '://' . $url['host'] . $url['path'] . "?" . $url['query'];
+        
+        // Create a signature using the private key and the URL-encoded
+        // string using HMAC SHA1. This signature will be binary.
+        $signature = hash_hmac('sha1', $urlPartToSign, $this->apiKey, true);
+
+        $encodedSignature = self::encodeBase64UrlSafe($signature);
+        $encodedSignature = str_replace(array('=', '-', '_'), array('', '%2b', '%2f'), $encodedSignature);
+
+        preg_match_all("/%[0-9a-f]{2}/", $encodedSignature, $m);
+        foreach ($m[0] as $code) {
+            $encodedSignature = str_replace($code, strtoupper($code), $encodedSignature);
+        }
+
+        $url = $urlPartToSign . '&signature=' . $encodedSignature;
+
+        return $url;
+    }
+
+    /**
      * @param string $resourcePath path to method endpoint
      * @param string $method method to call
      * @param array $queryParams parameters to be place in query URL
@@ -81,57 +118,22 @@ class APIClient {
         if (is_object($postData) or is_array($postData)) {
             $postData = json_encode(self::sanitizeForSerialization($postData));
         }
-	
+
         $resourcePath = str_replace("{appSid}", urlencode($this->appSid), $resourcePath);
         $url = rtrim($this->apiServer, "/") . $resourcePath;
 
-        /*
-         * 
-         * Sign URL starts
-         */
-
-        // parse the url
-        $UrlToSign = rtrim($url, "/");
-        $url = parse_url($UrlToSign);
-        $urlQuery = http_build_query($queryParams);
-
-
-        $urlPartToSign = $url['scheme'] . '://' . $url['host'] . $url['path'] . "?" . $url['query'];
-
-        // Create a signature using the private key and the URL-encoded
-        // string using HMAC SHA1. This signature will be binary.
-        $signature = hash_hmac('sha1', $urlPartToSign, $this->apiKey, true);
-
-        $encodedSignature = self::encodeBase64UrlSafe($signature);
-        $encodedSignature = str_replace(array('=', '-', '_'), array('', '%2b', '%2f'), $encodedSignature);
-
-        preg_match_all("/%[0-9a-f]{2}/", $encodedSignature, $m);
-        foreach ($m[0] as $code) {
-            $encodedSignature = str_replace($code, strtoupper($code), $encodedSignature);
+        if (! empty($queryParams)) {
+            $url = ($url . '&' . http_build_query($queryParams));
         }
 
-        $url = $urlPartToSign . '&signature=' . $encodedSignature;
-
-        /*
-         * 
-         * Sign url ends
-         */
-
-//		if (is_object($postData) or is_array($postData)) {
-//			$postData = json_encode(self::sanitizeForSerialization($postData));
-//		}
-//
-//		$url = $this->apiServer . $resourcePath;
-
+        // Sign URL
+        $url = $this->signURL($url, $queryParams);
+        print_r($url);
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_TIMEOUT, 180);
         // return the result on success, rather than just TRUE
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-//		if (!empty($queryParams)) {
-//			$url = ($url . '?' . http_build_query($queryParams));
-//		}
 
         if ($method == self::$POST) {
             if (file_exists($postData)) {
@@ -147,8 +149,8 @@ class APIClient {
                 curl_setopt($curl, CURLOPT_INFILE, $fp);
                 curl_setopt($curl, CURLOPT_INFILESIZE, filesize($postData));
             } else {
-            curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
             }
         } else if ($method == self::$PUT) {
             if (file_exists($postData)) {
@@ -178,13 +180,14 @@ class APIClient {
 
         // Make the request
         $response = curl_exec($curl);
+
         $response_info = curl_getinfo($curl);
 
         // Handle the response
         if ($response_info['http_code'] == 0) {
             throw new Exception("TIMEOUT: api call to " . $url .
             " took more than 180s to return");
-        } else if ($response_info['http_code'] == 200 || $response_info['http_code'] == 201) {
+        } else if ($response_info['http_code'] == 200) {
             //$data = json_decode($response);
             $data = $response;
         } else if ($response_info['http_code'] == 401) {
@@ -193,12 +196,63 @@ class APIClient {
         } else if ($response_info['http_code'] == 404) {
             $data = null;
         } else {
-            throw new Exception("Can't connect to the api: " . $url .
-            " response code: " .
-            $response_info['http_code']);
+            /* throw new Exception("Can't connect to the api: " . $url .
+              " response code: " .
+              $response_info['http_code']); */
+            echo "response code: " . $response_info['http_code'];
         }
 
         return $data;
+    }
+
+    public function callMultipartAPI($resourcePath, $queryParams, $boundary, $fields, $files) {
+
+        $resourcePath = str_replace("{appSid}", urlencode($this->appSid), $resourcePath);
+        $url = rtrim($this->apiServer, "/") . $resourcePath;
+
+        // Sign URL
+        $url = $this->signURL($url, $queryParams);
+
+        $curl = curl_init($url);
+
+        $delimiter = '-------------' . $boundary;
+        $data = '';
+
+        foreach ($fields as $name => $field) {
+            $data .= "--" . $delimiter . "\r\n";
+            $data .= 'Content-Type: ' . $field['type'] . "\r\n";
+            // this endline must be here to indicate end of headers
+            $data .= "\r\n";
+            // the file itself (note: UTF8 Encoding)
+            $data .= utf8_encode($field['content']) . "\r\n";
+        }
+        
+        foreach ($files as $name => $file) {
+            $data .= "--" . $delimiter . "\r\n";
+            // "filename" attribute is not essential; server-side scripts may use it
+            $data .= 'Content-Disposition: form-data; name="' . $name . '";' .
+                 ' filename="' . $name . '"' . "\r\n";
+            // this is, again, informative only; good practice to include though
+            $data .= 'Content-Type: ' . $file['type'] . "\r\n";
+            // this endline must be here to indicate end of headers
+            $data .= "\r\n";
+            // the file itself (note: there's no encoding of any kind)
+            $data .= $file['content'] . "\r\n";
+        }
+
+        $data .= "--" . $delimiter . "--\r\n";
+
+        curl_setopt_array($curl, [
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: multipart/form-data; boundary=' . $delimiter,
+                'Content-Length: ' . strlen($data)
+            ],
+            CURLOPT_POSTFIELDS => $data
+        ]);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        return curl_exec($curl);
     }
 
     /**
@@ -329,6 +383,42 @@ class APIClient {
 
     public static function isJson($string) {
         return is_string($string) && is_object(json_decode($string)) && (json_last_error() == JSON_ERROR_NONE) ? true : false;
+    }
+
+    /**
+     * Return the header 'Accept' based on an array of Accept provided
+     *
+     * @param string[] $accept Array of header
+     *
+     * @return string Accept (e.g. application/json)
+     */
+    public static function selectHeaderAccept($accept)
+    {
+        if (count($accept) === 0 or (count($accept) === 1 and $accept[0] === '')) {
+            return null;
+        } elseif (preg_grep("/application\/json/i", $accept)) {
+            return 'application/json';
+        } else {
+            return implode(',', $accept);
+        }
+    }
+  
+    /**
+     * Return the content type based on an array of content-type provided
+     *
+     * @param string[] $content_type Array fo content-type
+     *
+     * @return string Content-Type (e.g. application/json)
+     */
+    public static function selectHeaderContentType($content_type)
+    {
+        if (count($content_type) === 0 or (count($content_type) === 1 and $content_type[0] === '')) {
+            return 'application/json';
+        } elseif (preg_grep("/application\/json/i", $content_type)) {
+            return 'application/json';
+        } else {
+            return implode(',', $content_type);
+        }
     }
 
 }
