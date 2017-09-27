@@ -1,6 +1,6 @@
 {
   "name": "asposeslidescloud",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Aspose.Slides Cloud SDK for Node.js",
   "main": "lib/SlidesApi.js",
   "homepage": "http://www.aspose.com/cloud/powerpoint-api.aspx",
