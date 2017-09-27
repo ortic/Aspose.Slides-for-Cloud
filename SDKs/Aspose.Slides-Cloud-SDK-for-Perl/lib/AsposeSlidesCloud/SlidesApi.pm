@@ -12,7 +12,7 @@ use File::Slurp;
 use AsposeSlidesCloud::ApiClient;
 use AsposeSlidesCloud::Configuration;
 
-my $VERSION = '1.01';
+my $VERSION = '1.02';
 
 sub new {
     my $class   = shift;
