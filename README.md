@@ -24,7 +24,7 @@ Directory | Description
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
-+ **Product Home:** [Aspose.Slides for Cloud](https://www.aspose.com/products/slides/cloud)
++ **Product Home:** [Aspose.Slides for Cloud](https://products.aspose.cloud/slides)
 + **Documentation:** [Aspose.Slides for Cloud Documentation](https://docs.aspose.com/display/slidescloud/Home)
 + **Forum:** [Aspose.Slides for Cloud Forum](https://forum.aspose.com/c/slides)
 + **Blog:** [Aspose.Slides for Cloud Blog](https://blog.aspose.com/category/aspose-products/aspose-slides-product-family/)
