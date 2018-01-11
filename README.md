@@ -1,5 +1,5 @@
 ## Aspose.Slides for Cloud
-This repository contains examples and SDKs for [Aspose.Slides for Cloud](http://www.aspose.com/cloud/powerpoint-api.aspx).
+This repository contains examples and SDKs for [Aspose.Slides for Cloud](https://products.aspose.cloud/slides/cloud).
 
 ## Why SDKs?
 Aspose.Slides for Cloud is implemented as a REST API. If you use SDK, it hides the REST API calls and lets you use Aspose.Slides features in a native way for your preferred language.
@@ -23,8 +23,8 @@ Directory | Description
 [Perl SDK](SDKs/Aspose.Slides-Cloud-SDK-for-Perl)  | Aspose.Slides for Cloud Perl SDK
 ## Resources
 
-+ **Website:** [www.aspose.com](http://www.aspose.com)
++ **Website:** [www.aspose.cloud](http://www.aspose.cloud)
 + **Product Home:** [Aspose.Slides for Cloud](https://products.aspose.cloud/slides)
-+ **Documentation:** [Aspose.Slides for Cloud Documentation](https://docs.aspose.com/display/slidescloud/Home)
-+ **Forum:** [Aspose.Slides for Cloud Forum](https://forum.aspose.com/c/slides)
-+ **Blog:** [Aspose.Slides for Cloud Blog](https://blog.aspose.com/category/aspose-products/aspose-slides-product-family/)
++ **Documentation:** [Aspose.Slides for Cloud Documentation](https://docs.aspose.cloud/display/slidescloud/Home)
++ **Forum:** [Aspose.Slides for Cloud Forum](https://forum.aspose.cloud/)
++ **Blog:** [Aspose.Slides for Cloud Blog](https://blog.aspose.cloud/category/aspose-products/aspose-slides-product-family/)
