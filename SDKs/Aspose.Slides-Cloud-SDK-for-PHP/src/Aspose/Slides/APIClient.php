@@ -128,7 +128,6 @@ class APIClient {
 
         // Sign URL
         $url = $this->signURL($url, $queryParams);
-        print_r($url);
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_TIMEOUT, 180);
         // return the result on success, rather than just TRUE
